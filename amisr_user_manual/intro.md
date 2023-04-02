@@ -1,11 +1,9 @@
-# Welcome to your Jupyter Book
+# AMISR User Manual
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+This is a short guide for scientific end users of AMISR data.  It will give a broad overview of how to access, plot, and interpret the data.  This guide will attempt to focus on the most important points for most basic scientific analysis rather than a detailed descriptions of all nuances in these datasets.
 
-Check out the content pages bundled with this sample book to see more.
+
+### Table of Contents
 
 ```{tableofcontents}
 ```
