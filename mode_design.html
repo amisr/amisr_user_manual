@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ISR Theory &#8212; AMISR User Manual</title>
+    <title>Basics of Mode Design &#8212; AMISR User Manual</title>
   
   
   
@@ -61,11 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'isr_theory';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'mode_design';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SRI Database" href="navigate_database.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,9 +148,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ISR Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isr_theory.html">ISR Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="navigate_database.html">SRI Database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Common Plots</a></li>
@@ -227,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fisr_theory.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fmode_design.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -257,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/isr_theory.md" target="_blank"
+      <li><a href="_sources/mode_design.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +324,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -337,11 +337,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ISR Theory</h1>
+    <h1>Basics of Mode Design</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulse-coding">Pulse Coding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-resolution">Range Resolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-period">Integration Period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operation-modes">Common Operation Modes</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -351,16 +363,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="isr-theory">
-<h1>ISR Theory<a class="headerlink" href="#isr-theory" title="Permalink to this heading">#</a></h1>
-<p>Basic Theory of Incoherent Scatter Radars</p>
-<ul class="simple">
-<li><p>Plasma Physics</p></li>
-<li><p>ISR Spectra
-TBD - the level of detail/mathematical rigor to use in this section
-Utilize materials from ISR Summer School</p></li>
-</ul>
-<p>ISR is an inherently statistical techinique</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="basics-of-mode-design">
+<h1>Basics of Mode Design<a class="headerlink" href="#basics-of-mode-design" title="Permalink to this heading">#</a></h1>
+<section id="pulse-coding">
+<h2>Pulse Coding<a class="headerlink" href="#pulse-coding" title="Permalink to this heading">#</a></h2>
+<p>AKA: LP vs AC</p>
+<p>TDLR; For F-region experiments, use long pulse data
+For E-region experiments, use alternating code data</p>
+</section>
+<section id="beam-positions">
+<h2>Beam Positions<a class="headerlink" href="#beam-positions" title="Permalink to this heading">#</a></h2>
+<p>AMISRs are electronically-steerable phased-array radars, meaning the beam direction is set by individually varying the phase of each transmitting element such that constructive interferance occurs in the desired direction.  Because these phase shifts are enforced electronically and there is no need to physically move the radar structure, the beam look direction can be altered multiple times per second.  This allows the radar to cycle through a set of a set of independent look directions many times in one integration period, effectively measuring a volume of ionospheric plasma (instead of just one profile) simultaniously.</p>
+</section>
+<section id="range-resolution">
+<h2>Range Resolution<a class="headerlink" href="#range-resolution" title="Permalink to this heading">#</a></h2>
+<p>Post processing</p>
+</section>
+<section id="integration-period">
+<h2>Integration Period<a class="headerlink" href="#integration-period" title="Permalink to this heading">#</a></h2>
+<p>The integration period is the length of time autocorrelation functions are summed over before fitting to the ISR spectrum to determine plasma parameters.  This is determined in post-processing, and often raw data from one experiment is processed with mulitple integration periods.  The longer the integration period, the more independent pulses contribute to the spectrum, which because the ISR technique is inherently statistical, results in higher confidence in the fitted parameters.  In short, a longer integration period will ususally mean less noisy data with few errors. However, long integration periods will also have lower temporal resolution and may smear out sharp transient features.  In general, you should chose the longest integration period that still captures the time scales of interest for the phenomena you are studying.</p>
+</section>
+<section id="common-operation-modes">
+<h2>Common Operation Modes<a class="headerlink" href="#common-operation-modes" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -394,24 +419,6 @@ Utilize materials from ISR Summer School</p></li>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="introduction.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="navigate_database.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SRI Database</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -421,6 +428,24 @@ Utilize materials from ISR Summer School</p></li>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulse-coding">Pulse Coding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-resolution">Range Resolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-period">Integration Period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operation-modes">Common Operation Modes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
