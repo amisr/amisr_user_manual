@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Common Plots &#8212; AMISR User Manual</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -65,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Common Data Fields" href="common_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -151,6 +152,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="isr_theory.html">ISR Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigate_database.html">SRI Database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Common Plots</a></li>
 </ul>
@@ -397,13 +399,25 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="common-plots">
-<h1>Common Plots<a class="headerlink" href="#common-plots" title="Permalink to this headline">#</a></h1>
+<h1>Common Plots<a class="headerlink" href="#common-plots" title="Permalink to this heading">#</a></h1>
 <p>The following examples show how to create some common visualizations of AMISR data. Due to the 4D nature of the data, it is challnging to visualize all parts of the FoV simultaniously.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;h5py&#39;
 </pre></div>
 </div>
 </div>
@@ -416,10 +430,10 @@ document.write(`
 </div>
 </div>
 <section id="rti-plot">
-<h2>RTI Plot<a class="headerlink" href="#rti-plot" title="Permalink to this headline">#</a></h2>
+<h2>RTI Plot<a class="headerlink" href="#rti-plot" title="Permalink to this heading">#</a></h2>
 <p>Range-Time-Intensity (RTI) plots are a common way to look at how profiles of a parameter change in time.</p>
 <section id="the-most-basic">
-<h3>The Most Basic<a class="headerlink" href="#the-most-basic" title="Permalink to this headline">#</a></h3>
+<h3>The Most Basic<a class="headerlink" href="#the-most-basic" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
@@ -435,7 +449,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x1168f9de0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1682,) (23,) (1682, 23)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x10985fd90&gt;
 </pre></div>
 </div>
 <img alt="_images/c72dc4e9a81c84034a09b28bb61e5f641e9cce0b37840f25e9f406b46c795df8.png" src="_images/c72dc4e9a81c84034a09b28bb61e5f641e9cce0b37840f25e9f406b46c795df8.png" />
@@ -443,7 +460,7 @@ document.write(`
 </div>
 </section>
 <section id="a-scientifically-useful-plot">
-<h3>A Scientifically Useful Plot<a class="headerlink" href="#a-scientifically-useful-plot" title="Permalink to this headline">#</a></h3>
+<h3>A Scientifically Useful Plot<a class="headerlink" href="#a-scientifically-useful-plot" title="Permalink to this heading">#</a></h3>
 <p>Now lets create the same plot as before but with intelligable axes and labels, a colorbar, ect.  This is probably the minimum you want to do for inclusion in a paper or presentation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -465,7 +482,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x116b8ef50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11d1fe6b0&gt;
 </pre></div>
 </div>
 <img alt="_images/3521f840158421adc9bbffecfbd067b8ed3b7b2b0d92ebdf70a5a6d76b6eb410.png" src="_images/3521f840158421adc9bbffecfbd067b8ed3b7b2b0d92ebdf70a5a6d76b6eb410.png" />
@@ -473,7 +490,7 @@ document.write(`
 </div>
 </section>
 <section id="plotting-a-specific-beam">
-<h3>Plotting a Specific Beam<a class="headerlink" href="#plotting-a-specific-beam" title="Permalink to this headline">#</a></h3>
+<h3>Plotting a Specific Beam<a class="headerlink" href="#plotting-a-specific-beam" title="Permalink to this heading">#</a></h3>
 <p>Plot a specific beam by selecting the beam index (<code class="docutils literal notranslate"><span class="pre">bidx</span></code>) more carefully.  You can either select a particular beam by its beamcode, or choose a beam based on proximity to a particular azimuth/elevation (i.e., choose the highest elevation beam in the beam pattern).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,7 +522,7 @@ document.write(`
  [ 6.50660000e+04  7.50299988e+01  6.55599976e+01  7.08000000e-20]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x116e0f4c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11d09e9e0&gt;
 </pre></div>
 </div>
 <img alt="_images/5b50a95733ca474c4a6783f60193cc0178bc9ce6844f48318b0a766f81ca243c.png" src="_images/5b50a95733ca474c4a6783f60193cc0178bc9ce6844f48318b0a766f81ca243c.png" />
@@ -539,7 +556,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1682,) (23,) (1682, 23)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x116f23850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11d41b8e0&gt;
 </pre></div>
 </div>
 <img alt="_images/30315d6da8df092af93c4d96779b57684d6ec993382f144eeff18a4b176f1598.png" src="_images/30315d6da8df092af93c4d96779b57684d6ec993382f144eeff18a4b176f1598.png" />
@@ -549,7 +566,7 @@ document.write(`
 </section>
 </section>
 <section id="beam-postion-plot">
-<h2>Beam Postion Plot<a class="headerlink" href="#beam-postion-plot" title="Permalink to this headline">#</a></h2>
+<h2>Beam Postion Plot<a class="headerlink" href="#beam-postion-plot" title="Permalink to this heading">#</a></h2>
 <p>Create a polar plot of all beam positions for this particular experiment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -574,7 +591,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x116feca00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x11f83d9c0&gt;
 </pre></div>
 </div>
 <img alt="_images/32d265755722f4727ea434ab65eb23162a9971ea7f985b8238acdcf90e8f8ea3.png" src="_images/32d265755722f4727ea434ab65eb23162a9971ea7f985b8238acdcf90e8f8ea3.png" />
@@ -582,7 +599,7 @@ document.write(`
 </div>
 </section>
 <section id="altitude-slice-on-map">
-<h2>Altitude Slice on Map<a class="headerlink" href="#altitude-slice-on-map" title="Permalink to this headline">#</a></h2>
+<h2>Altitude Slice on Map<a class="headerlink" href="#altitude-slice-on-map" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 

@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Common Data Fields &#8212; AMISR User Manual</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -66,9 +67,9 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Common Plots" href="plotting.html" />
-    <link rel="prev" title="ISR Theory" href="isr_theory.html" />
+    <link rel="prev" title="SRI Database" href="navigate_database.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -154,6 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="isr_theory.html">ISR Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigate_database.html">SRI Database</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Common Data Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Common Plots</a></li>
 </ul>
@@ -399,11 +401,21 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="common-data-fields">
-<h1>Common Data Fields<a class="headerlink" href="#common-data-fields" title="Permalink to this headline">#</a></h1>
+<h1>Common Data Fields<a class="headerlink" href="#common-data-fields" title="Permalink to this heading">#</a></h1>
 <p>This notebook will walk through how to access some of the more common data fields from the SRI hdf5 data files.  This should be treated as a quick reference for common scientific applications and is NOT intended to be a comprehensive map of everything in these files.  Refer to metadata contained within the files for descriptions of other arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">h5py</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;h5py&#39;
 </pre></div>
 </div>
 </div>
@@ -424,7 +436,7 @@ document.write(`
 <li><p>Nranges: Number of radar range gates</p></li>
 </ul>
 <section id="electron-density">
-<h2>Electron Density<a class="headerlink" href="#electron-density" title="Permalink to this headline">#</a></h2>
+<h2>Electron Density<a class="headerlink" href="#electron-density" title="Permalink to this heading">#</a></h2>
 <p><strong>Units:</strong> m<span class="math notranslate nohighlight">\(^{-3}\)</span></p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -442,7 +454,7 @@ document.write(`
 </div>
 </section>
 <section id="ion-temperature">
-<h2>Ion Temperature<a class="headerlink" href="#ion-temperature" title="Permalink to this headline">#</a></h2>
+<h2>Ion Temperature<a class="headerlink" href="#ion-temperature" title="Permalink to this heading">#</a></h2>
 <p>The fourth index corresponds to the ion species (0 = O+).</p>
 <p><strong>Units:</strong> K</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
@@ -461,7 +473,7 @@ document.write(`
 </div>
 </section>
 <section id="electron-temperature">
-<h2>Electron Temperature<a class="headerlink" href="#electron-temperature" title="Permalink to this headline">#</a></h2>
+<h2>Electron Temperature<a class="headerlink" href="#electron-temperature" title="Permalink to this heading">#</a></h2>
 <p><strong>Units:</strong> K</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -479,7 +491,7 @@ document.write(`
 </div>
 </section>
 <section id="line-of-sight-velocity">
-<h2>Line-of-Sight Velocity<a class="headerlink" href="#line-of-sight-velocity" title="Permalink to this headline">#</a></h2>
+<h2>Line-of-Sight Velocity<a class="headerlink" href="#line-of-sight-velocity" title="Permalink to this heading">#</a></h2>
 <p><strong>Units:</strong> m/s</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -497,7 +509,7 @@ document.write(`
 </div>
 </section>
 <section id="time">
-<h2>Time<a class="headerlink" href="#time" title="Permalink to this headline">#</a></h2>
+<h2>Time<a class="headerlink" href="#time" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Time</span></code> group lists timestamps in a variety of formats, but <code class="docutils literal notranslate"><span class="pre">UnixTime</span></code> (seconds from January 1, 1970) is often most convenient for programing purposes.</p>
 <p><strong>Dimensions:</strong> Nrecords x 2</p>
 <div class="cell docutils container">
@@ -543,7 +555,7 @@ document.write(`
 </div>
 </section>
 <section id="geographic-position">
-<h2>Geographic Position<a class="headerlink" href="#geographic-position" title="Permalink to this headline">#</a></h2>
+<h2>Geographic Position<a class="headerlink" href="#geographic-position" title="Permalink to this heading">#</a></h2>
 <p>Geodetic latitude, longitude, and altitude of the center of each radar bin.</p>
 <p><strong>Dimensions:</strong> Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -564,7 +576,7 @@ document.write(`
 </div>
 </section>
 <section id="geomagnetic-position">
-<h2>Geomagnetic Position<a class="headerlink" href="#geomagnetic-position" title="Permalink to this headline">#</a></h2>
+<h2>Geomagnetic Position<a class="headerlink" href="#geomagnetic-position" title="Permalink to this heading">#</a></h2>
 <p>Geomagnetic latitude and longitude of the center of each radar bin.  If your application is dependent on highly accurate magnetic position relative to some outside dataset, it is recommended that you start with the geographic postion and calculate the conversion to magnetic coordinates yourself to avoid ambiguity with different magnetic coordinate systems and IGRF versions.</p>
 <p><strong>Dimensions:</strong> Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -625,12 +637,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="isr_theory.html"
+       href="navigate_database.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ISR Theory</p>
+        <p class="prev-next-title">SRI Database</p>
       </div>
     </a>
     <a class="right-next"

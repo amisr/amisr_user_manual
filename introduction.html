@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Introduction &#8212; AMISR User Manual</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -66,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="ISR Theory" href="isr_theory.html" />
     <link rel="prev" title="AMISR User Manual" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -152,6 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="isr_theory.html">ISR Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigate_database.html">SRI Database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Common Plots</a></li>
 </ul>
@@ -324,7 +326,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -340,6 +344,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incoherent-scatter-radar">Incoherent Scatter Radar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amisr-basics">AMISR Basics</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -350,7 +363,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Overview of the purpose of this book</p></li>
 <li><p>Guide for the end users of AMISR data</p></li>
@@ -362,6 +375,21 @@ document.write(`
 <li><p>error handling</p></li>
 <li><p>Examples of more sophisticated plots/analysis</p></li>
 </ul>
+<section id="incoherent-scatter-radar">
+<h2>Incoherent Scatter Radar<a class="headerlink" href="#incoherent-scatter-radar" title="Permalink to this heading">#</a></h2>
+<p>Incoherent Scatter Radars (ISRs) are large, ground-based facilities that measure ionospheric plasma parameters in the upper atmosphere.  They have been used for decades to investigate ionospheric plasma dynamics and are particularly powerful for their ability to measure a profile of plasma parameters through the entire ionospheric layer.  The four basic plasma parameters ISRs can measure are:</p>
+<ul class="simple">
+<li><p>Electron Density (Ne)</p></li>
+<li><p>Ion Temperature (Ti)</p></li>
+<li><p>Electron Temperature (Te)</p></li>
+<li><p>Line-of-Site Plasma Velocity (Vlos)</p></li>
+</ul>
+</section>
+<section id="amisr-basics">
+<h2>AMISR Basics<a class="headerlink" href="#amisr-basics" title="Permalink to this heading">#</a></h2>
+<p>Advanced Modular Incoherent Scatter Radars (AMISR) are a special category of ISR that are electronically-steerable phased-array radars. This means that the beam direction is set by individually varying the phase of each transmitting element such that constructive interferance occurs in the desired direction.  Because these phase shifts are enforced electronically and there is no need to physically move the radar structure, the beam look direction can be altered multiple times per second.  This allows the radar to cycle through a set of a set of independent look directions many times in one integration period, effectively measuring a volume of ionospheric plasma (instead of just one profile) simultaniously.</p>
+<p><img alt="phisr_array" src="images/pfisr_array.png" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -422,6 +450,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incoherent-scatter-radar">Incoherent Scatter Radar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amisr-basics">AMISR Basics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
