@@ -209,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=tree/plotting.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/plotting.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -427,22 +427,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">h5py</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;h5py&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/e30737/Desktop/Data/AMISR/PFISR/2020/20201023.003_lp_5min-fitcal.h5&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/20200207.001_lp_5min-fitcal.h5&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -462,18 +450,15 @@ document.write(`
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">ne</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)],</span> <span class="n">ne</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1682,) (23,) (1682, 23)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f2bf9d8a380&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x10985fd90&gt;
-</pre></div>
-</div>
-<img alt="_images/c72dc4e9a81c84034a09b28bb61e5f641e9cce0b37840f25e9f406b46c795df8.png" src="_images/c72dc4e9a81c84034a09b28bb61e5f641e9cce0b37840f25e9f406b46c795df8.png" />
+<img alt="_images/0bcdda22c88f83afe312c8dc9c355a5c38c489177ce5fcb3c59e63758520365d.png" src="_images/0bcdda22c88f83afe312c8dc9c355a5c38c489177ce5fcb3c59e63758520365d.png" />
 </div>
 </div>
 </section>
@@ -492,7 +477,7 @@ document.write(`
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">ne</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)],</span> <span class="n">ne</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Slant Range (m)&#39;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Electron Density (m$^{-3}$)&#39;</span><span class="p">)</span>
@@ -500,10 +485,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11d1fe6b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2bf8b17340&gt;
 </pre></div>
 </div>
-<img alt="_images/3521f840158421adc9bbffecfbd067b8ed3b7b2b0d92ebdf70a5a6d76b6eb410.png" src="_images/3521f840158421adc9bbffecfbd067b8ed3b7b2b0d92ebdf70a5a6d76b6eb410.png" />
+<img alt="_images/82cdda8b5e7d04d2851df33482c6cd30c9b3c0b8ddb447c3148b729dc1a60eaf.png" src="_images/82cdda8b5e7d04d2851df33482c6cd30c9b3c0b8ddb447c3148b729dc1a60eaf.png" />
 </div>
 </div>
 </section>
@@ -525,7 +510,7 @@ document.write(`
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">ne</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)],</span> <span class="n">ne</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Slant Range (m)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Beam Number: </span><span class="si">{:.0f}</span><span class="s1"> (az:</span><span class="si">{:.1f}</span><span class="s1">, el:</span><span class="si">{:.1f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">beamcodes</span><span class="p">[</span><span class="n">bidx</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">beamcodes</span><span class="p">[</span><span class="n">bidx</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">beamcodes</span><span class="p">[</span><span class="n">bidx</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
@@ -534,16 +519,23 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 6.40160000e+04  1.40400000e+01  9.00000000e+01  7.86000000e-20]
- [ 6.41570000e+04 -1.54300003e+02  7.75000000e+01  5.53000000e-20]
- [ 6.49640000e+04 -3.46899986e+01  6.60899963e+01  7.61000000e-20]
- [ 6.50660000e+04  7.50299988e+01  6.55599976e+01  7.08000000e-20]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 6.31970000e+04 -3.50900002e+01  6.61900024e+01  6.75000000e-20]
+ [ 6.32390000e+04 -1.62299995e+01  5.86800003e+01  6.54000000e-20]
+ [ 6.32810000e+04 -2.95000005e+00  4.75499992e+01  4.66000000e-20]
+ [ 6.33650000e+04  7.60899963e+01  6.61900024e+01  6.21000000e-20]
+ [ 6.34010000e+04  5.72299995e+01  5.86800003e+01  6.02000000e-20]
+ [ 6.34490000e+04  4.39500008e+01  4.75499992e+01  4.21000000e-20]
+ [ 6.40160000e+04  1.40400000e+01  9.00000000e+01  7.01000000e-20]
+ [ 6.40370000e+04  2.05000000e+01  7.60000000e+01  6.37000000e-20]
+ [ 6.40550000e+04  2.05000000e+01  6.40000000e+01  7.26000000e-20]
+ [ 6.40790000e+04  2.05000000e+01  5.00000000e+01  5.53000000e-20]
+ [ 6.41570000e+04 -1.54300003e+02  7.75000000e+01  4.45000000e-20]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11d09e9e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2bf8b471f0&gt;
 </pre></div>
 </div>
-<img alt="_images/5b50a95733ca474c4a6783f60193cc0178bc9ce6844f48318b0a766f81ca243c.png" src="_images/5b50a95733ca474c4a6783f60193cc0178bc9ce6844f48318b0a766f81ca243c.png" />
+<img alt="_images/6320bcc095aeb64c4657275eb03a9f997da8672fd8bc42a0a06811b9b7169d10.png" src="_images/6320bcc095aeb64c4657275eb03a9f997da8672fd8bc42a0a06811b9b7169d10.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -571,16 +563,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1682,) (23,) (1682, 23)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188,) (74,) (188, 74)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11d41b8e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2bf8a8f160&gt;
 </pre></div>
 </div>
-<img alt="_images/30315d6da8df092af93c4d96779b57684d6ec993382f144eeff18a4b176f1598.png" src="_images/30315d6da8df092af93c4d96779b57684d6ec993382f144eeff18a4b176f1598.png" />
+<img alt="_images/11132bdc772dbff4cb4c9a704dd9863c7511c2cf3b596e8614c8009dfa7d6b1a.png" src="_images/11132bdc772dbff4cb4c9a704dd9863c7511c2cf3b596e8614c8009dfa7d6b1a.png" />
 </div>
 </div>
-<p>Inlcude better versions of the RTI</p>
 </section>
 </section>
 <section id="beam-postion-plot">
@@ -609,10 +600,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x11f83d9c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f2bf8807fa0&gt;
 </pre></div>
 </div>
-<img alt="_images/32d265755722f4727ea434ab65eb23162a9971ea7f985b8238acdcf90e8f8ea3.png" src="_images/32d265755722f4727ea434ab65eb23162a9971ea7f985b8238acdcf90e8f8ea3.png" />
+<img alt="_images/49f75e5968dcbe3531cf534744e0ee261c52f35b465959c18c0c2a6dab4ae8d2.png" src="_images/49f75e5968dcbe3531cf534744e0ee261c52f35b465959c18c0c2a6dab4ae8d2.png" />
 </div>
 </div>
 </section>
