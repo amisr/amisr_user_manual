@@ -6,5 +6,6 @@ root: intro
 chapters:
 - file: introduction
 - file: isr_theory
+- file: navigate_database
 - file: common_data
 - file: plotting
