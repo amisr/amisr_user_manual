@@ -24,4 +24,4 @@ Incoherent Scatter Radars (ISRs) are large, ground-based facilities that measure
 
 Advanced Modular Incoherent Scatter Radars (AMISR) are a special category of ISR that are electronically-steerable phased-array radars. This means that the beam direction is set by individually varying the phase of each transmitting element such that constructive interferance occurs in the desired direction.  Because these phase shifts are enforced electronically and there is no need to physically move the radar structure, the beam look direction can be altered multiple times per second.  This allows the radar to cycle through a set of a set of independent look directions many times in one integration period, effectively measuring a volume of ionospheric plasma (instead of just one profile) simultaniously.
 
-![phisr_array](images/pfisr_array.png)
+![pfisr_array](images/pfisr_array.png)
