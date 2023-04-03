@@ -5,3 +5,5 @@ Basic Theory of Incoherent Scatter Radars
 - ISR Spectra
 TBD - the level of detail/mathematical rigor to use in this section
 Utilize materials from ISR Summer School
+
+ISR is an inherently statistical techinique

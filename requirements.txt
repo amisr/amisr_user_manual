@@ -1,4 +1,3 @@
-# requirements.txt
 jupyter-book
-numpy
 matplotlib
+numpy
