@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'mode_design';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SRI Database" href="navigate_database.html" />
+    <link rel="prev" title="ISR Theory" href="isr_theory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,9 +150,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="isr_theory.html">ISR Theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basics of Mode Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="navigate_database.html">SRI Database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Common Plots</a></li>
@@ -347,11 +350,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulse-coding">Pulse Coding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tl-dr">TL;DR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-period">Integration Period</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-resolution">Range Resolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-period">Integration Period</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operation-modes">Common Operation Modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-pulses">Types of Pulses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duty-cycle">Duty Cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-to-noise-ratio">Signal-to-Noise Ratio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tradespace">Tradespace</a></li>
 </ul>
             </nav>
         </div>
@@ -365,26 +371,53 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="basics-of-mode-design">
 <h1>Basics of Mode Design<a class="headerlink" href="#basics-of-mode-design" title="Permalink to this heading">#</a></h1>
-<section id="pulse-coding">
-<h2>Pulse Coding<a class="headerlink" href="#pulse-coding" title="Permalink to this heading">#</a></h2>
-<p>AKA: LP vs AC</p>
-<p>TDLR; For F-region experiments, use long pulse data
-For E-region experiments, use alternating code data</p>
-</section>
-<section id="beam-positions">
-<h2>Beam Positions<a class="headerlink" href="#beam-positions" title="Permalink to this heading">#</a></h2>
-<p>AMISRs are electronically-steerable phased-array radars, meaning the beam direction is set by individually varying the phase of each transmitting element such that constructive interferance occurs in the desired direction.  Because these phase shifts are enforced electronically and there is no need to physically move the radar structure, the beam look direction can be altered multiple times per second.  This allows the radar to cycle through a set of a set of independent look directions many times in one integration period, effectively measuring a volume of ionospheric plasma (instead of just one profile) simultaniously.</p>
-</section>
-<section id="range-resolution">
-<h2>Range Resolution<a class="headerlink" href="#range-resolution" title="Permalink to this heading">#</a></h2>
-<p>Post processing</p>
+<p>This section gives an overview of some of the basic factors to consider when designing radar modes and experiments.  It is also useful to help understand which data files you should use when there are multiple available and how to properly interpret the data</p>
+<section id="tl-dr">
+<h2>TL;DR<a class="headerlink" href="#tl-dr" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>For F-region experiments, use long pulse (LP) data</p></li>
+<li><p>For E-region experiments, use alternating code (AC) data</p></li>
+<li><p>Modes designed for spatial imaging will have lots of beams but longer time resolution</p></li>
+<li><p>Most standard modes modes try to balance these factors to acheive reasonable spatial and temporal resolution for both E- and F-region data</p></li>
+</ul>
 </section>
 <section id="integration-period">
 <h2>Integration Period<a class="headerlink" href="#integration-period" title="Permalink to this heading">#</a></h2>
 <p>The integration period is the length of time autocorrelation functions are summed over before fitting to the ISR spectrum to determine plasma parameters.  This is determined in post-processing, and often raw data from one experiment is processed with mulitple integration periods.  The longer the integration period, the more independent pulses contribute to the spectrum, which because the ISR technique is inherently statistical, results in higher confidence in the fitted parameters.  In short, a longer integration period will ususally mean less noisy data with few errors. However, long integration periods will also have lower temporal resolution and may smear out sharp transient features.  In general, you should chose the longest integration period that still captures the time scales of interest for the phenomena you are studying.</p>
 </section>
-<section id="common-operation-modes">
-<h2>Common Operation Modes<a class="headerlink" href="#common-operation-modes" title="Permalink to this heading">#</a></h2>
+<section id="beam-positions">
+<h2>Beam Positions<a class="headerlink" href="#beam-positions" title="Permalink to this heading">#</a></h2>
+<p>The number of beams a mode uses and their direction is fixed in a particular mode and therefore must be selected before the experiment is run.  Despite this, there is great flexibility in how beams can be configured for different modes.  In general, a larger number of beams will allow higher horizontal spatial resolution, but becaue each beam will be revisited less frequently, it will require a longer integration period to collect sufficient independent measurments.  Beams do not need to be evenly spaced across the field-of-view and can be clumped in tight clusters aranged along specific lines for specialized modes.  “Beam camping” (the process of revisiting one beam more frequently than the others) can also be used to acheieve higher temporal resolution in a specific beam while still having a relatively large number of beams.</p>
+</section>
+<section id="range-resolution">
+<h2>Range Resolution<a class="headerlink" href="#range-resolution" title="Permalink to this heading">#</a></h2>
+<p>Range resolution is related to how autocorrelation functions are sumed along each beam and is set in post-processing, similar to the integration period.</p>
+</section>
+<section id="types-of-pulses">
+<h2>Types of Pulses<a class="headerlink" href="#types-of-pulses" title="Permalink to this heading">#</a></h2>
+<p>Modes can be electronically configured to use different types of pulses depending on the scientific area of interest.  This aspect of radar engineering is highly sophisticated and there are many texts that discuss it in great detail, but in general AMISR systems use either long pulses (a relatively long transmitted pulse which is sampled and correlated against itself upon receive to resolve range) or coded pulses (a series of phase-modulated pulses that have been cleverly designed to avoid range ambiguity).  Coded pulses can generally achieve higher range resolution, but have lower sensitivity at long ranges.  AMISR ususally uses the following configurations to study the different ionospheric layers:</p>
+<ul class="simple">
+<li><p><strong>F-region:</strong> Long Pulse (LP)</p></li>
+<li><p><strong>E-region:</strong> Alternating Code (AC)</p></li>
+<li><p><strong>D-region:</strong> Barker Code (BC)</p></li>
+</ul>
+<p>It is common to design modes that interleve different types of pulses so that data can be collected that is good in multiple range regimes. Most standard modes will collect both LP and AC data.  BC data are more specialized and although some common modes collect these data, they require more sophisticated processing and are not automatically posted pubicly.</p>
+</section>
+<section id="duty-cycle">
+<h2>Duty Cycle<a class="headerlink" href="#duty-cycle" title="Permalink to this heading">#</a></h2>
+<p>The radar duty cycle is fraction of time the radar is transmitting.  In a higher the duty cycle, more independent pulses are transmitted and received in a given period of time and error on the processed data should be lower.  Howerver, duty cycle is often constrained by outside factors, such as the economics of powering and running the radar (i.e. fuel and electricity costs), equiptment limitations, and environmental factor (to avoid overheating).</p>
+</section>
+<section id="signal-to-noise-ratio">
+<h2>Signal-to-Noise Ratio<a class="headerlink" href="#signal-to-noise-ratio" title="Permalink to this heading">#</a></h2>
+<p>In addition to the number of independent pulses collected, the other major factor in data error is the Signal-to-Noise Ratio (SNR).  This is primarily impacted by both the transmit power of the radar, which can fluctuate over the lifetime of the facility depending on its contitions and maintence state, and the background plasma density in the ionosphere.  Dense plasma will return a stronger signal, which can be used to your advantage during periods where you can expect the background density to be relatively high (i.e., daylit and summertime).  This means that the radar often has more capabilities in terms of spatial and/or teporal resolution during certain times of the year or particular categories of events.</p>
+</section>
+<section id="tradespace">
+<h2>Tradespace<a class="headerlink" href="#tradespace" title="Permalink to this heading">#</a></h2>
+<p>AMISRs are extremely flexible, however they have limitations like all physical instruments.  In general, when designing a mode, you are working in the following tradespace:</p>
+<p><img alt="tradespace" src="_images/tradespace.png" /></p>
+<p>Spatial Resolution ↔ Number of Beams</p>
+<p>Temporal Resolution ↔ Integration Period</p>
+<p>Most standard AMISR modes have been designed to balance these factors to collect data that is potentially useful for as many scientific studies as possible.  However, if you have interest in a specific phenomena or type of observation, you are encouraged to contact the PI about whether a specialized mode or campaign makes sense.</p>
 </section>
 </section>
 
@@ -419,6 +452,24 @@ For E-region experiments, use alternating code data</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="isr_theory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ISR Theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="navigate_database.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SRI Database</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -437,11 +488,14 @@ For E-region experiments, use alternating code data</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulse-coding">Pulse Coding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tl-dr">TL;DR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-period">Integration Period</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-resolution">Range Resolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-period">Integration Period</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operation-modes">Common Operation Modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-pulses">Types of Pulses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duty-cycle">Duty Cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-to-noise-ratio">Signal-to-Noise Ratio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tradespace">Tradespace</a></li>
 </ul>
   </nav></div>
 
