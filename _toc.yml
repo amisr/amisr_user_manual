@@ -10,3 +10,4 @@ chapters:
 - file: navigate_database
 - file: common_data
 - file: plotting
+- file: errors
