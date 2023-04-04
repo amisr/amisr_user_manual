@@ -409,6 +409,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time">Time</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-position">Geographic Position</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geomagnetic-position">Geomagnetic Position</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#site-info">Site Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fits-array">Fits Array</a></li>
 </ul>
             </nav>
@@ -466,7 +468,7 @@ document.write(`
 </section>
 <section id="ion-temperature">
 <h2>Ion Temperature<a class="headerlink" href="#ion-temperature" title="Permalink to this heading">#</a></h2>
-<p>The fourth index corresponds to the ion species (0 = O+).</p>
+<p>The fourth index corresponds to the ion species (0 = O+).  Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> K</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -485,6 +487,7 @@ document.write(`
 </section>
 <section id="electron-temperature">
 <h2>Electron Temperature<a class="headerlink" href="#electron-temperature" title="Permalink to this heading">#</a></h2>
+<p>Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> K</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -503,6 +506,7 @@ document.write(`
 </section>
 <section id="line-of-sight-velocity">
 <h2>Line-of-Sight Velocity<a class="headerlink" href="#line-of-sight-velocity" title="Permalink to this heading">#</a></h2>
+<p>Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> m/s</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -521,7 +525,7 @@ document.write(`
 </section>
 <section id="time">
 <h2>Time<a class="headerlink" href="#time" title="Permalink to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">Time</span></code> group lists timestamps in a variety of formats, but <code class="docutils literal notranslate"><span class="pre">UnixTime</span></code> (seconds from January 1, 1970) is often most convenient for programing purposes.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Time</span></code> group lists timestamps in a variety of formats, but <code class="docutils literal notranslate"><span class="pre">UnixTime</span></code> (seconds from January 1, 1970) is often most convenient for programming purposes.</p>
 <p><strong>Dimensions:</strong> Nrecords x 2</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,7 +540,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Note the two columns in this array correspond to the start and end of each integration period.  If you need a 1D array of time stamps (common for most plotting and basic analysis), it is generally acceptable to take either just the first column (start times) or the midpoint of the interval.</p>
+<p>Note the two columns in this array correspond to the start time and end time of each integration period.  If you need a 1D array of time stamps (common for most plotting and basic analysis), it is generally acceptable to take either just the first column (start times) or the midpoint of the interval.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start times</span>
@@ -549,7 +553,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>To convert these unix timestamps to datetime objects, use either the native python <a class="reference external" href="https://docs.python.org/3/library/datetime.html">datetime</a> library or the <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.datetime.html">numpy datetime</a> functionality.</p>
+<p>To convert these Unix timestamps to datetime objects, use either the native python <a class="reference external" href="https://docs.python.org/3/library/datetime.html">datetime</a> library or the <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.datetime.html">numpy datetime</a> functionality.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
@@ -588,7 +592,7 @@ document.write(`
 </section>
 <section id="geomagnetic-position">
 <h2>Geomagnetic Position<a class="headerlink" href="#geomagnetic-position" title="Permalink to this heading">#</a></h2>
-<p>Geomagnetic latitude and longitude of the center of each radar bin.  If your application is dependent on highly accurate magnetic position relative to some outside dataset, it is recommended that you start with the geographic postion and calculate the conversion to magnetic coordinates yourself to avoid ambiguity with different magnetic coordinate systems and IGRF versions.</p>
+<p>Geomagnetic latitude and longitude of the center of each radar bin.  If your application is dependent on highly accurate magnetic position relative to some external dataset, it is recommended that you start with the geographic position and calculate the conversion to magnetic coordinates yourself to avoid ambiguity with different magnetic coordinate systems and IGRF versions.</p>
 <p><strong>Dimensions:</strong> Nbeams x Nranges</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -606,11 +610,52 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="beam-positions">
+<h2>Beam Positions<a class="headerlink" href="#beam-positions" title="Permalink to this heading">#</a></h2>
+<p>The beam azimuths and elevations are contained in the <code class="docutils literal notranslate"><span class="pre">BeamCodes</span></code> array.</p>
+<p><strong>Dimensions:</strong> Nbeams</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">az</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;BeamCodes&#39;</span><span class="p">][:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">el</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;BeamCodes&#39;</span><span class="p">][:,</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">az</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">el</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11,) (11,)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="site-info">
+<h2>Site Info<a class="headerlink" href="#site-info" title="Permalink to this heading">#</a></h2>
+<p>Various information about the radar site and its coordinates are contained within the <code class="docutils literal notranslate"><span class="pre">Site</span></code> group.  These are all scalar parameters.  Magnetic coordinates are also available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">site_name</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Name&#39;</span><span class="p">][()]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="n">site_lat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Latitude&#39;</span><span class="p">][()]</span>
+<span class="n">site_lon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Longitude&#39;</span><span class="p">][()]</span>
+<span class="n">site_alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Altitude&#39;</span><span class="p">][()]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">site_name</span><span class="p">,</span> <span class="n">site_lat</span><span class="p">,</span> <span class="n">site_lon</span><span class="p">,</span> <span class="n">site_alt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Poker flat radar 65.12992 -147.47104 213.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="fits-array">
-<h2>Fits Array<a class="headerlink" href="#fits-array" title="Permalink to this heading">#</a></h2>
+<span id="fits"></span><h2>Fits Array<a class="headerlink" href="#fits-array" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">FittedParams/Fits</span></code> array contains all fitted parameters aside from electron density (Ti, Te, Vlos), plus collision frequency and fractional composition.  It is a five dimensional array indexed as follows:</p>
 <p><code class="docutils literal notranslate"><span class="pre">Fits[record][beam][range][species][parameter]</span></code></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">species</span></code> index referes to either ion species or electrons.  The specific ion species can be determined from the <code class="docutils literal notranslate"><span class="pre">IonMass</span></code> array.  If you are interested in a specific species, find its mass in <code class="docutils literal notranslate"><span class="pre">IonMass</span></code> then use that index in the <code class="docutils literal notranslate"><span class="pre">Fits</span></code> array.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">species</span></code> index refers to either ion species or electrons.  The ion species can be determined from the <code class="docutils literal notranslate"><span class="pre">IonMass</span></code> array.  If you are interested in a specific species, find its mass in <code class="docutils literal notranslate"><span class="pre">IonMass</span></code> then use that index in the <code class="docutils literal notranslate"><span class="pre">Fits</span></code> array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:])</span>
@@ -751,6 +796,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time">Time</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-position">Geographic Position</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geomagnetic-position">Geomagnetic Position</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#site-info">Site Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fits-array">Fits Array</a></li>
 </ul>
   </nav></div>

@@ -374,8 +374,11 @@ document.write(`
 <section id="navigate-database">
 <h2>Navigate Database<a class="headerlink" href="#navigate-database" title="Permalink to this heading">#</a></h2>
 <p>If you know the date and time you are interested in, the easiest way to navigate to the appropriate datafiles is selecting the appropriate radar from “Calendar of Actual Operations”.  To follow along, select “PFISR” here.</p>
-<p>Note: The SRI AMISR website only hosts processed data from the SRI-operated radars (PFISR and RISR-N).  RISR-C is operated by University of Calgary and those data can be accessed from the <a class="reference external" href="https://data.phys.ucalgary.ca/sort_by_project/RISR-C/">UofC RISR-C database</a> (link at bottom of page).</p>
-<p>Use the drop-down menus next to “Change Date” at the top of the page to select your month of interest.  This is the operation calendar for May 2020.  Note that each row is one day of the month, and universal time (UT) stretches horizontally across the calendar.  Each colored block is one AMISR experiment.  The text in each block is the experiment mode.  Hovering over this text reveals the unique experiment number for that particular mode. Note that these are NOT organized by day or hour and can start and end at any time, although there are some patterns as to when certain modes are generally run (Themis36 is typically used as a nighttime mode during moon-down periods).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SRI AMISR website only hosts processed data from the SRI-operated radars (PFISR and RISR-N).  RISR-C is operated by University of Calgary and those data can be accessed from the <a class="reference external" href="https://data.phys.ucalgary.ca/sort_by_project/RISR-C/">UofC RISR-C database</a> (link at bottom of page).</p>
+</div>
+<p>Use the drop-down menus next to “Change Date” at the top of the page to select your month of interest.  This is the operation calendar for May 2020.  Note that each row is one day of the month, and universal time (UT) stretches horizontally across the calendar.  Each colored block is one AMISR experiment.  The text in each block is the experiment mode.  Hovering over this text reveals the unique experiment number for that particular mode. Note that these are NOT organized by day or hour and can start and end at any time, although there are some patterns as to when certain modes are generally run (i.e., Themis36 is often used as a nighttime mode during moon-down periods).</p>
 <p><img alt="calendar" src="_images/calendar.png" /></p>
 <p>Select the Themis36 experiment on May 18, 2020.</p>
 <p><img alt="experiment_view" src="_images/experiment_view.png" /></p>
@@ -384,19 +387,19 @@ document.write(`
 <h2>Download Data<a class="headerlink" href="#download-data" title="Permalink to this heading">#</a></h2>
 <p>Now choose “Data Availability” from the left sidebar menu.  This menu will expand with a number of additional options.  To download data files directly, select “Data Files”.</p>
 <p><img alt="download_data" src="_images/download_data.png" /></p>
-<p>This produces a table of data files.  Click on the filename to download.  For processed data, the file naming convenctions is as follows:</p>
+<p>This produces a table of data files.  Click on the filename to download.  For processed data, the file naming conventions is as follows:</p>
 <p><code class="docutils literal notranslate"><span class="pre">{Experiment</span> <span class="pre">Number}_{Pulse</span> <span class="pre">Code}_{Integration</span> <span class="pre">Period}-fitcal.h5</span></code></p>
 <p><strong>Experiment Number:</strong> A unique decimal number that identifies individual experiments.  These are formed as <code class="docutils literal notranslate"><span class="pre">YYYYMMDD.NNN</span></code> where <code class="docutils literal notranslate"><span class="pre">YYYYMMDD</span></code> is the date the experiment STARTS on and <code class="docutils literal notranslate"><span class="pre">NNN</span></code> denotes the number of the experiment in that day.</p>
 <p><strong>Pulse Code:</strong> Either <code class="docutils literal notranslate"><span class="pre">lp</span></code> (long pulse) or <code class="docutils literal notranslate"><span class="pre">ac</span></code> (alternating code).</p>
-<p><strong>Integration Period:</strong> In recent years, all data are processed using muliple integration periods for convenience.  Most users should be able to select from this standard list.  In general, longer integration periods will result in data with smaller errors, but lack temporal resolution and some features may be “smeared out”.  A good rule of thumb is to choose the longest integration period that still gives you the time resoultion you need for your particular scientific application.</p>
+<p><strong>Integration Period:</strong> In recent years, all data are processed using multiple integration periods for convenience.  A good rule of thumb is to choose the longest integration period that still gives you the time resolution you need for your particular scientific application (see <a class="reference internal" href="mode_design.html#integration-period"><span class="std std-ref">Integration Period</span></a> for more details).</p>
 </section>
 <section id="summary-plots">
 <h2>Summary Plots<a class="headerlink" href="#summary-plots" title="Permalink to this heading">#</a></h2>
 <p>To view summary plots for this experiment, select either “Long Pulse” or “Alternating Code” from the left sidebar.  This produces a LARGE table of summary plots to view.  This table contains a row for each major parameter at each integration period.</p>
 <p><img alt="summary_plot_table" src="_images/summary_plot_table.png" /></p>
-<p>This is long, but scroll down to the parameter and intergration period of interest (in this example, electron density at 1 minute).  Click on one of the radar square thumbnails in the second column to view the summary plots.</p>
+<p>This is long, but scroll down to the parameter and integration period of interest (in this example, electron density at 1 minute).  Click on one of the radar square thumbnails in the second column to view the summary plots.</p>
 <p><img alt="summary_plot" src="_images/summary_plot.png" /></p>
-<p>Each subplot in this figure shows a RTI from one beam of the experiment.  To keep plots readable, no more than 24 hours of data are plotted in a subplot and no more than 11 subplots are shown in one figure.  If the length of the experiment or the number of beams dictates more than one page is nessisary, these can be flipped through either using the control bar in the bottom of the plot or your keyboard arrow keys.</p>
+<p>Each subplot in this figure shows a RTI from one beam of the experiment.  To keep plots readable, no more than 24 hours of data are plotted in a subplot and no more than 11 subplots are shown in one figure.  If the length of the experiment or the number of beams dictates more than one page is necessary, these can be flipped through either using the control bar in the bottom of the plot or your keyboard arrow keys.</p>
 </section>
 </section>
 

@@ -436,7 +436,7 @@ document.write(`
 </div>
 <section id="error-fields">
 <h2>Error Fields<a class="headerlink" href="#error-fields" title="Permalink to this heading">#</a></h2>
-<p>Electron density errors are found in the <code class="docutils literal notranslate"><span class="pre">FittedParams/dNe</span></code> array.  Errors for all other parameters can be found in the <code class="docutils literal notranslate"><span class="pre">FittedParams/Errors</span></code> array, which is constructed analogously to the Fits array.</p>
+<p>Electron density errors are found in the <code class="docutils literal notranslate"><span class="pre">FittedParams/dNe</span></code> array.  Errors for all other parameters can be found in the <code class="docutils literal notranslate"><span class="pre">FittedParams/Errors</span></code> array, which is constructed analogously to the <a class="reference internal" href="common_data.html#fits"><span class="std std-ref">Fits</span></a> array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
@@ -469,7 +469,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f3564926fb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe434d06fb0&gt;
 </pre></div>
 </div>
 <img alt="_images/82cdda8b5e7d04d2851df33482c6cd30c9b3c0b8ddb447c3148b729dc1a60eaf.png" src="_images/82cdda8b5e7d04d2851df33482c6cd30c9b3c0b8ddb447c3148b729dc1a60eaf.png" />
@@ -488,7 +488,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f35645db670&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe4349b36d0&gt;
 </pre></div>
 </div>
 <img alt="_images/1c2dbc66e8307309575a8a62897c4cf66fdb7be5aea85de62aa8d649d5a084ea.png" src="_images/1c2dbc66e8307309575a8a62897c4cf66fdb7be5aea85de62aa8d649d5a084ea.png" />
@@ -498,7 +498,7 @@ document.write(`
 </section>
 <section id="data-quality-filtering">
 <h2>Data Quality Filtering<a class="headerlink" href="#data-quality-filtering" title="Permalink to this heading">#</a></h2>
-<p>AMISR data files contain two useful data quality parameters, both in the <code class="docutils literal notranslate"><span class="pre">FittedParams/FitInfo</span></code> group.  The first is <code class="docutils literal notranslate"><span class="pre">fitcode</span></code>, which is an indication of wether or not the fitting software used to process the raw data sucessfully converged. A parameter should only be used if <code class="docutils literal notranslate"><span class="pre">fitcode</span></code> has a value of 1, 2, 3, or 4.  The second is <code class="docutils literal notranslate"><span class="pre">chi2</span></code>, which is the <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit parameter.  This is expected to be somewhere around 1 becaue of statistical variability.  If <code class="docutils literal notranslate"><span class="pre">chi2</span></code> is substantially greater than 1, it indicates this was a very poor fit and the model is not a good match for the data, and therefor the output parameter should not be used.  If <code class="docutils literal notranslate"><span class="pre">chi2</span></code> is substantially less than 1, it is also suspect because it sugguests very little variance in the data, which is not characteristic of incoherent scatter.  It is possible that this point is instead a coherent echo off a hard-target (such as a metallic satellite in the radar’s beam), which erroniously looks like a very high density value with a very low error.  A resonable value for <code class="docutils literal notranslate"><span class="pre">chi2</span></code> is between 0.1 - 10 for most situations.</p>
+<p>AMISR data files contain two useful data quality parameters, both in the <code class="docutils literal notranslate"><span class="pre">FittedParams/FitInfo</span></code> group.  The first is <code class="docutils literal notranslate"><span class="pre">fitcode</span></code>, which is an indication of whether or not the fitting software used to process the raw data successfully converged. A parameter should only be used if <code class="docutils literal notranslate"><span class="pre">fitcode</span></code> has a value of 1, 2, 3, or 4.  The second is <code class="docutils literal notranslate"><span class="pre">chi2</span></code>, which is the <span class="math notranslate nohighlight">\(\chi^2\)</span> goodness-of-fit parameter.  This is expected to be somewhere around 1 because of statistical variability.  If <code class="docutils literal notranslate"><span class="pre">chi2</span></code> is substantially greater than 1, it indicates this was a very poor fit and the model is not a good match for the data, and therefor the output parameter should not be used.  If <code class="docutils literal notranslate"><span class="pre">chi2</span></code> is substantially less than 1, it is also suspect because it suggests very little variance in the data, which is not characteristic of incoherent scatter.  It is possible that this point is instead a coherent echo off a hard-target (such as a metallic satellite in the radar’s beam), which erroneously looks like a very high density value with a very low error.  A reasonable value for <code class="docutils literal notranslate"><span class="pre">chi2</span></code> is between 0.1 - 10 for most situations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
@@ -515,7 +515,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Note that the <code class="docutils literal notranslate"><span class="pre">fitcode</span></code> and <code class="docutils literal notranslate"><span class="pre">chi2</span></code> arrays have the same shape as all the other data arrays.  These data quality parameters can be applied to all data arrays equally - there are not seperate data quality parameters for each of the four main data parameter.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">fitcode</span></code> and <code class="docutils literal notranslate"><span class="pre">chi2</span></code> arrays have the same shape as all the other data arrays.  These data quality parameters can be applied to all data arrays equally - there are not separate data quality parameters for each of the four main data parameter.</p>
 <p>Plot electron data filtered based on data quality parameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -533,13 +533,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f3592d25630&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe43471d4e0&gt;
 </pre></div>
 </div>
 <img alt="_images/958b2fc2c5d4e016cf5b1d8c3135b4ef0c46533428c46285a86eab717e2cbddc.png" src="_images/958b2fc2c5d4e016cf5b1d8c3135b4ef0c46533428c46285a86eab717e2cbddc.png" />
 </div>
 </div>
-<p>Plot electron density filterd by data quality parameters and where the density error is greater than the denity (relative error greater than 1).</p>
+<p>Plot electron density filtered by data quality parameters and where the density error is greater than the density (relative error greater than 1).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bad_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">fitcode</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">chi2</span><span class="o">&lt;</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">chi2</span><span class="o">&gt;</span><span class="mf">10.</span><span class="p">),</span> <span class="n">Ne</span><span class="o">&lt;</span><span class="n">dNe</span><span class="p">)</span>
@@ -556,7 +556,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f356482efb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe434c0af80&gt;
 </pre></div>
 </div>
 <img alt="_images/958b2fc2c5d4e016cf5b1d8c3135b4ef0c46533428c46285a86eab717e2cbddc.png" src="_images/958b2fc2c5d4e016cf5b1d8c3135b4ef0c46533428c46285a86eab717e2cbddc.png" />

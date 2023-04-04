@@ -406,7 +406,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-a-specific-beam">Plotting a Specific Beam</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-postion-plot">Beam Postion Plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-position-plot">Beam Position Plot</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions-with-data">Beam Positions with Data</a></li>
 </ul>
 </li>
@@ -423,7 +423,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="common-plots">
 <h1>Common Plots<a class="headerlink" href="#common-plots" title="Permalink to this heading">#</a></h1>
-<p>The following examples show how to create some common visualizations of AMISR data. Due to the 4D nature of the data, it is challnging to visualize all parts of the FoV simultaniously.</p>
+<p>The following examples show how to create some common visualizations of AMISR data. Due to the 4D nature of the data, it is challenging to visualize all parts of the FoV simultaneously.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
@@ -460,7 +460,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f17275b9ae0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f5827ab5ae0&gt;
 </pre></div>
 </div>
 <img alt="_images/0bcdda22c88f83afe312c8dc9c355a5c38c489177ce5fcb3c59e63758520365d.png" src="_images/0bcdda22c88f83afe312c8dc9c355a5c38c489177ce5fcb3c59e63758520365d.png" />
@@ -469,7 +469,7 @@ document.write(`
 </section>
 <section id="a-scientifically-useful-plot">
 <h3>A Scientifically Useful Plot<a class="headerlink" href="#a-scientifically-useful-plot" title="Permalink to this heading">#</a></h3>
-<p>Now lets create the same plot as before but with intelligable axes and labels, a colorbar, ect.  This is probably the minimum you want to do for inclusion in a paper or presentation.</p>
+<p>Now lets create the same plot as before but with intelligible axes and labels, a colorbar, ect.  This is probably the minimum you want to do for inclusion in a paper or presentation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
@@ -490,7 +490,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f172534e3e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f58248463e0&gt;
 </pre></div>
 </div>
 <img alt="_images/82cdda8b5e7d04d2851df33482c6cd30c9b3c0b8ddb447c3148b729dc1a60eaf.png" src="_images/82cdda8b5e7d04d2851df33482c6cd30c9b3c0b8ddb447c3148b729dc1a60eaf.png" />
@@ -537,7 +537,7 @@ document.write(`
  [ 6.41570000e+04 -1.54300003e+02  7.75000000e+01  4.45000000e-20]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f172412f1c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f58246231c0&gt;
 </pre></div>
 </div>
 <img alt="_images/6320bcc095aeb64c4657275eb03a9f997da8672fd8bc42a0a06811b9b7169d10.png" src="_images/6320bcc095aeb64c4657275eb03a9f997da8672fd8bc42a0a06811b9b7169d10.png" />
@@ -555,8 +555,6 @@ document.write(`
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">rng</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ne</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">ne</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
@@ -568,10 +566,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188,) (74,) (188, 74)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f171dfb3dc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f5824527a90&gt;
 </pre></div>
 </div>
 <img alt="_images/11132bdc772dbff4cb4c9a704dd9863c7511c2cf3b596e8614c8009dfa7d6b1a.png" src="_images/11132bdc772dbff4cb4c9a704dd9863c7511c2cf3b596e8614c8009dfa7d6b1a.png" />
@@ -579,8 +574,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="beam-postion-plot">
-<h2>Beam Postion Plot<a class="headerlink" href="#beam-postion-plot" title="Permalink to this heading">#</a></h2>
+<section id="beam-position-plot">
+<h2>Beam Position Plot<a class="headerlink" href="#beam-position-plot" title="Permalink to this heading">#</a></h2>
 <p>Create a polar plot of all beam positions for this particular experiment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -605,7 +600,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f17242536d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f58247931f0&gt;
 </pre></div>
 </div>
 <img alt="_images/49f75e5968dcbe3531cf534744e0ee261c52f35b465959c18c0c2a6dab4ae8d2.png" src="_images/49f75e5968dcbe3531cf534744e0ee261c52f35b465959c18c0c2a6dab4ae8d2.png" />
@@ -631,10 +626,6 @@ document.write(`
     <span class="n">tidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span><span class="o">-</span><span class="n">targtime</span><span class="p">))</span>
     <span class="n">ne</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,:,</span><span class="n">aidx</span><span class="p">]</span>
 
-<span class="c1"># time = utime.astype(&#39;datetime64[s]&#39;)</span>
-
-<span class="c1"># targtime = np.datetime64(&#39;2020-02-07T02:00:00&#39;)</span>
-
 <span class="n">az</span> <span class="o">=</span> <span class="n">beamcodes</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">el</span> <span class="o">=</span> <span class="n">beamcodes</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
 
@@ -655,7 +646,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f171de174f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f5824387460&gt;
 </pre></div>
 </div>
 <img alt="_images/f008a30b4e7da720a260a5442d5dad39b25c3b751a9c49346d66252dae48465f.png" src="_images/f008a30b4e7da720a260a5442d5dad39b25c3b751a9c49346d66252dae48465f.png" />
@@ -738,7 +729,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-a-specific-beam">Plotting a Specific Beam</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-postion-plot">Beam Postion Plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-position-plot">Beam Position Plot</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions-with-data">Beam Positions with Data</a></li>
 </ul>
 </li>
