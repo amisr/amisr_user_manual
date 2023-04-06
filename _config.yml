@@ -9,7 +9,7 @@ author: Leslie Lamarche
 execute:
   execute_notebooks: force
 
-exclude_patterns: [future_material/*, tbd/*]
+exclude_patterns: [future_material/*, tbd/*, README.md]
 
 # Define the name of the latex output file for PDF builds
 latex:
