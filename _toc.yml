@@ -11,3 +11,4 @@ chapters:
 - file: plotting
 - file: errors
 - file: advanced_plotting
+- file: vector_velocity_example
