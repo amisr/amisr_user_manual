@@ -28,26 +28,18 @@ jobs:
         #      run: |
         #        pip install -r requirements.txt
 
-    - name: Setup conda environment
+    - name: Install dependencies
       uses: conda-incubator/setup-miniconda@v2
       with:
         activate-environment: buildjupyterbook
         environment-file: environment.yml
         python-version: '3.10'
-          #condarc-file: etc/example-condarc.yml
-          #auto-activate-base: true
-          #activate-environment: true
-
-          #    - name: Install dependencies
-          #      run: |
-          #        conda env update --name base --file environment.yml
 
 
     # Build the book
     - name: Build the book
       shell: bash -el {0}
       run: |
-        conda info --envs
         conda activate buildjupyterbook
         jupyter-book build --all .
 
