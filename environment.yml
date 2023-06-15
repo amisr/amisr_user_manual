@@ -5,3 +5,5 @@ dependencies:
   - jupyter-book
   - matplotlib
   - numpy
+  - h5py
+  - cartopy
