@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Common Plots &#8212; AMISR User Manual</title>
   
@@ -44,7 +44,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -67,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Errors and Data Filtering" href="errors.html" />
     <link rel="prev" title="Common Data Fields" href="common_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -423,13 +422,25 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="common-plots">
-<h1>Common Plots<a class="headerlink" href="#common-plots" title="Permalink to this heading">#</a></h1>
+<h1>Common Plots<a class="headerlink" href="#common-plots" title="Permalink to this headline">#</a></h1>
 <p>The following examples show how to create some common visualizations of AMISR data. Due to the 4D nature of the data, it is challenging to visualize all parts of the FoV simultaneously.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;h5py&#39;
 </pre></div>
 </div>
 </div>
@@ -442,10 +453,10 @@ document.write(`
 </div>
 </div>
 <section id="rti-plot">
-<h2>RTI Plot<a class="headerlink" href="#rti-plot" title="Permalink to this heading">#</a></h2>
+<h2>RTI Plot<a class="headerlink" href="#rti-plot" title="Permalink to this headline">#</a></h2>
 <p>Range-Time-Intensity (RTI) plots are a common way to look at how profiles of a parameter change in time.</p>
 <section id="the-most-basic">
-<h3>The Most Basic<a class="headerlink" href="#the-most-basic" title="Permalink to this heading">#</a></h3>
+<h3>The Most Basic<a class="headerlink" href="#the-most-basic" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
@@ -461,15 +472,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fa94f0a2710&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x10b95e770&gt;
 </pre></div>
 </div>
-<img alt="_images/0bcdda22c88f83afe312c8dc9c355a5c38c489177ce5fcb3c59e63758520365d.png" src="_images/0bcdda22c88f83afe312c8dc9c355a5c38c489177ce5fcb3c59e63758520365d.png" />
+<img alt="_images/7245d18e820efa0a0d51aef6567f8098444a8efd96cb55c1921767b7442748c1.png" src="_images/7245d18e820efa0a0d51aef6567f8098444a8efd96cb55c1921767b7442748c1.png" />
 </div>
 </div>
 </section>
 <section id="a-scientifically-useful-plot">
-<h3>A Scientifically Useful Plot<a class="headerlink" href="#a-scientifically-useful-plot" title="Permalink to this heading">#</a></h3>
+<h3>A Scientifically Useful Plot<a class="headerlink" href="#a-scientifically-useful-plot" title="Permalink to this headline">#</a></h3>
 <p>Now lets create the same plot as before but with intelligible axes and labels, a colorbar, ect.  This is probably the minimum you want to do for inclusion in a paper or presentation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -491,15 +502,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fa949e2eec0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x10bcbab90&gt;
 </pre></div>
 </div>
-<img alt="_images/82cdda8b5e7d04d2851df33482c6cd30c9b3c0b8ddb447c3148b729dc1a60eaf.png" src="_images/82cdda8b5e7d04d2851df33482c6cd30c9b3c0b8ddb447c3148b729dc1a60eaf.png" />
+<img alt="_images/58f3ddb12ce2a85875440655176e3ef54ed407e0ea6067ec9021d13a62234707.png" src="_images/58f3ddb12ce2a85875440655176e3ef54ed407e0ea6067ec9021d13a62234707.png" />
 </div>
 </div>
 </section>
 <section id="plotting-a-specific-beam">
-<h3>Plotting a Specific Beam<a class="headerlink" href="#plotting-a-specific-beam" title="Permalink to this heading">#</a></h3>
+<h3>Plotting a Specific Beam<a class="headerlink" href="#plotting-a-specific-beam" title="Permalink to this headline">#</a></h3>
 <p>Plot a specific beam by selecting the beam index (<code class="docutils literal notranslate"><span class="pre">bidx</span></code>) more carefully.  You can either select a particular beam by its beamcode, or choose a beam based on proximity to a particular azimuth/elevation (i.e., choose the highest elevation beam in the beam pattern).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -538,10 +549,10 @@ document.write(`
  [ 6.41570000e+04 -1.54300003e+02  7.75000000e+01  4.45000000e-20]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fa949c1bb80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x10f06aef0&gt;
 </pre></div>
 </div>
-<img alt="_images/6320bcc095aeb64c4657275eb03a9f997da8672fd8bc42a0a06811b9b7169d10.png" src="_images/6320bcc095aeb64c4657275eb03a9f997da8672fd8bc42a0a06811b9b7169d10.png" />
+<img alt="_images/4d233e7cb2996b157d5ef1d625645e7a232ca0304a2a99b0c91aee2f4752fde5.png" src="_images/4d233e7cb2996b157d5ef1d625645e7a232ca0304a2a99b0c91aee2f4752fde5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -567,16 +578,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fa949ab1de0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x10f286e30&gt;
 </pre></div>
 </div>
-<img alt="_images/11132bdc772dbff4cb4c9a704dd9863c7511c2cf3b596e8614c8009dfa7d6b1a.png" src="_images/11132bdc772dbff4cb4c9a704dd9863c7511c2cf3b596e8614c8009dfa7d6b1a.png" />
+<img alt="_images/eca33b5bfa9a76daab55ac55bff5759040e4ba7890eb092b572c492de6ef55d1.png" src="_images/eca33b5bfa9a76daab55ac55bff5759040e4ba7890eb092b572c492de6ef55d1.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="beam-position-plot">
-<h2>Beam Position Plot<a class="headerlink" href="#beam-position-plot" title="Permalink to this heading">#</a></h2>
+<h2>Beam Position Plot<a class="headerlink" href="#beam-position-plot" title="Permalink to this headline">#</a></h2>
 <p>Create a polar plot of all beam positions for this particular experiment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -601,14 +612,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa949da0af0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x10f2b0820&gt;
 </pre></div>
 </div>
-<img alt="_images/49f75e5968dcbe3531cf534744e0ee261c52f35b465959c18c0c2a6dab4ae8d2.png" src="_images/49f75e5968dcbe3531cf534744e0ee261c52f35b465959c18c0c2a6dab4ae8d2.png" />
+<img alt="_images/cd026c3dc34bc0dd3947cacc53c5efc71a5084a7d54fe1cad7b5f1fc313db931.png" src="_images/cd026c3dc34bc0dd3947cacc53c5efc71a5084a7d54fe1cad7b5f1fc313db931.png" />
 </div>
 </div>
 <section id="beam-positions-with-data">
-<h3>Beam Positions with Data<a class="headerlink" href="#beam-positions-with-data" title="Permalink to this heading">#</a></h3>
+<h3>Beam Positions with Data<a class="headerlink" href="#beam-positions-with-data" title="Permalink to this headline">#</a></h3>
 <p>Now plot the beams positions with density values for one timestamp.  Because this is a 2D plot and each beam has many values at different ranges, you need to choose a characteristic value from each profile to plot.  A simple way to do this is plot the range index that intersects your altitude of interest (say 300 km).  Because range binning is done approximately in altitude, you can use the same index across most of the FoV, although this is not the most precise.  Plot the density values of this slice at 2020-02-07 02:00:00 UT.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -647,10 +658,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fa94997b9a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x10f37b940&gt;
 </pre></div>
 </div>
-<img alt="_images/f008a30b4e7da720a260a5442d5dad39b25c3b751a9c49346d66252dae48465f.png" src="_images/f008a30b4e7da720a260a5442d5dad39b25c3b751a9c49346d66252dae48465f.png" />
+<img alt="_images/521a1227cff9d1970193d30c4f2eaa4ff9d1826a5ae390731589c1fed37541cd.png" src="_images/521a1227cff9d1970193d30c4f2eaa4ff9d1826a5ae390731589c1fed37541cd.png" />
 </div>
 </div>
 </section>

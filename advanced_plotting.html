@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Advanced Plotting &#8212; AMISR User Manual</title>
   
@@ -44,7 +44,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -67,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Resolved Vector Velocities" href="vector_velocity_example.html" />
     <link rel="prev" title="Errors and Data Filtering" href="errors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -403,6 +402,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rti-plots-of-lp-and-ac-data">RTI Plots of LP and AC Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-all-isr-parameters">Plot all ISR Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#altitude-slice-map">Altitude Slice Map</a></li>
 </ul>
             </nav>
         </div>
@@ -415,7 +415,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="advanced-plotting">
-<h1>Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permalink to this heading">#</a></h1>
+<h1>Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permalink to this headline">#</a></h1>
 <p>Here are some more sophisticated techniques for visualizing AMISR data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -423,12 +423,25 @@ document.write(`
 <span class="kn">import</span> <span class="nn">h5py</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <section id="rti-plots-of-lp-and-ac-data">
-<h2>RTI Plots of LP and AC Data<a class="headerlink" href="#rti-plots-of-lp-and-ac-data" title="Permalink to this heading">#</a></h2>
+<h2>RTI Plots of LP and AC Data<a class="headerlink" href="#rti-plots-of-lp-and-ac-data" title="Permalink to this headline">#</a></h2>
 <p>It is possible to create RTI plots of LP and AC data together to visualize the full profile.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -480,15 +493,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f82fc9cef20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11b466aa0&gt;
 </pre></div>
 </div>
-<img alt="_images/63d84907e5f87d999e0a7e96db5913ae57847bce50870072fbc93ad44b40a46c.png" src="_images/63d84907e5f87d999e0a7e96db5913ae57847bce50870072fbc93ad44b40a46c.png" />
+<img alt="_images/7f8a6dec5577740b830822b53dc12000566af99d02e3de41c6a6a1864ec1a19c.png" src="_images/7f8a6dec5577740b830822b53dc12000566af99d02e3de41c6a6a1864ec1a19c.png" />
 </div>
 </div>
 </section>
 <section id="plot-all-isr-parameters">
-<h2>Plot all ISR Parameters<a class="headerlink" href="#plot-all-isr-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Plot all ISR Parameters<a class="headerlink" href="#plot-all-isr-parameters" title="Permalink to this headline">#</a></h2>
 <p>Create a figure showing all four ISR parameters (Ne, Ti, Te, Vlos).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -568,10 +581,73 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f82fc973490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x12a34b070&gt;
 </pre></div>
 </div>
-<img alt="_images/67ddbd18255a6e638513b98c2d1aa4edd0161775ac863a0dde0f4168c29a39a1.png" src="_images/67ddbd18255a6e638513b98c2d1aa4edd0161775ac863a0dde0f4168c29a39a1.png" />
+<img alt="_images/53716b5739236a81bd49aeaf6fb83e061928f61e575864cc924b04c7ebdeb0cf.png" src="_images/53716b5739236a81bd49aeaf6fb83e061928f61e575864cc924b04c7ebdeb0cf.png" />
+</div>
+</div>
+</section>
+<section id="altitude-slice-map">
+<h2>Altitude Slice Map<a class="headerlink" href="#altitude-slice-map" title="Permalink to this headline">#</a></h2>
+<p>Create a map showing an altitude slice of the FoV at a particular time.  Unlike RTI plots, this will display horizontal variations.  To create a series of plots or animation of how the structures move through the FoV over time, loop over the time index in the plotting portion of this example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2020-02-07T02:00:00&#39;</span><span class="p">)</span>
+<span class="n">targalt</span> <span class="o">=</span> <span class="mf">250.</span>
+
+<span class="c1"># read in data file</span>
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename_lp</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+
+    <span class="c1"># find indicies that occur within the time interval specified</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">site_lat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Latitude&#39;</span><span class="p">][()]</span>
+    <span class="n">site_lon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Longitude&#39;</span><span class="p">][()]</span>
+
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Latitude&#39;</span><span class="p">][:]</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Longitude&#39;</span><span class="p">][:]</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Altitude&#39;</span><span class="p">][:]</span>
+
+    <span class="n">dens</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:]</span>
+
+<span class="c1"># condence arrays to single altitude slice</span>
+<span class="n">aidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">alt</span><span class="o">-</span><span class="n">targalt</span><span class="o">*</span><span class="mf">1000.</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">aidx0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">aidx</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">slice_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">take_along_axis</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">aidx0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">slice_lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">take_along_axis</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">aidx0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># density must be handled slightly differently to account for the time dimension</span>
+<span class="n">aidx1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">aidx</span><span class="p">]])</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">slice_dens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">take_along_axis</span><span class="p">(</span><span class="n">dens</span><span class="p">,</span> <span class="n">aidx1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># find index of target time for plottin</span>
+<span class="n">tidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">targtime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">-</span><span class="n">utime</span><span class="p">))</span>
+
+<span class="c1"># create plots</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">map_proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=</span><span class="n">site_lat</span><span class="p">,</span> <span class="n">central_longitude</span><span class="o">=</span><span class="n">site_lon</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="n">map_proj</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mf">160.</span><span class="p">,</span> <span class="o">-</span><span class="mf">135.</span><span class="p">,</span> <span class="mf">60.</span><span class="p">,</span> <span class="mf">70.</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">targtime</span><span class="p">)</span>
+
+<span class="c1"># plot RISR</span>
+<span class="n">amisr</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">slice_lon</span><span class="p">,</span> <span class="n">slice_lat</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">slice_dens</span><span class="p">[</span><span class="n">tidx</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.e11</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">2.e11</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">amisr</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Electron Density (10$^</span><span class="si">{11}</span><span class="s1">$ m$^{-3}$)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/e30737/miniconda3/envs/py310/lib/python3.10/site-packages/shapely/constructive.py:181: RuntimeWarning: invalid value encountered in buffer
+  return lib.buffer(
+/Users/e30737/miniconda3/envs/py310/lib/python3.10/site-packages/shapely/predicates.py:798: RuntimeWarning: invalid value encountered in intersects
+  return lib.intersects(a, b, **kwargs)
+</pre></div>
+</div>
+<img alt="_images/7af564ce5d36cf0ee410d49d280a2ba0d0a9df5868a2744833cc8f16c042060c.png" src="_images/7af564ce5d36cf0ee410d49d280a2ba0d0a9df5868a2744833cc8f16c042060c.png" />
 </div>
 </div>
 </section>
@@ -646,6 +722,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rti-plots-of-lp-and-ac-data">RTI Plots of LP and AC Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-all-isr-parameters">Plot all ISR Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#altitude-slice-map">Altitude Slice Map</a></li>
 </ul>
   </nav></div>
 
