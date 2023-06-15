@@ -31,7 +31,7 @@ jobs:
     - name: Setup conda environment
       uses: conda-incubator/setup-miniconda@v2
       with:
-        #        activate-environment: anaconda-client-env
+        activate-environment: buildjupyterbook
         environment-file: environment.yml
         python-version: '3.10'
           #condarc-file: etc/example-condarc.yml
@@ -47,6 +47,7 @@ jobs:
     - name: Build the book
       shell: bash -el {0}
       run: |
+        conda info --envs
         conda activate buildjupyterbook
         jupyter-book build --all .
 
