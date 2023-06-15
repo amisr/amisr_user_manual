@@ -1,3 +1,4 @@
+name: buildjupyterbook
 channels:
   - conda-forge
 dependencies:
