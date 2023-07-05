@@ -42,3 +42,9 @@
 ## Other Important Stuff
 - Data quality decreases at long ranges
 - Filtering/removing bad data
+
+## Examples of Phenomena
+- Polar Cap Patch
+- Energetic Particle Precipitation
+- Flow shears
+- TIDs
