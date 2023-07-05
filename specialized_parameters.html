@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>SRI Database &#8212; AMISR User Manual</title>
+    <title>Specialized Parameters &#8212; AMISR User Manual</title>
   
   
   
@@ -60,11 +60,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'navigate_database';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'specialized_parameters';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Common Data Fields" href="common_data.html" />
-    <link rel="prev" title="Basics of Mode Design" href="mode_design.html" />
+    <link rel="next" title="Ion Composition" href="ion_comp.html" />
+    <link rel="prev" title="Resolved Vector Velocities" href="vector_velocity_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -152,13 +152,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mode_design.html">Basics of Mode Design</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">SRI Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigate_database.html">SRI Database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Common Plots</a></li>
 <li class="toctree-l1"><a class="reference internal" href="errors.html">Errors and Data Filtering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_plotting.html">Advanced Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vector_velocity_example.html">Resolved Vector Velocities</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="specialized_parameters.html">Specialized Parameters</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Specialized Parameters</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="ion_comp.html">Ion Composition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ne_notr.html">Ne From Power</a></li>
 </ul>
@@ -234,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fnavigate_database.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fspecialized_parameters.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/navigate_database.md" target="_blank"
+      <li><a href="_sources/specialized_parameters.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,9 +333,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -346,21 +344,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SRI Database</h1>
+    <h1>Specialized Parameters</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-database">Navigate Database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-plots">Summary Plots</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -370,42 +358,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sri-database">
-<h1>SRI Database<a class="headerlink" href="#sri-database" title="Permalink to this headline">#</a></h1>
-<p>Processed AMISR data and other information about the radars is available on the <a class="reference external" href="https://amisr.com/amisr/">SRI AMISR website</a>.</p>
-<p><img alt="amsir_webpage" src="_images/amisr_webpage.png" /></p>
-<p>To access the data for downloading, click <a class="reference external" href="https://amisr.com/amisr/links/data-access/">Data Access, Downloads, and Links</a>.</p>
-<p><img alt="data_access_page" src="_images/data_access_page.png" /></p>
-<section id="navigate-database">
-<h2>Navigate Database<a class="headerlink" href="#navigate-database" title="Permalink to this headline">#</a></h2>
-<p>If you know the date and time you are interested in, the easiest way to navigate to the appropriate datafiles is selecting the appropriate radar from “Calendar of Actual Operations”.  To follow along, select “PFISR” here.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The SRI AMISR website only hosts processed data from the SRI-operated radars (PFISR and RISR-N).  RISR-C is operated by University of Calgary and those data can be accessed from the <a class="reference external" href="https://data.phys.ucalgary.ca/sort_by_project/RISR-C/">UofC RISR-C database</a> (link at bottom of page).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="specialized-parameters">
+<h1>Specialized Parameters<a class="headerlink" href="#specialized-parameters" title="Permalink to this headline">#</a></h1>
+<p>This section contain descriptions of how to access and use some of the more specialized parameters contained in the AMISR files.  These can be very useful for certain projects, but can also be more complicated with specific caveats, so they have be separated out to avoid cluttering the basic description of ISR parameters.</p>
+<div class="toctree-wrapper compound">
 </div>
-<p>Use the drop-down menus next to “Change Date” at the top of the page to select your month of interest.  This is the operation calendar for May 2020.  Note that each row is one day of the month, and universal time (UT) stretches horizontally across the calendar.  Each colored block is one AMISR experiment.  The text in each block is the experiment mode.  Hovering over this text reveals the unique experiment number for that particular mode. Note that these are NOT organized by day or hour and can start and end at any time, although there are some patterns as to when certain modes are generally run (i.e., Themis36 is often used as a nighttime mode during moon-down periods).</p>
-<p><img alt="calendar" src="_images/calendar.png" /></p>
-<p>Select the Themis36 experiment on May 18, 2020.</p>
-<p><img alt="experiment_view" src="_images/experiment_view.png" /></p>
-</section>
-<section id="download-data">
-<h2>Download Data<a class="headerlink" href="#download-data" title="Permalink to this headline">#</a></h2>
-<p>Now choose “Data Availability” from the left sidebar menu.  This menu will expand with a number of additional options.  To download data files directly, select “Data Files”.</p>
-<p><img alt="download_data" src="_images/download_data.png" /></p>
-<p>This produces a table of data files.  Click on the filename to download.  For processed data, the file naming conventions is as follows:</p>
-<p><code class="docutils literal notranslate"><span class="pre">{Experiment</span> <span class="pre">Number}_{Pulse</span> <span class="pre">Code}_{Integration</span> <span class="pre">Period}-fitcal.h5</span></code></p>
-<p><strong>Experiment Number:</strong> A unique decimal number that identifies individual experiments.  These are formed as <code class="docutils literal notranslate"><span class="pre">YYYYMMDD.NNN</span></code> where <code class="docutils literal notranslate"><span class="pre">YYYYMMDD</span></code> is the date the experiment STARTS on and <code class="docutils literal notranslate"><span class="pre">NNN</span></code> denotes the number of the experiment in that day.</p>
-<p><strong>Pulse Code:</strong> Either <code class="docutils literal notranslate"><span class="pre">lp</span></code> (long pulse) or <code class="docutils literal notranslate"><span class="pre">ac</span></code> (alternating code).</p>
-<p><strong>Integration Period:</strong> In recent years, all data are processed using multiple integration periods for convenience.  A good rule of thumb is to choose the longest integration period that still gives you the time resolution you need for your particular scientific application (see <a class="reference internal" href="mode_design.html#integration-period"><span class="std std-ref">Integration Period</span></a> for more details).</p>
-</section>
-<section id="summary-plots">
-<h2>Summary Plots<a class="headerlink" href="#summary-plots" title="Permalink to this headline">#</a></h2>
-<p>To view summary plots for this experiment, select either “Long Pulse” or “Alternating Code” from the left sidebar.  This produces a LARGE table of summary plots to view.  This table contains a row for each major parameter at each integration period.</p>
-<p><img alt="summary_plot_table" src="_images/summary_plot_table.png" /></p>
-<p>This is long, but scroll down to the parameter and integration period of interest (in this example, electron density at 1 minute).  Click on one of the radar square thumbnails in the second column to view the summary plots.</p>
-<p><img alt="summary_plot" src="_images/summary_plot.png" /></p>
-<p>Each subplot in this figure shows a RTI from one beam of the experiment.  To keep plots readable, no more than 24 hours of data are plotted in a subplot and no more than 11 subplots are shown in one figure.  If the length of the experiment or the number of beams dictates more than one page is necessary, these can be flipped through either using the control bar in the bottom of the plot or your keyboard arrow keys.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -440,20 +397,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="mode_design.html"
+       href="vector_velocity_example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Basics of Mode Design</p>
+        <p class="prev-next-title">Resolved Vector Velocities</p>
       </div>
     </a>
     <a class="right-next"
-       href="common_data.html"
+       href="ion_comp.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Common Data Fields</p>
+        <p class="prev-next-title">Ion Composition</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -466,22 +423,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-database">Navigate Database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-plots">Summary Plots</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
