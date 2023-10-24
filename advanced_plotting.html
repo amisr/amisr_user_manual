@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Advanced Plotting &#8212; AMISR User Manual</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -66,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Resolved Vector Velocities" href="vector_velocity_example.html" />
     <link rel="prev" title="Errors and Data Filtering" href="errors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -367,10 +378,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -378,7 +389,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -420,7 +431,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="advanced-plotting">
-<h1>Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permalink to this headline">#</a></h1>
+<h1>Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permalink to this heading">#</a></h1>
 <p>Here are some more sophisticated techniques for visualizing AMISR data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -434,7 +445,7 @@ document.write(`
 </div>
 </div>
 <section id="rti-plots-of-lp-and-ac-data">
-<h2>RTI Plots of LP and AC Data<a class="headerlink" href="#rti-plots-of-lp-and-ac-data" title="Permalink to this headline">#</a></h2>
+<h2>RTI Plots of LP and AC Data<a class="headerlink" href="#rti-plots-of-lp-and-ac-data" title="Permalink to this heading">#</a></h2>
 <p>It is possible to create RTI plots of LP and AC data together to visualize the full profile.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -486,15 +497,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff213e61f00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f77d6fec640&gt;
 </pre></div>
 </div>
-<img alt="_images/7f8a6dec5577740b830822b53dc12000566af99d02e3de41c6a6a1864ec1a19c.png" src="_images/7f8a6dec5577740b830822b53dc12000566af99d02e3de41c6a6a1864ec1a19c.png" />
+<img alt="_images/4edec75d7531bbf9d3f0435657ec1efb92afa9ca6b4f02e5ba0781b131eccbd4.png" src="_images/4edec75d7531bbf9d3f0435657ec1efb92afa9ca6b4f02e5ba0781b131eccbd4.png" />
 </div>
 </div>
 </section>
 <section id="plot-all-isr-parameters">
-<h2>Plot all ISR Parameters<a class="headerlink" href="#plot-all-isr-parameters" title="Permalink to this headline">#</a></h2>
+<h2>Plot all ISR Parameters<a class="headerlink" href="#plot-all-isr-parameters" title="Permalink to this heading">#</a></h2>
 <p>Create a figure showing all four ISR parameters (Ne, Ti, Te, Vlos).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,7 +516,7 @@ document.write(`
     <span class="n">ne_lp</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:]</span>
     <span class="n">ti_lp</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">te_lp</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">vlos_lp</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">vlos_lp</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
     <span class="n">utime_lp</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">time_lp</span> <span class="o">=</span> <span class="n">utime_lp</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
@@ -522,7 +533,7 @@ document.write(`
     <span class="n">ne_ac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:]</span>
     <span class="n">ti_ac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">te_ac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">vlos_ac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">vlos_ac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,</span><span class="n">bidx</span><span class="p">,:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
     <span class="n">utime_ac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">time_ac</span> <span class="o">=</span> <span class="n">utime_ac</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
@@ -574,15 +585,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff209947ca0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f77d6d4f490&gt;
 </pre></div>
 </div>
-<img alt="_images/53716b5739236a81bd49aeaf6fb83e061928f61e575864cc924b04c7ebdeb0cf.png" src="_images/53716b5739236a81bd49aeaf6fb83e061928f61e575864cc924b04c7ebdeb0cf.png" />
+<img alt="_images/54eebfe784963878c23e2d5c5c31f6a1fdd6df83d5ae643c38a2ae275a590c3c.png" src="_images/54eebfe784963878c23e2d5c5c31f6a1fdd6df83d5ae643c38a2ae275a590c3c.png" />
 </div>
 </div>
 </section>
 <section id="altitude-slice-map">
-<h2>Altitude Slice Map<a class="headerlink" href="#altitude-slice-map" title="Permalink to this headline">#</a></h2>
+<h2>Altitude Slice Map<a class="headerlink" href="#altitude-slice-map" title="Permalink to this heading">#</a></h2>
 <p>Create a map showing an altitude slice of the FoV at a particular time.  Unlike RTI plots, this will display horizontal variations.  To create a series of plots or animation of how the structures move through the FoV over time, loop over the time index in the plotting portion of this example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -638,7 +649,7 @@ document.write(`
   warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
 </pre></div>
 </div>
-<img alt="_images/d195f669b0b44a6177e3567f869841cee3b8001976b5a4abd882bb1138931ea3.png" src="_images/d195f669b0b44a6177e3567f869841cee3b8001976b5a4abd882bb1138931ea3.png" />
+<img alt="_images/09d8e0641e0a853bdd2453c15a5ca0c0c9c1b47b70d5d193ce6672718875997f.png" src="_images/09d8e0641e0a853bdd2453c15a5ca0c0c9c1b47b70d5d193ce6672718875997f.png" />
 </div>
 </div>
 </section>
@@ -669,11 +680,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="errors.html"
@@ -693,10 +703,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -761,8 +768,8 @@ By Leslie Lamarche
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

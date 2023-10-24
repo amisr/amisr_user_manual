@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>SRI Database &#8212; AMISR User Manual</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -66,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Common Data Fields" href="common_data.html" />
     <link rel="prev" title="Basics of Mode Design" href="mode_design.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -318,10 +329,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -329,7 +340,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -371,13 +382,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sri-database">
-<h1>SRI Database<a class="headerlink" href="#sri-database" title="Permalink to this headline">#</a></h1>
+<h1>SRI Database<a class="headerlink" href="#sri-database" title="Permalink to this heading">#</a></h1>
 <p>Processed AMISR data and other information about the radars is available on the <a class="reference external" href="https://amisr.com/amisr/">SRI AMISR website</a>.</p>
 <p><img alt="amsir_webpage" src="_images/amisr_webpage.png" /></p>
 <p>To access the data for downloading, click <a class="reference external" href="https://amisr.com/amisr/links/data-access/">Data Access, Downloads, and Links</a>.</p>
 <p><img alt="data_access_page" src="_images/data_access_page.png" /></p>
 <section id="navigate-database">
-<h2>Navigate Database<a class="headerlink" href="#navigate-database" title="Permalink to this headline">#</a></h2>
+<h2>Navigate Database<a class="headerlink" href="#navigate-database" title="Permalink to this heading">#</a></h2>
 <p>If you know the date and time you are interested in, the easiest way to navigate to the appropriate datafiles is selecting the appropriate radar from “Calendar of Actual Operations”.  To follow along, select “PFISR” here.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -389,7 +400,7 @@ document.write(`
 <p><img alt="experiment_view" src="_images/experiment_view.png" /></p>
 </section>
 <section id="download-data">
-<h2>Download Data<a class="headerlink" href="#download-data" title="Permalink to this headline">#</a></h2>
+<h2>Download Data<a class="headerlink" href="#download-data" title="Permalink to this heading">#</a></h2>
 <p>Now choose “Data Availability” from the left sidebar menu.  This menu will expand with a number of additional options.  To download data files directly, select “Data Files”.</p>
 <p><img alt="download_data" src="_images/download_data.png" /></p>
 <p>This produces a table of data files.  Click on the filename to download.  For processed data, the file naming conventions is as follows:</p>
@@ -399,7 +410,7 @@ document.write(`
 <p><strong>Integration Period:</strong> In recent years, all data are processed using multiple integration periods for convenience.  A good rule of thumb is to choose the longest integration period that still gives you the time resolution you need for your particular scientific application (see <a class="reference internal" href="mode_design.html#integration-period"><span class="std std-ref">Integration Period</span></a> for more details).</p>
 </section>
 <section id="summary-plots">
-<h2>Summary Plots<a class="headerlink" href="#summary-plots" title="Permalink to this headline">#</a></h2>
+<h2>Summary Plots<a class="headerlink" href="#summary-plots" title="Permalink to this heading">#</a></h2>
 <p>To view summary plots for this experiment, select either “Long Pulse” or “Alternating Code” from the left sidebar.  This produces a LARGE table of summary plots to view.  This table contains a row for each major parameter at each integration period.</p>
 <p><img alt="summary_plot_table" src="_images/summary_plot_table.png" /></p>
 <p>This is long, but scroll down to the parameter and integration period of interest (in this example, electron density at 1 minute).  Click on one of the radar square thumbnails in the second column to view the summary plots.</p>
@@ -433,11 +444,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="mode_design.html"
@@ -457,10 +467,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -525,8 +532,8 @@ By Leslie Lamarche
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
