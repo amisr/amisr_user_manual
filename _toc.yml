@@ -12,6 +12,7 @@ chapters:
 - file: errors
 - file: advanced_plotting
 - file: vector_velocity_example
+- file: new_vvels
 - file: specialized_parameters
   sections:
   - file: ion_comp
