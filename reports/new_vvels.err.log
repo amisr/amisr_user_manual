@@ -31,12 +31,11 @@ import cartopy.crs as ccrs
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 9[0m
-[1;32m      7[0m [38;5;28;01mimport[39;00m [38;5;21;01mh5py[39;00m
+Cell [0;32mIn[1], line 10[0m
 [1;32m      8[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m----> 9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mapexpy[39;00m [38;5;28;01mimport[39;00m Apex
-[1;32m     10[0m [38;5;28;01mimport[39;00m [38;5;21;01mpymap3d[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpm[39;00m
+[1;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mapexpy[39;00m [38;5;28;01mimport[39;00m Apex
+[0;32m---> 10[0m [38;5;28;01mimport[39;00m [38;5;21;01mpymap3d[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpm[39;00m
 [1;32m     11[0m [38;5;28;01mimport[39;00m [38;5;21;01mcartopy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcrs[39;00m [38;5;28;01mas[39;00m [38;5;21;01mccrs[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'apexpy'
+[0;31mModuleNotFoundError[0m: No module named 'pymap3d'
 
