@@ -7,3 +7,6 @@ dependencies:
   - numpy
   - h5py
   - cartopy
+  - pip
+  - pip:
+      - apexpy
