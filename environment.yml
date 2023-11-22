@@ -9,4 +9,5 @@ dependencies:
   - cartopy
   - pip
   - pip:
+      - pymap3d
       - apexpy

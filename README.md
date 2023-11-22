@@ -21,7 +21,7 @@ If you have content or examples you would like to contribute to the book, please
 2. Install the current requirements
 3. Add your content.  This can be in the form of markdown files or jupyter notebooks.
 4. Add any pages you created to `_toc.yml`.
-5. Add any packages your examples rely on to `requirements.txt`.
+5. Add any packages your examples rely on to `environment.yml`.
 6. Build the book locally and check to make sure your material looks correct.
 7. Commit your changes.
 8. Push changes to GitHub.  The updated webpage will be build automatically.
