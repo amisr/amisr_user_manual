@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Resolved Vector Velocities - “New” Version &#8212; AMISR User Manual</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'new_vvels';</script>
@@ -78,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -141,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -153,7 +152,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">AMISR User Manual</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -173,11 +183,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="advanced_plotting.html">Advanced Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vector_velocity_example.html">Resolved Vector Velocities</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Resolved Vector Velocities - “New” Version</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="specialized_parameters.html">Specialized Parameters</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="specialized_parameters.html">Specialized Parameters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="ion_comp.html">Ion Composition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ne_notr.html">Ne From Power</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -193,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -202,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -380,6 +390,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -389,6 +400,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -450,10 +462,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="resolved-vector-velocities-new-version">
-<h1>Resolved Vector Velocities - “New” Version<a class="headerlink" href="#resolved-vector-velocities-new-version" title="Permalink to this heading">#</a></h1>
+<h1>Resolved Vector Velocities - “New” Version<a class="headerlink" href="#resolved-vector-velocities-new-version" title="Link to this heading">#</a></h1>
 <p>This tutorial covers how to read in, plot, and work with the new output vector velocities data product.</p>
 <div class="admonition-wip admonition">
 <p class="admonition-title">WIP</p>
@@ -478,14 +490,14 @@ document.write(`
 </div>
 </div>
 <section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
 <p>The resolved vector velocity data product (informally known as “vvels”) is derived from the standard AMISR processed parameters.  By assuming some degree of uniform flow across the FoV, it is possible to combine LoS velocity measurements from different beams to invert a full 3D velocity vector.  This technique is described in detail in Heinsleman and Nicolls, 2008.</p>
 <section id="magnetic-field-mapping">
-<h3>Magnetic Field Mapping<a class="headerlink" href="#magnetic-field-mapping" title="Permalink to this heading">#</a></h3>
+<h3>Magnetic Field Mapping<a class="headerlink" href="#magnetic-field-mapping" title="Link to this heading">#</a></h3>
 <p>The resolved velocities algorithms assumes the plasma drift velocity maps along the magnetic field lines and is only valid in the regime where this holds true.  Under the electrostatic assumption (no parallel electric fields), the electric potential is constant along magnetic field lines and an electric field can be mapped to anywhere on that field line.  In the collisionless regime, the plasma velocity is the <span class="math notranslate nohighlight">\(E \times B\)</span> drift velocity and likewise maps along field lines.  This allows the resolved velocities to utilize LoS measurements from all F-region altitudes.</p>
 </section>
 <section id="apex-coordinates">
-<h3>Apex Coordinates<a class="headerlink" href="#apex-coordinates" title="Permalink to this heading">#</a></h3>
+<h3>Apex Coordinates<a class="headerlink" href="#apex-coordinates" title="Link to this heading">#</a></h3>
 <p>The resolved velocities inversion algorithm could be implemented in any magnetic coordinate system. We choose to use the Modified Apex coordinate system (Richmond, 1995, Laundal and Richmond, 2017) for the following reasons:</p>
 <ul class="simple">
 <li><p>It is defined everywhere on the globe</p></li>
@@ -553,17 +565,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/48edab2e76ed513513b584668149816aba404346f3cfc77613cd5ad148371a04.png" src="_images/48edab2e76ed513513b584668149816aba404346f3cfc77613cd5ad148371a04.png" />
+<img alt="_images/117130f7f13536e550f217860a8acfa4036fd8890d8e83551bb49543f8f54aa8.png" src="_images/117130f7f13536e550f217860a8acfa4036fd8890d8e83551bb49543f8f54aa8.png" />
 </div>
 </div>
 </section>
 <section id="binning">
-<h3>Binning<a class="headerlink" href="#binning" title="Permalink to this heading">#</a></h3>
+<h3>Binning<a class="headerlink" href="#binning" title="Link to this heading">#</a></h3>
 <p>Instead of calculating a single vector velocity over the entire AMISR FoV, the FoV is usually broken into several bins based on magnetic latitude and the velocity is assumed constant in each bin.  This works relatively well as auroral structures tend to be oriented along magnetic parallels and it allows us to resolve some variation in the flow structure in magnetic latitude.  These bins are customizable when the resolved vector velocities code is run and do not need to cover the entire longitudinal range of the FoV, but it is recommended they do to maximize the diversity of look-angles used and make the inversion more well-poised.</p>
 </section>
 </section>
 <section id="resolved-vector-velocity-data">
-<h2>Resolved Vector Velocity Data<a class="headerlink" href="#resolved-vector-velocity-data" title="Permalink to this heading">#</a></h2>
+<h2>Resolved Vector Velocity Data<a class="headerlink" href="#resolved-vector-velocity-data" title="Link to this heading">#</a></h2>
 <p>The velocity vector inversion is done in magnetic coordinates, but for convenience, output files contain the resulting vector in both geodetic and magnetic coordinates.  These are stored in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> and the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> groups respectively.  The <code class="docutils literal notranslate"><span class="pre">ProcessingParams</span></code>, <code class="docutils literal notranslate"><span class="pre">Site</span></code>, and <code class="docutils literal notranslate"><span class="pre">Time</span></code> groups are similar to those in the original processed data files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -591,7 +603,7 @@ VvelsMagCoords
 </div>
 </div>
 <section id="magnetic-components">
-<h3>Magnetic Components<a class="headerlink" href="#magnetic-components" title="Permalink to this heading">#</a></h3>
+<h3>Magnetic Components<a class="headerlink" href="#magnetic-components" title="Link to this heading">#</a></h3>
 <p>The magnetic components of the velocity vector is the native output of the resolved velocities inversion algorithm.  All other output parameters in the file are derived from these.</p>
 <p>The plasma drift velocity components <span class="math notranslate nohighlight">\(V_{e_1}\)</span>, <span class="math notranslate nohighlight">\(V_{e_2}\)</span>, and <span class="math notranslate nohighlight">\(V_{e_3}\)</span> are available in the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">Velocity</span></code>.  This array has the dimensions nrecords x nbins x 3.</p>
 <p>Because the inversion algorithm assumes the velocity is purely the <span class="math notranslate nohighlight">\(E \times B\)</span> plasma drift velocity that is perpendicular to the magnetic fields, the <span class="math notranslate nohighlight">\(V_{e_3}\)</span> component SHOULD be zero. This is often not the case in the output, but it is typically orders of magnitude less than the perp-B components and can be thought of as a residual to the fit.</p>
@@ -620,12 +632,12 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/56fb081b19f84ccfaef0baa0d06f7cc18daa21a360122409f06b3abbbabaad64.png" src="_images/56fb081b19f84ccfaef0baa0d06f7cc18daa21a360122409f06b3abbbabaad64.png" />
+<img alt="_images/12ffbd7d4895b23266c06838a57a3ec0506f730929d0c2488ff87f02a69225b7.png" src="_images/12ffbd7d4895b23266c06838a57a3ec0506f730929d0c2488ff87f02a69225b7.png" />
 </div>
 </div>
 </section>
 <section id="geodetic-components">
-<h3>Geodetic Components<a class="headerlink" href="#geodetic-components" title="Permalink to this heading">#</a></h3>
+<h3>Geodetic Components<a class="headerlink" href="#geodetic-components" title="Link to this heading">#</a></h3>
 <p>The Geodetic East, North, and Up components of the vector velocities are available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">Velocity</span></code>.  The shape of this array is nrecords x nalt x nbins x 3, where the last dimension is for each of the three E, N, U components respectively.  Unlike the magnetic components, the geodetic components DO change in altitude, hence the additional altitude dimension in this array.  The values of these altitude slices are in <code class="docutils literal notranslate"><span class="pre">Altitude</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -656,12 +668,12 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/46a13b5a76a53c9f56a0f1cc6b9b064e7e1ab000d130ca429ae1dc1b39bce92c.png" src="_images/46a13b5a76a53c9f56a0f1cc6b9b064e7e1ab000d130ca429ae1dc1b39bce92c.png" />
+<img alt="_images/66309c46c8796dcfe23db571bc4e9bf86b60b42ecbe82df09fc01182dd91e52d.png" src="_images/66309c46c8796dcfe23db571bc4e9bf86b60b42ecbe82df09fc01182dd91e52d.png" />
 </div>
 </div>
 </section>
 <section id="magnitude-and-direction">
-<h3>Magnitude and Direction<a class="headerlink" href="#magnitude-and-direction" title="Permalink to this heading">#</a></h3>
+<h3>Magnitude and Direction<a class="headerlink" href="#magnitude-and-direction" title="Link to this heading">#</a></h3>
 <p>The magnitude and horizontal direction (azimuth angle in degrees East of North) of the resolved velocity vectors are also available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group as <code class="docutils literal notranslate"><span class="pre">Vmag</span></code> and <code class="docutils literal notranslate"><span class="pre">Vdir</span></code>, respectively.  These are scalar quantities but also depend on altitude, so have the dimensions nrecords x nalt x nbins.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -693,23 +705,23 @@ VvelsMagCoords
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc60c64a5f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f334cd30e20&gt;
 </pre></div>
 </div>
-<img alt="_images/b2401b04993f6b1408b72d860b6ff1dc39e141e22795bbec7095f8481a2d5a1e.png" src="_images/b2401b04993f6b1408b72d860b6ff1dc39e141e22795bbec7095f8481a2d5a1e.png" />
+<img alt="_images/3cd9450de6772521e71e53e4e2f6e0e1d2fb039eac572cdef63de09b57cffac9.png" src="_images/3cd9450de6772521e71e53e4e2f6e0e1d2fb039eac572cdef63de09b57cffac9.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="electric-field">
-<h2>Electric Field<a class="headerlink" href="#electric-field" title="Permalink to this heading">#</a></h2>
+<h2>Electric Field<a class="headerlink" href="#electric-field" title="Link to this heading">#</a></h2>
 <p>The electric field is calculated from the vector velocity, assuming only <span class="math notranslate nohighlight">\(E \times B\)</span> plasma drift.</p>
 <div class="math notranslate nohighlight">
 \[ \mathbf{E} = - \mathbf{V} \times \mathbf{B} \]</div>
 <p>The electric field and velocity in the resolved velocities files are not independent measurements.  Both are provided for user convenience.  By definition, there is no parallel electric field component (<span class="math notranslate nohighlight">\(E_{d_3} = 0 \)</span>).</p>
 <p>Similar to velocity, the output files contain the electric field in both geodetic and magnetic coordinates stored in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> and the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> groups respectively.</p>
 <section id="id1">
-<h3>Magnetic Components<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Magnetic Components<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>The electric field components <span class="math notranslate nohighlight">\(E_{d_1}\)</span>, <span class="math notranslate nohighlight">\(E_{d_2}\)</span>, and <span class="math notranslate nohighlight">\(E_{d_3}\)</span> are available in the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">Electric</span> <span class="pre">Field</span></code>.  This array has the dimensions nrecords x nbins x 3.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -736,12 +748,12 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/4fad011ba54c21c2204cd0607857df7a4603145b03b0cf03554155f62034fc7c.png" src="_images/4fad011ba54c21c2204cd0607857df7a4603145b03b0cf03554155f62034fc7c.png" />
+<img alt="_images/a801e93825dbcf43fbe3d6e250c4f1ef3a496a9166dbfa6811917bdddfd9686e.png" src="_images/a801e93825dbcf43fbe3d6e250c4f1ef3a496a9166dbfa6811917bdddfd9686e.png" />
 </div>
 </div>
 </section>
 <section id="id2">
-<h3>Geodetic Components<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Geodetic Components<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>The Geodetic East, North, and Up components of the electric field are available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">ElectricField</span></code>.  The shape of this array is nrecords x nalt x nbins x 3, where the last dimension is for each of the three E, N, U components respectively.  Similar to the velocity, the additional altitude dimension captures the fact that the geodetic components change in altitude and the value of each altitude slice can be found in <code class="docutils literal notranslate"><span class="pre">Altitude</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,12 +784,12 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/f00aa248d2b730508448dd86751d0de0ae8f22276ad3e0a6a28036ea2d0b0b4f.png" src="_images/f00aa248d2b730508448dd86751d0de0ae8f22276ad3e0a6a28036ea2d0b0b4f.png" />
+<img alt="_images/c963edb1ff1581a9d7ca96858fdb63a9a7fef7e3953870092d938ef3297f2921.png" src="_images/c963edb1ff1581a9d7ca96858fdb63a9a7fef7e3953870092d938ef3297f2921.png" />
 </div>
 </div>
 </section>
 <section id="id3">
-<h3>Magnitude and Direction<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Magnitude and Direction<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>The magnitude and horizontal direction (azimuth angle in degrees East of North) of the electric field are also available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group as <code class="docutils literal notranslate"><span class="pre">Emag</span></code> and <code class="docutils literal notranslate"><span class="pre">Edir</span></code>, respectively.  These are scalar quantities but also depend on altitude, so have the dimensions nrecords x nalt x nbins.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -813,16 +825,16 @@ VvelsMagCoords
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;Altitude&#39;, &#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;Edir&#39;, &#39;ElectricField&#39;, &#39;Emag&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Vdir&#39;, &#39;Velocity&#39;, &#39;Vmag&#39;, &#39;errEdir&#39;, &#39;errElectricField&#39;, &#39;errEmag&#39;, &#39;errVdir&#39;, &#39;errVelocity&#39;, &#39;errVmag&#39;]&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc606f921d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f334f1d6da0&gt;
 </pre></div>
 </div>
-<img alt="_images/8d657941a1788859539ae8409353afe2291b3d6e6c799f36081e2156d0bf15d2.png" src="_images/8d657941a1788859539ae8409353afe2291b3d6e6c799f36081e2156d0bf15d2.png" />
+<img alt="_images/737e66a1c08cac25ee9f92590a9b163cdd72633b7078b1e8af99da37c9d62bed.png" src="_images/737e66a1c08cac25ee9f92590a9b163cdd72633b7078b1e8af99da37c9d62bed.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="convert-magnetic-to-geodetic">
-<h2>Convert Magnetic to Geodetic<a class="headerlink" href="#convert-magnetic-to-geodetic" title="Permalink to this heading">#</a></h2>
+<h2>Convert Magnetic to Geodetic<a class="headerlink" href="#convert-magnetic-to-geodetic" title="Link to this heading">#</a></h2>
 <p>To convert magnetic vector components to geodetic vector components, use apexpy to find the base vectors for that location.  Then use Laundal and Richmond, 2017 eqn 75/77 to calculate the geodetic components of the vector.</p>
 <div class="math notranslate nohighlight">
 \[ \mathbf{V} = V_{e_1} \mathbf{e}_1 + V_{e_2} \mathbf{e}_2 \]</div>
@@ -885,7 +897,7 @@ Converted Electric Field Shape: (188, 29, 3)
 </div>
 </section>
 <section id="vector-errors">
-<h2>Vector Errors<a class="headerlink" href="#vector-errors" title="Permalink to this heading">#</a></h2>
+<h2>Vector Errors<a class="headerlink" href="#vector-errors" title="Link to this heading">#</a></h2>
 <p>The resolved velocities files contain error arrays for the components (geodetic and magnetic), magnitudes, and directions.  The files also contain the full covariance matrices for the component arrays.  These are nessisary for error propogation when converting between different coordinate systems and other vector calculations.  The magnetic component covariance matrices have the shape nrecords x nbins x 3 x 3 while the geodetic component covariance matrices have the shape nrecords x nalt x nbins x 3 x 3.  The additional dimension in both cases represents the fact that the covariance matrix for a vector of length 3 has the shape 3 x 3.  To calculate the errors on individual components from a covariance matrix, take the square root of the diagonal components.</p>
 <p>Plotting the error arrays reveals that the errors get extremely high in the northern-most and southern-most magnetic latitude bins where there are often few points in each bin to control the inversion.  This corresponds to the regions in the above plots that show a great deal of “salt and pepper” noise, and should generally not be trusted.</p>
 <div class="cell docutils container">
@@ -935,12 +947,12 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/29a6712793b89820d912a476b0d26b7ad2d2137357bd4cd5299e94a7ccd312e9.png" src="_images/29a6712793b89820d912a476b0d26b7ad2d2137357bd4cd5299e94a7ccd312e9.png" />
+<img alt="_images/d093606b4de4c24e9e20389db7326a8a6673c96b2c4e30f170206c6ba82af05e.png" src="_images/d093606b4de4c24e9e20389db7326a8a6673c96b2c4e30f170206c6ba82af05e.png" />
 </div>
 </div>
 </section>
 <section id="plot-vectors-on-map">
-<h2>Plot Vectors on Map<a class="headerlink" href="#plot-vectors-on-map" title="Permalink to this heading">#</a></h2>
+<h2>Plot Vectors on Map<a class="headerlink" href="#plot-vectors-on-map" title="Link to this heading">#</a></h2>
 <p>To create a map of the velocity or electric field vectors on a map, load the geodetic components of the quantity of interest an plot them with quiver and cartopy.  Only the geodetic East and geodetic North components can be displayed this way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1004,7 +1016,7 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cc9a2e1acaa95d474f7da87ce929b8b9b42ba340e9afd2f4833362bcd06eb885.png" src="_images/cc9a2e1acaa95d474f7da87ce929b8b9b42ba340e9afd2f4833362bcd06eb885.png" />
+<img alt="_images/65ccff7c738dec67038354dca510947558e0890445e22a50abe9dc512427d0fc.png" src="_images/65ccff7c738dec67038354dca510947558e0890445e22a50abe9dc512427d0fc.png" />
 </div>
 </div>
 </section>
@@ -1037,8 +1049,8 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="vector_velocity_example.html"
@@ -1066,6 +1078,7 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1115,9 +1128,10 @@ By Leslie Lamarche
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1141,8 +1155,8 @@ By Leslie Lamarche
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>
