@@ -18,41 +18,41 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -141,6 +141,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -156,7 +158,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -217,9 +219,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -244,14 +246,14 @@
       
       <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/new_vvels.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -262,14 +264,14 @@
       
       <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/new_vvels.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -393,10 +395,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -404,14 +406,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -485,6 +487,143 @@ document.write(`
 <span class="kn">from</span> <span class="nn">apexpy</span> <span class="kn">import</span> <span class="n">Apex</span>
 <span class="kn">import</span> <span class="nn">pymap3d</span> <span class="k">as</span> <span class="nn">pm</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.0 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/runpy.py&quot;, line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/runpy.py&quot;, line 86, in _run_code
+    exec(code, run_globals)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel_launcher.py&quot;, line 18, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/traitlets/config/application.py&quot;, line 1075, in launch_instance
+    app.start()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelapp.py&quot;, line 739, in start
+    self.io_loop.start()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/tornado/platform/asyncio.py&quot;, line 205, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py&quot;, line 603, in run_forever
+    self._run_once()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py&quot;, line 1909, in _run_once
+    handle._run()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 545, in dispatch_queue
+    await self.process_one()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 534, in process_one
+    await dispatch(*args)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 437, in dispatch_shell
+    await result
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 362, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 778, in execute_request
+    reply_content = await reply_content
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 449, in do_execute
+    res = shell.run_cell(
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/zmqshell.py&quot;, line 549, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3075, in run_cell
+    result = self._run_cell(
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3130, in _run_cell
+    result = runner(coro)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/async_helpers.py&quot;, line 128, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3334, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3517, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3577, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_2314/3640984315.py&quot;, line 9, in &lt;module&gt;
+    from apexpy import Apex
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/__init__.py&quot;, line 5, in &lt;module&gt;
+    from apexpy import fortranapex  # noqa F401
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fortranapex module could not be imported. apexpy probably won&#39;t work. Failed with error: numpy.core.multiarray failed to import
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.0 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/runpy.py&quot;, line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/runpy.py&quot;, line 86, in _run_code
+    exec(code, run_globals)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel_launcher.py&quot;, line 18, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/traitlets/config/application.py&quot;, line 1075, in launch_instance
+    app.start()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelapp.py&quot;, line 739, in start
+    self.io_loop.start()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/tornado/platform/asyncio.py&quot;, line 205, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py&quot;, line 603, in run_forever
+    self._run_once()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py&quot;, line 1909, in _run_once
+    handle._run()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 545, in dispatch_queue
+    await self.process_one()
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 534, in process_one
+    await dispatch(*args)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 437, in dispatch_shell
+    await result
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 362, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 778, in execute_request
+    reply_content = await reply_content
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 449, in do_execute
+    res = shell.run_cell(
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/zmqshell.py&quot;, line 549, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3075, in run_cell
+    result = self._run_cell(
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3130, in _run_cell
+    result = runner(coro)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/async_helpers.py&quot;, line 128, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3334, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3517, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3577, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_2314/3640984315.py&quot;, line 9, in &lt;module&gt;
+    from apexpy import Apex
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/__init__.py&quot;, line 11, in &lt;module&gt;
+    from apexpy.apex import Apex, ApexHeightError  # noqa F401
+  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/apex.py&quot;, line 13, in &lt;module&gt;
+    from apexpy import fortranapex as fa
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/apex.py:15: UserWarning: fortranapex module could not be imported, so apexpy probably won&#39;t work.  Make sure you have a gfortran compiler. Failed with error: numpy.core.multiarray failed to import
+  warnings.warn(&quot;&quot;.join([&quot;fortranapex module could not be imported, so &quot;,
 </pre></div>
 </div>
 </div>
@@ -565,7 +704,23 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/117130f7f13536e550f217860a8acfa4036fd8890d8e83551bb49543f8f54aa8.png" src="_images/117130f7f13536e550f217860a8acfa4036fd8890d8e83551bb49543f8f54aa8.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">A</span> <span class="o">=</span> <span class="n">Apex</span><span class="p">(</span><span class="mi">2023</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">glat</span> <span class="o">=</span> <span class="mf">65.7</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">glon</span> <span class="o">=</span> <span class="o">-</span><span class="mf">147.7</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/apex.py:89,</span> in <span class="ni">Apex.__init__</span><span class="nt">(self, date, refh, datafile, fortranlib)</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>     <span class="n">datafile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;apexsh.dat&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">if</span> <span class="n">fortranlib</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">89</span>     <span class="n">fortranlib</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="vm">__file__</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span> <span class="bp">self</span><span class="o">.</span><span class="n">RE</span> <span class="o">=</span> <span class="mf">6371.009</span>  <span class="c1"># Mean Earth radius in km</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_refh</span><span class="p">(</span><span class="n">refh</span><span class="p">)</span>  <span class="c1"># Reference height in km</span>
+
+<span class="ne">NameError</span>: name &#39;fa&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -632,7 +787,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/12ffbd7d4895b23266c06838a57a3ec0506f730929d0c2488ff87f02a69225b7.png" src="_images/12ffbd7d4895b23266c06838a57a3ec0506f730929d0c2488ff87f02a69225b7.png" />
+<img alt="_images/1efb18942aa0484b3dc4cc8480f2d62c981955744226619a6fb649d71de18277.png" src="_images/1efb18942aa0484b3dc4cc8480f2d62c981955744226619a6fb649d71de18277.png" />
 </div>
 </div>
 </section>
@@ -668,7 +823,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/66309c46c8796dcfe23db571bc4e9bf86b60b42ecbe82df09fc01182dd91e52d.png" src="_images/66309c46c8796dcfe23db571bc4e9bf86b60b42ecbe82df09fc01182dd91e52d.png" />
+<img alt="_images/219e2b73031cc0d99608386cf307d02d31b1a2b50b1020aa5683e15cbebfeb16.png" src="_images/219e2b73031cc0d99608386cf307d02d31b1a2b50b1020aa5683e15cbebfeb16.png" />
 </div>
 </div>
 </section>
@@ -705,10 +860,10 @@ VvelsMagCoords
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f001490cb20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x131483100&gt;
 </pre></div>
 </div>
-<img alt="_images/3cd9450de6772521e71e53e4e2f6e0e1d2fb039eac572cdef63de09b57cffac9.png" src="_images/3cd9450de6772521e71e53e4e2f6e0e1d2fb039eac572cdef63de09b57cffac9.png" />
+<img alt="_images/89c34034e3434a2d355f0e80c387b6a03095b97a1d3fc23b144b453b4d79fafa.png" src="_images/89c34034e3434a2d355f0e80c387b6a03095b97a1d3fc23b144b453b4d79fafa.png" />
 </div>
 </div>
 </section>
@@ -748,7 +903,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/a801e93825dbcf43fbe3d6e250c4f1ef3a496a9166dbfa6811917bdddfd9686e.png" src="_images/a801e93825dbcf43fbe3d6e250c4f1ef3a496a9166dbfa6811917bdddfd9686e.png" />
+<img alt="_images/4c3a062120076eb6387671ecbe8bb92ea35e0cc7dac67e3058d24f1a622dc242.png" src="_images/4c3a062120076eb6387671ecbe8bb92ea35e0cc7dac67e3058d24f1a622dc242.png" />
 </div>
 </div>
 </section>
@@ -784,7 +939,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/c963edb1ff1581a9d7ca96858fdb63a9a7fef7e3953870092d938ef3297f2921.png" src="_images/c963edb1ff1581a9d7ca96858fdb63a9a7fef7e3953870092d938ef3297f2921.png" />
+<img alt="_images/7cae022b237d6ec35b5a6e7040543347f79ff5657e523135e1ccde6aa57c1974.png" src="_images/7cae022b237d6ec35b5a6e7040543347f79ff5657e523135e1ccde6aa57c1974.png" />
 </div>
 </div>
 </section>
@@ -825,10 +980,10 @@ VvelsMagCoords
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;Altitude&#39;, &#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;Edir&#39;, &#39;ElectricField&#39;, &#39;Emag&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Vdir&#39;, &#39;Velocity&#39;, &#39;Vmag&#39;, &#39;errEdir&#39;, &#39;errElectricField&#39;, &#39;errEmag&#39;, &#39;errVdir&#39;, &#39;errVelocity&#39;, &#39;errVmag&#39;]&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f0017f7ae90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x133b47c70&gt;
 </pre></div>
 </div>
-<img alt="_images/737e66a1c08cac25ee9f92590a9b163cdd72633b7078b1e8af99da37c9d62bed.png" src="_images/737e66a1c08cac25ee9f92590a9b163cdd72633b7078b1e8af99da37c9d62bed.png" />
+<img alt="_images/fcba6078b95e8ff7896f1c8da61861a1f1352b3b567326fc7078e3178b16fc16.png" src="_images/fcba6078b95e8ff7896f1c8da61861a1f1352b3b567326fc7078e3178b16fc16.png" />
 </div>
 </div>
 </section>
@@ -885,7 +1040,7 @@ VvelsMagCoords
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;ElectricField&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Velocity&#39;, &#39;errElectricField&#39;, &#39;errVelocity&#39;]&gt;
-Geodetic Velocity Components: [-55.96753707 -34.19414638 -11.09833089]
+Geodetic Velocity Components: [-55.96753607 -34.19414676 -11.09833093]
 Geodetic Electric Field Components: [-0.00176155  0.00272533  0.0004865 ]
 Original Velocity Shape: (188, 29, 3)
 Converted Velocity Shape: (188, 29, 3)
@@ -947,7 +1102,7 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/d093606b4de4c24e9e20389db7326a8a6673c96b2c4e30f170206c6ba82af05e.png" src="_images/d093606b4de4c24e9e20389db7326a8a6673c96b2c4e30f170206c6ba82af05e.png" />
+<img alt="_images/80ae4780d412838099f4571d5254687e33891c4f0a6fd89a4544cd22f0f68f1b.png" src="_images/80ae4780d412838099f4571d5254687e33891c4f0a6fd89a4544cd22f0f68f1b.png" />
 </div>
 </div>
 </section>
@@ -1016,7 +1171,7 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/65ccff7c738dec67038354dca510947558e0890445e22a50abe9dc512427d0fc.png" src="_images/65ccff7c738dec67038354dca510947558e0890445e22a50abe9dc512427d0fc.png" />
+<img alt="_images/418b89b83e0b8162a39648a0a72ccee482f02d2a0731fe3ccba9b52dcf4d0ca9.png" src="_images/418b89b83e0b8162a39648a0a72ccee482f02d2a0731fe3ccba9b52dcf4d0ca9.png" />
 </div>
 </div>
 </section>
@@ -1155,8 +1310,8 @@ By Leslie Lamarche
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
