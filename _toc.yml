@@ -18,7 +18,6 @@ chapters:
       sections:
       - file: ion_comp
       - file: ne_notr
-
 - file: navigate_database_madrigal
   sections:
     - file: madrigal_remote_access
