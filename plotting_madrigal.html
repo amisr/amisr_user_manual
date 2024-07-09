@@ -576,7 +576,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot beam 64157</span>
 <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
     <span class="n">beamcodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">beamcodes</span><span class="p">)</span>
     <span class="n">bidx</span> <span class="o">=</span> <span class="s1">&#39;Array with beamid=64157 &#39;</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
     <span class="n">ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ne&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
@@ -599,21 +598,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Array with beamid=63149 &#39; &#39;Array with beamid=63197 &#39;
- &#39;Array with beamid=63239 &#39; &#39;Array with beamid=63281 &#39;
- &#39;Array with beamid=63317 &#39; &#39;Array with beamid=63365 &#39;
- &#39;Array with beamid=63401 &#39; &#39;Array with beamid=63449 &#39;
- &#39;Array with beamid=64016 &#39; &#39;Array with beamid=64031 &#39;
- &#39;Array with beamid=64046 &#39; &#39;Array with beamid=64067 &#39;
- &#39;Array with beamid=64157 &#39; &#39;Array with beamid=64163 &#39;
- &#39;Array with beamid=64205 &#39; &#39;Array with beamid=64232 &#39;
- &#39;Array with beamid=64247 &#39; &#39;Array with beamid=64475 &#39;
- &#39;Array with beamid=64817 &#39; &#39;Array with beamid=64973 &#39;
- &#39;Array with beamid=65057 &#39; &#39;Array with beamid=65282 &#39;
- &#39;Array with beamid=65363 &#39;]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f42ef62d340&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f42f469ffd0&gt;
 </pre></div>
 </div>
 <img alt="_images/67b90a19b8abfafe9eb1f1ba90d8bfa857e3bccb677ec9e4c9757079309c5e65.png" src="_images/67b90a19b8abfafe9eb1f1ba90d8bfa857e3bccb677ec9e4c9757079309c5e65.png" />
