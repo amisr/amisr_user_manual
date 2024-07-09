@@ -448,11 +448,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-temperature">Electron Temperature</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-sight-velocity">Line-of-Sight Velocity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time">Time</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-position">Geographic Position</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geomagnetic-position">Geomagnetic Position</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-m">Range [m]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-position-deg">Geographic Position [deg]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#site-info">Site Info</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fits-array">Fits Array</a></li>
 </ul>
             </nav>
         </div>
@@ -466,7 +465,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="common-data-fields">
 <h1>Common Data Fields<a class="headerlink" href="#common-data-fields" title="Link to this heading">#</a></h1>
-<p>This notebook will walk through how to access some of the more common data fields from the SRI hdf5 data files.  This should be treated as a quick reference for common scientific applications and is NOT intended to be a comprehensive map of everything in these files.  Refer to metadata contained within the files for descriptions of other arrays.</p>
+<p>This notebook will walk through how to access some of the more common data fields from the Madrigal hdf5 data files.  This should be treated as a quick reference for common scientific applications and is NOT intended to be a comprehensive map of everything in these files.  Refer to metadata contained within the files for descriptions of other arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
@@ -476,32 +475,184 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/20200207.001_lp_5min-fitcal.h5&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pfa20240108.001_lp_fit_01min.001.h5&#39;</span>
 
 <span class="n">h5</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pfa20240108.001_lp_fit_01min.001.h5&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">h5</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/h5py/_hl/files.py:562,</span> in <span class="ni">File.__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, fs_strategy, fs_persist, fs_threshold, fs_page_size, page_buf_size, min_meta_keep, min_raw_keep, locking, alignment_threshold, alignment_interval, meta_block_size, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span>     <span class="n">fapl</span> <span class="o">=</span> <span class="n">make_fapl</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">libver</span><span class="p">,</span> <span class="n">rdcc_nslots</span><span class="p">,</span> <span class="n">rdcc_nbytes</span><span class="p">,</span> <span class="n">rdcc_w0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span>                      <span class="n">locking</span><span class="p">,</span> <span class="n">page_buf_size</span><span class="p">,</span> <span class="n">min_meta_keep</span><span class="p">,</span> <span class="n">min_raw_keep</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span>                      <span class="n">alignment_threshold</span><span class="o">=</span><span class="n">alignment_threshold</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>                      <span class="n">alignment_interval</span><span class="o">=</span><span class="n">alignment_interval</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>                      <span class="n">meta_block_size</span><span class="o">=</span><span class="n">meta_block_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span>                      <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span>     <span class="n">fcpl</span> <span class="o">=</span> <span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">,</span> <span class="n">fs_strategy</span><span class="o">=</span><span class="n">fs_strategy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">560</span>                      <span class="n">fs_persist</span><span class="o">=</span><span class="n">fs_persist</span><span class="p">,</span> <span class="n">fs_threshold</span><span class="o">=</span><span class="n">fs_threshold</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span>                      <span class="n">fs_page_size</span><span class="o">=</span><span class="n">fs_page_size</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">562</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">make_fid</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">userblock_size</span><span class="p">,</span> <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="p">,</span> <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">libver</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_libver</span> <span class="o">=</span> <span class="n">libver</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/h5py/_hl/files.py:235,</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="k">if</span> <span class="n">swmr</span> <span class="ow">and</span> <span class="n">swmr_support</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span>         <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
+<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_RDWR</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+
+<span class="nn">File h5py/_objects.pyx:54,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">File h5py/_objects.pyx:55,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">File h5py/h5f.pyx:102,</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] Unable to synchronously open file (unable to open file: name = &#39;data/pfa20240108.001_lp_fit_01min.001.h5&#39;, errno = 2, error message = &#39;No such file or directory&#39;, flags = 0, o_flags = 0)
+</pre></div>
 </div>
-<p>Throughout this notebook, the expected dimensions of each data field will be listed using the following definitions:</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">][</span><span class="s1">&#39;Array Layout&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Data&#39;, &#39;Metadata&#39;]
+
+[&#39;Array Layout&#39;, &#39;Table Layout&#39;]
+
+[&#39;Data Parameters&#39;, &#39;Experiment Notes&#39;, &#39;Experiment Parameters&#39;, &#39;Independent Spatial Parameters&#39;, &#39;Parameters Used to Split Array Data&#39;, &#39;_record_layout&#39;]
+
+[&#39;Array with beamid=63149 &#39;, &#39;Array with beamid=63197 &#39;, &#39;Array with beamid=63239 &#39;, &#39;Array with beamid=63281 &#39;, &#39;Array with beamid=63317 &#39;, &#39;Array with beamid=63365 &#39;, &#39;Array with beamid=63401 &#39;, &#39;Array with beamid=63449 &#39;, &#39;Array with beamid=64016 &#39;, &#39;Array with beamid=64031 &#39;, &#39;Array with beamid=64046 &#39;, &#39;Array with beamid=64067 &#39;, &#39;Array with beamid=64157 &#39;, &#39;Array with beamid=64163 &#39;, &#39;Array with beamid=64205 &#39;, &#39;Array with beamid=64232 &#39;, &#39;Array with beamid=64247 &#39;, &#39;Array with beamid=64475 &#39;, &#39;Array with beamid=64817 &#39;, &#39;Array with beamid=64973 &#39;, &#39;Array with beamid=65057 &#39;, &#39;Array with beamid=65282 &#39;, &#39;Array with beamid=65363 &#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata/Data Parameters&#39;</span><span class="p">]))):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata/Data Parameters&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata/Data Parameters&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Year (universal time) [y]
+1 Month (universal time) [m]
+2 Day (universal time) [d]
+3 Hour (universal time) [h]
+4 Minute (universal time) [m]
+5 Second (universal time) [s]
+6 Logical Record Number [N/A]
+7 Kind of data [N/A]
+8 Instrument Code [N/A]
+9 Unix seconds (1/1/1970) at start [s]
+10 Unix seconds (1/1/1970) at end [s]
+11 Mean azimuth angle (0=geog N;90=east) [deg]
+12 Elevation angle (0=horizontal;90=vert) [deg]
+13 Beam identifier [N/A]
+14 Peak power [kW]
+15 Average number of transmit AEUs used [N/A]
+16 Average number of receive AEUs used [N/A]
+17 Code baud count per pulse [N/A]
+18 Pulse length [s]
+19 Transmitted frequency [Hz]
+20 Received frequency [Hz]
+21 Range [km]
+22 Electron density (Ne) [m-3]
+23 Error in Electron density (Ne) [m-3]
+24 Ion temperature (Ti) [K]
+25 Error in Ion temperature (Ti) [K]
+26 Electron temperature (Te) [K]
+27 Error in Electron temperature (Te) [K]
+28 Line of sight ion velocity (pos = away) [ms-1]
+29 Error in Line of sight ion velocity (pos = away) [ms-1]
+30 Corrected Geomagnetic latitude [deg]
+31 Corrected Geomagnetic Longitude [deg]
+32 Composition - [O+]/Ne [N/A]
+33 Error in Composition - [O+]/Ne [N/A]
+34 Reduced-chi square of fit [N/A]
+35 Signal to noise ratio [N/A]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will mostly be dealing with the Array Layout, which is organized by beam.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">][</span><span class="s1">&#39;Array Layout&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Array with beamid=63149 &#39;, &#39;Array with beamid=63197 &#39;, &#39;Array with beamid=63239 &#39;, &#39;Array with beamid=63281 &#39;, &#39;Array with beamid=63317 &#39;, &#39;Array with beamid=63365 &#39;, &#39;Array with beamid=63401 &#39;, &#39;Array with beamid=63449 &#39;, &#39;Array with beamid=64016 &#39;, &#39;Array with beamid=64031 &#39;, &#39;Array with beamid=64046 &#39;, &#39;Array with beamid=64067 &#39;, &#39;Array with beamid=64157 &#39;, &#39;Array with beamid=64163 &#39;, &#39;Array with beamid=64205 &#39;, &#39;Array with beamid=64232 &#39;, &#39;Array with beamid=64247 &#39;, &#39;Array with beamid=64475 &#39;, &#39;Array with beamid=64817 &#39;, &#39;Array with beamid=64973 &#39;, &#39;Array with beamid=65057 &#39;, &#39;Array with beamid=65282 &#39;, &#39;Array with beamid=65363 &#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1D Parameters&#39;, &#39;2D Parameters&#39;, &#39;Layout Description&#39;, &#39;range&#39;, &#39;timestamps&#39;]
+
+[&#39;Data Parameters&#39;, &#39;cgm_lat&#39;, &#39;cgm_long&#39;, &#39;chisq&#39;, &#39;dne&#39;, &#39;dpo+&#39;, &#39;dte&#39;, &#39;dti&#39;, &#39;dvo&#39;, &#39;ne&#39;, &#39;po+&#39;, &#39;sn&#39;, &#39;te&#39;, &#39;ti&#39;, &#39;vo&#39;]
+
+[&#39;Data Parameters&#39;, &#39;azm&#39;, &#39;beamid&#39;, &#39;cbadl&#39;, &#39;elm&#39;, &#39;numrxaeu&#39;, &#39;numtxaeu&#39;, &#39;pl&#39;, &#39;power&#39;, &#39;rfreq&#39;, &#39;tfreq&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="electron-density">
+<h2>Electron Density<a class="headerlink" href="#electron-density" title="Link to this heading">#</a></h2>
+<p><strong>Units:</strong> m<span class="math notranslate nohighlight">\(^{-3}\)</span></p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
 <ul class="simple">
 <li><p>Nrecords: Number of time records</p></li>
 <li><p>Nbeams: Number of radar beams</p></li>
 <li><p>Nranges: Number of radar range gates</p></li>
 </ul>
-<section id="electron-density">
-<h2>Electron Density<a class="headerlink" href="#electron-density" title="Link to this heading">#</a></h2>
-<p><strong>Units:</strong> m<span class="math notranslate nohighlight">\(^{-3}\)</span></p>
-<p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ne</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Ne</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">ne</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ne&#39;</span><span class="p">]))</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ne</span><span class="p">)</span>
+<span class="n">ne</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
 </pre></div>
 </div>
 </div>
@@ -509,18 +660,21 @@ document.write(`
 </section>
 <section id="ion-temperature">
 <h2>Ion Temperature<a class="headerlink" href="#ion-temperature" title="Link to this heading">#</a></h2>
-<p>The fourth index corresponds to the ion species (0 = O+).  Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> K</p>
-<p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ti</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Ti</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ti</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">ti</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ti&#39;</span><span class="p">]))</span>
+    <span class="n">ti</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ti</span><span class="p">)</span>
+<span class="n">ti</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
 </pre></div>
 </div>
 </div>
@@ -528,18 +682,21 @@ document.write(`
 </section>
 <section id="electron-temperature">
 <h2>Electron Temperature<a class="headerlink" href="#electron-temperature" title="Link to this heading">#</a></h2>
-<p>Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> K</p>
-<p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Te</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Te</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">te</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">te</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;te&#39;</span><span class="p">]))</span>
+    <span class="n">te</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">te</span><span class="p">)</span>
+<span class="n">te</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
 </pre></div>
 </div>
 </div>
@@ -547,18 +704,21 @@ document.write(`
 </section>
 <section id="line-of-sight-velocity">
 <h2>Line-of-Sight Velocity<a class="headerlink" href="#line-of-sight-velocity" title="Link to this heading">#</a></h2>
-<p>Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> m/s</p>
-<p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vlos</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Vlos</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">Vlos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">Vlos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;vo&#39;</span><span class="p">]))</span>
+    <span class="n">Vlos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Vlos</span><span class="p">)</span>
+<span class="n">Vlos</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
 </pre></div>
 </div>
 </div>
@@ -567,85 +727,64 @@ document.write(`
 <section id="time">
 <h2>Time<a class="headerlink" href="#time" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Time</span></code> group lists timestamps in a variety of formats, but <code class="docutils literal notranslate"><span class="pre">UnixTime</span></code> (seconds from January 1, 1970) is often most convenient for programming purposes.</p>
-<p><strong>Dimensions:</strong> Nrecords x 2</p>
+<p><strong>Dimensions:</strong> Nbeams x Nrecords</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">utime</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;timestamps&#39;</span><span class="p">]))</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 2)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note the two columns in this array correspond to the start time and end time of each integration period.  If you need a 1D array of time stamps (common for most plotting and basic analysis), it is generally acceptable to take either just the first column (start times) or the midpoint of the interval.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start times</span>
-<span class="n">utime_1d</span> <span class="o">=</span> <span class="n">utime</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="c1"># midpoints</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">utime_1d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">utime</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>To convert these Unix timestamps to datetime objects, use either the native python <a class="reference external" href="https://docs.python.org/3/library/datetime.html">datetime</a> library or the <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.datetime.html">numpy datetime</a> functionality.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># native python datetime library</span>
-<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">ut</span><span class="p">)</span> <span class="k">for</span> <span class="n">ut</span> <span class="ow">in</span> <span class="n">utime_1d</span><span class="p">]</span>
-
-<span class="c1"># numpy datetime</span>
-<span class="n">time</span> <span class="o">=</span> <span class="n">utime_1d</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 543)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="geographic-position">
-<h2>Geographic Position<a class="headerlink" href="#geographic-position" title="Link to this heading">#</a></h2>
-<p>Geodetic latitude, longitude, and altitude of the center of each radar bin.</p>
-<p><strong>Dimensions:</strong> Nbeams x Nranges</p>
+<section id="range-m">
+<h2>Range [m]<a class="headerlink" href="#range-m" title="Link to this heading">#</a></h2>
+<p><strong>Dimensions:</strong> Nranges</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Latitude&#39;</span><span class="p">][:]</span>
-<span class="n">glon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Longitude&#39;</span><span class="p">][:]</span>
-<span class="n">galt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Altitude&#39;</span><span class="p">][:]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">glat</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">glon</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">galt</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11, 74) (11, 74) (11, 74)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(73,)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="geomagnetic-position">
-<h2>Geomagnetic Position<a class="headerlink" href="#geomagnetic-position" title="Link to this heading">#</a></h2>
-<p>Geomagnetic latitude and longitude of the center of each radar bin.  If your application is dependent on highly accurate magnetic position relative to some external dataset, it is recommended that you start with the geographic position and calculate the conversion to magnetic coordinates yourself to avoid ambiguity with different magnetic coordinate systems and IGRF versions.</p>
-<p><strong>Dimensions:</strong> Nbeams x Nranges</p>
+<section id="geographic-position-deg">
+<h2>Geographic Position [deg]<a class="headerlink" href="#geographic-position-deg" title="Link to this heading">#</a></h2>
+<p>Corrected Geomagnetic Latitude and Corrected Geomagnetic Longitude.</p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/MagneticLatitude&#39;</span><span class="p">][:]</span>
-<span class="n">mlon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/MagneticLongitude&#39;</span><span class="p">][:]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">mlat</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">mlon</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">cgm_lat</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cgm_long</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">cgm_lat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;cgm_lat&#39;</span><span class="p">]))</span>
+        <span class="n">cgm_long</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;cgm_long&#39;</span><span class="p">]))</span>
+    <span class="n">cgm_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cgm_lat</span><span class="p">)</span>
+    <span class="n">cgm_long</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cgm_long</span><span class="p">)</span>
+    
+<span class="n">cgm_lat</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11, 74) (11, 74)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
 </pre></div>
 </div>
 </div>
@@ -653,19 +792,24 @@ document.write(`
 </section>
 <section id="beam-positions">
 <h2>Beam Positions<a class="headerlink" href="#beam-positions" title="Link to this heading">#</a></h2>
-<p>The beam azimuths and elevations are contained in the <code class="docutils literal notranslate"><span class="pre">BeamCodes</span></code> array.</p>
+<p>The beam azimuths and elevations are contained in the 1D Parameters array.</p>
 <p><strong>Dimensions:</strong> Nbeams</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">az</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;BeamCodes&#39;</span><span class="p">][:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">el</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;BeamCodes&#39;</span><span class="p">][:,</span><span class="mi">2</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">az</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">el</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">elm</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">azm</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">elm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;elm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">azm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;azm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">elm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">elm</span><span class="p">)</span>
+    <span class="n">azm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">azm</span><span class="p">)</span>
+<span class="n">elm</span><span class="o">.</span><span class="n">shape</span>  
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11,) (11,)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23,)
 </pre></div>
 </div>
 </div>
@@ -673,86 +817,28 @@ document.write(`
 </section>
 <section id="site-info">
 <h2>Site Info<a class="headerlink" href="#site-info" title="Link to this heading">#</a></h2>
-<p>Various information about the radar site and its coordinates are contained within the <code class="docutils literal notranslate"><span class="pre">Site</span></code> group.  These are all scalar parameters.  Magnetic coordinates are also available.</p>
+<p>Various information about the radar site and its coordinates are contained within the Site group.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">site_name</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Name&#39;</span><span class="p">][()]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
-<span class="n">site_lat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Latitude&#39;</span><span class="p">][()]</span>
-<span class="n">site_lon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Longitude&#39;</span><span class="p">][()]</span>
-<span class="n">site_alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Altitude&#39;</span><span class="p">][()]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">param</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata&#39;</span><span class="p">][</span><span class="s1">&#39;Experiment Parameters&#39;</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">site_name</span><span class="p">,</span> <span class="n">site_lat</span><span class="p">,</span> <span class="n">site_lon</span><span class="p">,</span> <span class="n">site_alt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Site Name:&#39;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Instrument Latitude:&#39;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Instrument Longitude:&#39;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Instrument Altitude:&#39;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Poker flat radar 65.12992 -147.47104 213.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Site Name: Poker Flat IS Radar
+Instrument Latitude: 65.13
+Instrument Longitude: 212.529
+Instrument Altitude: 0.215
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="fits-array">
-<span id="fits"></span><h2>Fits Array<a class="headerlink" href="#fits-array" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">FittedParams/Fits</span></code> array contains all fitted parameters aside from electron density (Ti, Te, Vlos), plus collision frequency and fractional composition.  It is a five dimensional array indexed as follows:</p>
-<p><code class="docutils literal notranslate"><span class="pre">Fits[record][beam][range][species][parameter]</span></code></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">species</span></code> index refers to either ion species or electrons.  The ion species can be determined from the <code class="docutils literal notranslate"><span class="pre">IonMass</span></code> array.  If you are interested in a specific species, find its mass in <code class="docutils literal notranslate"><span class="pre">IonMass</span></code> then use that index in the <code class="docutils literal notranslate"><span class="pre">Fits</span></code> array.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16. 32. 30. 28. 14.]
-</pre></div>
-</div>
-</div>
-</div>
-<p>These correspond to the following species:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Mass</p></th>
-<th class="head"><p>Species</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>16</p></td>
-<td><p>O<span class="math notranslate nohighlight">\(^+\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p>32</p></td>
-<td><p>O<span class="math notranslate nohighlight">\(_2^+\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p>30</p></td>
-<td><p>NO<span class="math notranslate nohighlight">\(^+\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p>28</p></td>
-<td><p>N<span class="math notranslate nohighlight">\(_2^+\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p>14</p></td>
-<td><p>N<span class="math notranslate nohighlight">\(^+\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Note that the fourth dimension of the <code class="docutils literal notranslate"><span class="pre">Fits</span></code> array is one element longer than the <code class="docutils literal notranslate"><span class="pre">IonMass</span></code> array.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fits</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74, 6, 4)
-</pre></div>
-</div>
-</div>
-</div>
-<p>The last spot in this is dimension is always reserved for electrons, which can be reliably selected with the index -1.  Different AMISR data files may have fit for a different number of species, however, O+ will always be first and electrons will always be last.</p>
-<p>The last dimension of the <code class="docutils literal notranslate"><span class="pre">Fits</span></code> array gives the parameter, always in this order:</p>
-<p><code class="docutils literal notranslate"><span class="pre">fraction,</span> <span class="pre">temperature,</span> <span class="pre">collision</span> <span class="pre">frequency,</span> <span class="pre">LOS</span> <span class="pre">velocity</span></code></p>
-<p>The last dimension should be indexed by whatever parameter you want to pull out of the array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Close h5 object</span>
@@ -833,11 +919,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-temperature">Electron Temperature</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-sight-velocity">Line-of-Sight Velocity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time">Time</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-position">Geographic Position</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geomagnetic-position">Geomagnetic Position</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-m">Range [m]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-position-deg">Geographic Position [deg]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#site-info">Site Info</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fits-array">Fits Array</a></li>
 </ul>
   </nav></div>
 
