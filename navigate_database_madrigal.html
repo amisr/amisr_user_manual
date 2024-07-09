@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Basics of Mode Design &#8212; AMISR User Manual</title>
+    <title>Madrigal Database &#8212; AMISR User Manual</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'mode_design';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'navigate_database_madrigal';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SRI Database" href="navigate_database.html" />
-    <link rel="prev" title="Background" href="background.html" />
+    <link rel="next" title="Common Data Fields" href="common_data_madrigal.html" />
+    <link rel="prev" title="Ne From Power" href="ne_notr.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,7 +177,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basics of Mode Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mode_design.html">Basics of Mode Design</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html">Common Plots</a></li>
@@ -190,7 +192,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Madrigal Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="common_data_madrigal.html">Common Data Fields</a></li>
 </ul>
 </details></li>
@@ -265,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fmode_design.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fnavigate_database_madrigal.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +297,7 @@
       
       
       
-      <li><a href="_sources/mode_design.md" target="_blank"
+      <li><a href="_sources/navigate_database_madrigal.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +381,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Basics of Mode Design</h1>
+    <h1>Madrigal Database</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,13 +391,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-period">Integration Period</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-resolution">Range Resolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-pulses">Types of Pulses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duty-cycle">Duty Cycle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-to-noise-ratio">Signal-to-Noise Ratio</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trade-space">Trade Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-database">Navigate Database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download Data</a></li>
 </ul>
             </nav>
         </div>
@@ -407,56 +404,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="basics-of-mode-design">
-<h1>Basics of Mode Design<a class="headerlink" href="#basics-of-mode-design" title="Link to this heading">#</a></h1>
-<p>This section gives an overview of some of the basic factors to consider when designing radar modes and experiments.  It is also useful to help understand which data files you should use when there are multiple available and how to properly interpret the data</p>
-<div class="admonition-tl-dr admonition">
-<p class="admonition-title">TL;DR</p>
-<ul class="simple">
-<li><p>For F-region studies, use long pulse (LP) data</p></li>
-<li><p>For E-region studies, use alternating code (AC) data</p></li>
-<li><p>Modes designed for spatial imaging will have lots of beams but longer time resolution</p></li>
-<li><p>Most standard modes modes try to balance these factors to achieve reasonable spatial and temporal resolution for both E- and F-region data</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="madrigal-database">
+<h1>Madrigal Database<a class="headerlink" href="#madrigal-database" title="Link to this heading">#</a></h1>
+<p>Processed data and other information about the radars is available on the <a class="reference external" href="http://cedar.openmadrigal.org/index.html">Madrigal website</a>.</p>
+<p><img alt="madrigal_webpage" src="_images/madrigal_database.png" /></p>
+<p>To access the data for downloading, click <a class="reference external" href="http://cedar.openmadrigal.org/list">Access data, List experiments, and select instrument category and instrument</a>.</p>
+<p><img alt="data_access_page" src="_images/madrigal_experiments.png" /></p>
+<section id="navigate-database">
+<h2>Navigate Database<a class="headerlink" href="#navigate-database" title="Link to this heading">#</a></h2>
+<p>If you know the date and time you are interested in, the easiest way to navigate to the appropriate data files is to select the instrument category and the instrument. Then, specify the date and timeframe of the experiment. Then, List experiments to view all experiments.</p>
+<p>Select the IPY27_Tracking_v03 experiment and use the drop-down menu to select the specific file to download.</p>
+<p><img alt="experiment_view" src="_images/madrigal_files.png" /></p>
+</section>
+<section id="download-data">
+<h2>Download Data<a class="headerlink" href="#download-data" title="Link to this heading">#</a></h2>
+<p>Once the file is selected, click on “Download file” and then “As is” to download the file.</p>
+<p><img alt="download_data" src="_images/madrigal_download.png" /></p>
+</section>
+<div class="toctree-wrapper compound">
 </div>
-<section id="integration-period">
-<span id="id1"></span><h2>Integration Period<a class="headerlink" href="#integration-period" title="Link to this heading">#</a></h2>
-<p>The integration period is the length of time autocorrelation functions are summed over before fitting to the ISR spectrum to find plasma parameters.  This is determined in post-processing, and often raw data from one experiment is processed with multiple integration periods.  The longer the integration period, the more independent pulses contribute to the spectrum, which because the ISR technique is inherently statistical, results in higher confidence in the fitted parameters.  In short, a longer integration period will usually mean less noisy data with few errors. However, long integration periods will also have lower temporal resolution and may smear out sharp transient features.  In general, you should chose the longest integration period that still captures the time scales of interest for the phenomena you are studying.</p>
-</section>
-<section id="beam-positions">
-<h2>Beam Positions<a class="headerlink" href="#beam-positions" title="Link to this heading">#</a></h2>
-<p>The number of beams a mode uses and their direction is fixed in a particular mode and therefore must be selected before the experiment is run.  Despite this, there is great flexibility in how beams can be configured for different modes.  In general, a larger number of beams will allow higher horizontal spatial resolution, but because each beam will be revisited less frequently, it will require a longer integration period to collect sufficient independent measurements.  Beams do not need to be evenly spaced across the field-of-view and can be clumped in tight clusters or arranged along specific lines for specialized modes.  “Beam camping” (the process of revisiting one beam more frequently than the others) can also be used to achieve higher temporal resolution in a specific beam while still having a relatively large number of beams.</p>
-</section>
-<section id="range-resolution">
-<h2>Range Resolution<a class="headerlink" href="#range-resolution" title="Link to this heading">#</a></h2>
-<p>Range resolution is related to how autocorrelation functions are summed along each beam and is set in post-processing, similar to the integration period.</p>
-</section>
-<section id="types-of-pulses">
-<h2>Types of Pulses<a class="headerlink" href="#types-of-pulses" title="Link to this heading">#</a></h2>
-<p>Modes can be electronically configured to use different types of pulses depending on the scientific area of interest.  This aspect of radar engineering is highly sophisticated and there are many texts that discuss it in great detail, but in general AMISR systems use either long pulses (a relatively long transmitted pulse which is sampled and correlated against itself upon receive to resolve range) or coded pulses (a series of phase-modulated pulses that have been cleverly designed to avoid range ambiguity).  Coded pulses can generally achieve higher range resolution, but have lower sensitivity at long ranges.  AMISR usually uses the following configurations to study the different ionospheric layers:</p>
-<ul class="simple">
-<li><p><strong>F-region:</strong> Long Pulse (LP)</p></li>
-<li><p><strong>E-region:</strong> Alternating Code (AC)</p></li>
-<li><p><strong>D-region:</strong> Barker Code (BC)</p></li>
-</ul>
-<p>It is common to design modes that interleave different types of pulses so that data can be collected that is good in multiple range regimes. Most standard modes will collect both LP and AC data.  BC data are more specialized and although some common modes collect these data, they require more sophisticated processing and are not automatically posted publicly.</p>
-</section>
-<section id="duty-cycle">
-<h2>Duty Cycle<a class="headerlink" href="#duty-cycle" title="Link to this heading">#</a></h2>
-<p>The radar duty cycle is fraction of time the radar is transmitting.  In a higher duty cycle, more independent pulses are transmitted and received in a given period of time and error on the processed data should be lower.  However, duty cycle is often constrained by outside factors, such as the economics of powering and running the radar (i.e. fuel and electricity costs), equipment limitations, and environmental factor (to avoid overheating).</p>
-</section>
-<section id="signal-to-noise-ratio">
-<h2>Signal-to-Noise Ratio<a class="headerlink" href="#signal-to-noise-ratio" title="Link to this heading">#</a></h2>
-<p>In addition to the number of independent pulses collected, the other major factor in data error is the Signal-to-Noise Ratio (SNR).  This is primarily impacted by both the transmit power of the radar, which can fluctuate over the lifetime of the facility depending on its conditions and maintenance state, and the background plasma density in the ionosphere.  Dense plasma will return a stronger signal, which can be used to your advantage during periods where you can expect the background density to be relatively high (i.e., summer daytime).  This means that the radar often has more capabilities in terms of spatial and/or temporal resolution during certain times of the year or particular categories of events.</p>
-</section>
-<section id="trade-space">
-<h2>Trade Space<a class="headerlink" href="#trade-space" title="Link to this heading">#</a></h2>
-<p>AMISRs are extremely flexible, however they have limitations like all physical instruments.  In general, when designing a mode, you are working in the following trade space:</p>
-<p><img alt="tradespace" src="_images/tradespace.png" /></p>
-<p>Spatial Resolution ↔ Number of Beams</p>
-<p>Temporal Resolution ↔ Integration Period</p>
-<p>Most standard AMISR modes have been designed to balance these factors to collect data that is potentially useful for as many scientific studies as possible.  However, if you have interest in a specific phenomena or type of observation, you are encouraged to contact the PI about potentially designing a specialized mode or campaign.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -490,20 +456,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="background.html"
+       href="ne_notr.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Background</p>
+        <p class="prev-next-title">Ne From Power</p>
       </div>
     </a>
     <a class="right-next"
-       href="navigate_database.html"
+       href="common_data_madrigal.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SRI Database</p>
+        <p class="prev-next-title">Common Data Fields</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -523,13 +489,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-period">Integration Period</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-resolution">Range Resolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-pulses">Types of Pulses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duty-cycle">Duty Cycle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-to-noise-ratio">Signal-to-Noise Ratio</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trade-space">Trade Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-database">Navigate Database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download Data</a></li>
 </ul>
   </nav></div>
 
