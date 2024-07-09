@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'new_vvels';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'new_vvels_madrigal';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Specialized Parameters" href="specialized_parameters.html" />
-    <link rel="prev" title="Resolved Vector Velocities" href="vector_velocity_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,16 +175,16 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mode_design.html">Basics of Mode Design</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html">Common Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Errors and Data Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_plotting.html">Advanced Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_velocity_example.html">Resolved Vector Velocities</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Resolved Vector Velocities - “New” Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_vvels.html">Resolved Vector Velocities - “New” Version</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="specialized_parameters.html">Specialized Parameters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="ion_comp.html">Ion Composition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ne_notr.html">Ne From Power</a></li>
@@ -253,7 +253,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/new_vvels.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/new_vvels_madrigal.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +271,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/new_vvels.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/new_vvels_madrigal.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +319,7 @@
       
       
       
-      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fnew_vvels.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fnew_vvels_madrigal.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +349,7 @@
       
       
       
-      <li><a href="_sources/new_vvels.ipynb" target="_blank"
+      <li><a href="_sources/new_vvels_madrigal.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -553,7 +553,7 @@ Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildju
     if await self.run_code(code, result, async_=asy):
   File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3577, in run_code
     exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_2375/3640984315.py&quot;, line 9, in &lt;module&gt;
+  File &quot;/tmp/ipykernel_2396/3640984315.py&quot;, line 9, in &lt;module&gt;
     from apexpy import Apex
   File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/__init__.py&quot;, line 5, in &lt;module&gt;
     from apexpy import fortranapex  # noqa F401
@@ -618,7 +618,7 @@ Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildju
     if await self.run_code(code, result, async_=asy):
   File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3577, in run_code
     exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_2375/3640984315.py&quot;, line 9, in &lt;module&gt;
+  File &quot;/tmp/ipykernel_2396/3640984315.py&quot;, line 9, in &lt;module&gt;
     from apexpy import Apex
   File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/__init__.py&quot;, line 11, in &lt;module&gt;
     from apexpy.apex import Apex, ApexHeightError  # noqa F401
@@ -1216,24 +1216,6 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="vector_velocity_example.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Resolved Vector Velocities</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="specialized_parameters.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Specialized Parameters</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

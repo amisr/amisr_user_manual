@@ -57,11 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_plotting';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced_plotting_madrigal';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Resolved Vector Velocities" href="vector_velocity_example.html" />
-    <link rel="prev" title="Errors and Data Filtering" href="errors.html" />
+    <link rel="prev" title="Errors and Data Filtering" href="errors_madrigal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,11 +175,11 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mode_design.html">Basics of Mode Design</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html">Common Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Errors and Data Filtering</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_plotting.html">Advanced Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_velocity_example.html">Resolved Vector Velocities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="new_vvels.html">Resolved Vector Velocities - “New” Version</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="specialized_parameters.html">Specialized Parameters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -190,11 +189,11 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="common_data_madrigal.html">Common Data Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting_madrigal.html">Common Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors_madrigal.html">Errors and Data Filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_plotting_madrigal.html">Advanced Plotting</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Advanced Plotting</a></li>
 </ul>
 </details></li>
 </ul>
@@ -251,7 +250,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/advanced_plotting.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/advanced_plotting_madrigal.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +268,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/advanced_plotting.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/advanced_plotting_madrigal.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +316,7 @@
       
       
       
-      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fadvanced_plotting.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fadvanced_plotting_madrigal.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +346,7 @@
       
       
       
-      <li><a href="_sources/advanced_plotting.ipynb" target="_blank"
+      <li><a href="_sources/advanced_plotting_madrigal.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -522,7 +521,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f184c1659c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f7568311330&gt;
 </pre></div>
 </div>
 <img alt="_images/42ee59ac8419a37ae077ea8242e8af659221ebee29d74711d39a8f400d64f01b.png" src="_images/42ee59ac8419a37ae077ea8242e8af659221ebee29d74711d39a8f400d64f01b.png" />
@@ -610,7 +609,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f1844983610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f75688096f0&gt;
 </pre></div>
 </div>
 <img alt="_images/5a98ac12195b4e7bddffb7f97bf6e4c2873831d3a7fbbfdc545c76fae16bc703.png" src="_images/5a98ac12195b4e7bddffb7f97bf6e4c2873831d3a7fbbfdc545c76fae16bc703.png" />
@@ -670,10 +669,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_coastline.zip
-  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
-</pre></div>
-</div>
 <img alt="_images/3145c98f412030c31cf9ef78c8f0f3f36bfacadae56462a7dcb7e06be4194d2e.png" src="_images/3145c98f412030c31cf9ef78c8f0f3f36bfacadae56462a7dcb7e06be4194d2e.png" />
 </div>
 </div>
@@ -711,22 +706,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="errors.html"
+       href="errors_madrigal.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Errors and Data Filtering</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="vector_velocity_example.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Resolved Vector Velocities</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

@@ -1,0 +1,90 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+A = Apex(2023)
+glat = 65.7
+glon = -147.7
+mlat, mlon = A.geo2apex(glat, glon, 300.)
+
+# Create field line array
+apex_height = A.get_apex(mlat)
+galt = np.arange(0., apex_height, 100.)*1000.
+glatN, glonN, _ = A.map_to_height(glat, glon, 300., galt/1000.)
+glatS, glonS, _ = A.map_to_height(glat, glon, 300., galt/1000., conjugate=True)
+# Combine north and south mapped arrays
+fl_glat = np.concatenate((glatN,glatS[::-1]))
+fl_glon = np.concatenate((glonN,glonS[::-1]))
+fl_galt = np.concatenate((galt,galt[::-1]))
+
+f1, f2, f3, g1, g2, g3, d1, d2, d3, e1, e2, e3 = A.basevectors_apex(glat, glon, 300.)
+efield = 500.*d2
+vel = 500.*e1
+# Subsample field line array to get locations for vectors
+vec_galt = fl_galt[::30]
+vec_glat = fl_glat[::30]
+vec_glon = fl_glon[::30]
+# Map vectors to these locations
+mapped_vel = A.map_V_to_height(mlat, mlon, 300., vec_galt/1000., vel)
+mapped_ef = A.map_V_to_height(mlat, mlon, 300., vec_galt/1000., efield)
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the surface
+u = np.linspace(0, 2 * np.pi, 100)
+v = np.linspace(0, np.pi, 100)
+x = 6371.*1000. * np.outer(np.cos(u), np.sin(v))
+y = 6371.*1000. * np.outer(np.sin(u), np.sin(v))
+z = 6371.*1000. * np.outer(np.ones(np.size(u)), np.cos(v))
+ax.plot_surface(x, y, z)
+
+# Plot field line
+x, y, z = pm.geodetic2ecef(fl_glat, fl_glon, fl_galt)
+ax.plot(x, y, z, color='gold', label='Magnetic Field Line')
+
+# Plot velocity/electric field
+x, y, z = pm.geodetic2ecef(vec_glat, vec_glon, vec_galt)
+u, v, w = pm.enu2uvw(mapped_vel[0,:], mapped_vel[1,:], mapped_vel[2,:], vec_glat, vec_glon)
+ax.quiver(x, y, z, u, v, w, length=1000., color='blue', label='Velocity')
+u, v, w = pm.enu2uvw(mapped_ef[0,:], mapped_ef[1,:], mapped_ef[2,:], vec_glat, vec_glon)
+ax.quiver(x, y, z, u, v, w, length=1000., color='red', label='Electric Field')
+
+ax.legend(loc=(1.05, 0.5))
+
+ax.view_init(azim=75.)
+# Set an equal aspect ratio
+ax.set_aspect('equal')
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m A [38;5;241m=[39m [43mApex[49m[43m([49m[38;5;241;43m2023[39;49m[43m)[49m
+[1;32m      2[0m glat [38;5;241m=[39m [38;5;241m65.7[39m
+[1;32m      3[0m glon [38;5;241m=[39m [38;5;241m-[39m[38;5;241m147.7[39m
+
+File [0;32m/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/apex.py:89[0m, in [0;36mApex.__init__[0;34m(self, date, refh, datafile, fortranlib)[0m
+[1;32m     86[0m     datafile [38;5;241m=[39m os[38;5;241m.[39mpath[38;5;241m.[39mjoin(os[38;5;241m.[39mpath[38;5;241m.[39mdirname([38;5;18m__file__[39m), [38;5;124m'[39m[38;5;124mapexsh.dat[39m[38;5;124m'[39m)
+[1;32m     88[0m [38;5;28;01mif[39;00m fortranlib [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m---> 89[0m     fortranlib [38;5;241m=[39m [43mfa[49m[38;5;241m.[39m[38;5;18m__file__[39m
+[1;32m     91[0m [38;5;28mself[39m[38;5;241m.[39mRE [38;5;241m=[39m [38;5;241m6371.009[39m  [38;5;66;03m# Mean Earth radius in km[39;00m
+[1;32m     92[0m [38;5;28mself[39m[38;5;241m.[39mset_refh(refh)  [38;5;66;03m# Reference height in km[39;00m
+
+[0;31mNameError[0m: name 'fa' is not defined
+

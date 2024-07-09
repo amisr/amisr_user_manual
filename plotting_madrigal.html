@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'plotting';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'plotting_madrigal';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Errors and Data Filtering" href="errors.html" />
-    <link rel="prev" title="Common Data Fields" href="common_data.html" />
+    <link rel="next" title="Errors and Data Filtering" href="errors_madrigal.html" />
+    <link rel="prev" title="Common Data Fields" href="common_data_madrigal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,9 +176,9 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mode_design.html">Basics of Mode Design</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">Common Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Errors and Data Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_plotting.html">Advanced Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_velocity_example.html">Resolved Vector Velocities</a></li>
@@ -190,9 +190,9 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="common_data_madrigal.html">Common Data Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting_madrigal.html">Common Plots</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Common Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors_madrigal.html">Errors and Data Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_plotting_madrigal.html">Advanced Plotting</a></li>
 </ul>
@@ -251,7 +251,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/plotting.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/plotting_madrigal.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +269,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/plotting.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/plotting_madrigal.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +317,7 @@
       
       
       
-      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fplotting.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fplotting_madrigal.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +347,7 @@
       
       
       
-      <li><a href="_sources/plotting.ipynb" target="_blank"
+      <li><a href="_sources/plotting_madrigal.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -501,7 +501,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f184e77ad70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f68b277ed70&gt;
 </pre></div>
 </div>
 <img alt="_images/82feb54f7790e4326fe0fe1404b0509cf20e517bc266cba0c1556460ec99c4c0.png" src="_images/82feb54f7790e4326fe0fe1404b0509cf20e517bc266cba0c1556460ec99c4c0.png" />
@@ -531,7 +531,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f18444e6110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f68a8522110&gt;
 </pre></div>
 </div>
 <img alt="_images/986553b94aeffab4fffd858eb3612245915772d916389bce7d28f0bf61466a58.png" src="_images/986553b94aeffab4fffd858eb3612245915772d916389bce7d28f0bf61466a58.png" />
@@ -578,7 +578,7 @@ document.write(`
  [ 6.41570000e+04 -1.54300003e+02  7.75000000e+01  4.45000000e-20]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f1844160670&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f68a8198670&gt;
 </pre></div>
 </div>
 <img alt="_images/dfa8cf66e36fcd61391ec41f1dd409e69194051dd39fa66388986442ade4298c.png" src="_images/dfa8cf66e36fcd61391ec41f1dd409e69194051dd39fa66388986442ade4298c.png" />
@@ -607,7 +607,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f18441d3f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f68a820bf10&gt;
 </pre></div>
 </div>
 <img alt="_images/d1551d9130483f7611e98b29b5d0bd947b2f4b85668c0d1da270deae290065b6.png" src="_images/d1551d9130483f7611e98b29b5d0bd947b2f4b85668c0d1da270deae290065b6.png" />
@@ -641,7 +641,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f184408d360&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f68a80c1300&gt;
 </pre></div>
 </div>
 <img alt="_images/b60691d8409905ddd7951630a13e4781fedaf2b0c2b368ab9e20cfa755900d3e.png" src="_images/b60691d8409905ddd7951630a13e4781fedaf2b0c2b368ab9e20cfa755900d3e.png" />
@@ -687,7 +687,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f184415a920&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f68a8192920&gt;
 </pre></div>
 </div>
 <img alt="_images/8fb725e31d6d3fa01db9966f6bc414a23a0314a80149447d3b095aff38066869.png" src="_images/8fb725e31d6d3fa01db9966f6bc414a23a0314a80149447d3b095aff38066869.png" />
@@ -728,7 +728,7 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="common_data.html"
+       href="common_data_madrigal.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -737,7 +737,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="errors.html"
+       href="errors_madrigal.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
