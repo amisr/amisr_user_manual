@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'common_data';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'common_data_madrigal';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Common Plots" href="plotting.html" />
-    <link rel="prev" title="SRI Database" href="navigate_database.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,11 +175,11 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mode_design.html">Basics of Mode Design</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Common Data Fields</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="navigate_database.html">SRI Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="common_data.html">Common Data Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html">Common Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Errors and Data Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_plotting.html">Advanced Plotting</a></li>
@@ -246,7 +246,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/common_data.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/common_data_madrigal.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -264,7 +264,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/common_data.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/common_data_madrigal.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +312,7 @@
       
       
       
-      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fcommon_data.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fcommon_data_madrigal.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -342,7 +342,7 @@
       
       
       
-      <li><a href="_sources/common_data.ipynb" target="_blank"
+      <li><a href="_sources/common_data_madrigal.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -502,7 +502,7 @@ document.write(`
 </section>
 <section id="ion-temperature">
 <h2>Ion Temperature<a class="headerlink" href="#ion-temperature" title="Link to this heading">#</a></h2>
-<p>The fourth index corresponds to the ion species (0 = O+).  Refer to <a class="reference internal" href="common_data_madrigal.html#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
+<p>The fourth index corresponds to the ion species (0 = O+).  Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> K</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -521,7 +521,7 @@ document.write(`
 </section>
 <section id="electron-temperature">
 <h2>Electron Temperature<a class="headerlink" href="#electron-temperature" title="Link to this heading">#</a></h2>
-<p>Refer to <a class="reference internal" href="common_data_madrigal.html#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
+<p>Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> K</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -540,7 +540,7 @@ document.write(`
 </section>
 <section id="line-of-sight-velocity">
 <h2>Line-of-Sight Velocity<a class="headerlink" href="#line-of-sight-velocity" title="Link to this heading">#</a></h2>
-<p>Refer to <a class="reference internal" href="common_data_madrigal.html#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
+<p>Refer to <a class="reference internal" href="#fits"><span class="std std-ref">Fits Array</span></a> for more information.</p>
 <p><strong>Units:</strong> m/s</p>
 <p><strong>Dimensions:</strong> Nrecords x Nbeams x Nranges</p>
 <div class="cell docutils container">
@@ -787,24 +787,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="navigate_database.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SRI Database</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="plotting.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Common Plots</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
