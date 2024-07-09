@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Madrigal Database &#8212; AMISR User Manual</title>
+    <title>Remote Access &#8212; AMISR User Manual</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'navigate_database_madrigal';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'madrigal_remote_access';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Remote Access" href="madrigal_remote_access.html" />
-    <link rel="prev" title="Ne From Power" href="ne_notr.html" />
+    <link rel="next" title="Common Data Fields" href="common_data_madrigal.html" />
+    <link rel="prev" title="Madrigal Database" href="navigate_database_madrigal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,8 +190,8 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Madrigal Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="madrigal_remote_access.html">Remote Access</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Remote Access</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_data_madrigal.html">Common Data Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting_madrigal.html">Common Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors_madrigal.html">Errors and Data Filtering</a></li>
@@ -247,6 +245,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/ljlamarche/amisr_user_manual/main?urlpath=lab/tree/madrigal_remote_access.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ljlamarche/amisr_user_manual/blob/main/madrigal_remote_access.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -272,7 +319,7 @@
       
       
       
-      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fnavigate_database_madrigal.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ljlamarche/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fmadrigal_remote_access.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +349,7 @@
       
       
       
-      <li><a href="_sources/navigate_database_madrigal.md" target="_blank"
+      <li><a href="_sources/madrigal_remote_access.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +359,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -373,9 +420,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -386,20 +431,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Madrigal Database</h1>
+    <h1>Remote Access</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-database">Navigate Database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download Data</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -409,25 +445,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="madrigal-database">
-<h1>Madrigal Database<a class="headerlink" href="#madrigal-database" title="Link to this heading">#</a></h1>
-<p>Processed data and other information about the radars is available on the <a class="reference external" href="http://cedar.openmadrigal.org/index.html">Madrigal website</a>.</p>
-<p><img alt="madrigal_webpage" src="_images/madrigal_database.png" /></p>
-<p>To access the data for downloading, click <a class="reference external" href="http://cedar.openmadrigal.org/list">Access data, List experiments, and select instrument category and instrument</a>.</p>
-<p><img alt="data_access_page" src="_images/madrigal_experiments.png" /></p>
-<section id="navigate-database">
-<h2>Navigate Database<a class="headerlink" href="#navigate-database" title="Link to this heading">#</a></h2>
-<p>If you know the date and time you are interested in, the easiest way to navigate to the appropriate data files is to select the instrument category and the instrument. Then, specify the date and timeframe of the experiment. Then, List experiments to view all experiments.</p>
-<p>Select the IPY27_Tracking_v03 experiment and use the drop-down menu to select the specific file to download.</p>
-<p><img alt="experiment_view" src="_images/madrigal_files.png" /></p>
-</section>
-<section id="download-data">
-<h2>Download Data<a class="headerlink" href="#download-data" title="Link to this heading">#</a></h2>
-<p>Once the file is selected, click on “Download file” and then “As is” to download the file.</p>
-<p><img alt="download_data" src="_images/madrigal_download.png" /></p>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="remote-access">
+<h1>Remote Access<a class="headerlink" href="#remote-access" title="Link to this heading">#</a></h1>
+<p>Madrigal database can be accessed from python by using the Madrigal python remote data access API to download one or multiple experiments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">madrigalWeb.madrigalWeb</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">madrigalWeb.madrigalWeb</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;madrigalWeb&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Credentials</span>
+<span class="n">user_fullname</span> <span class="o">=</span> <span class="s1">&#39;username&#39;</span>
+<span class="n">user_email</span> <span class="o">=</span> <span class="s1">&#39;email@email.com&#39;</span>
+<span class="n">user_affiliation</span> <span class="o">=</span> <span class="s1">&#39;ABC&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">madrigalUrl</span><span class="o">=</span><span class="s1">&#39;http://cedar.openmadrigal.org&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">madrigalWeb</span><span class="o">.</span><span class="n">madrigalWeb</span><span class="o">.</span><span class="n">MadrigalData</span><span class="p">(</span><span class="n">madrigalUrl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Specify the Radar you want to access by its code and the timeframe for the experiment/experiments you want to retrieve.</p>
+<ul class="simple">
+<li><p>PFISR radar code = 61</p></li>
+<li><p>RISR-N radar code = 91</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -461,20 +521,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ne_notr.html"
+       href="navigate_database_madrigal.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Ne From Power</p>
+        <p class="prev-next-title">Madrigal Database</p>
       </div>
     </a>
     <a class="right-next"
-       href="madrigal_remote_access.html"
+       href="common_data_madrigal.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Remote Access</p>
+        <p class="prev-next-title">Common Data Fields</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -484,22 +544,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-database">Navigate Database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download Data</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
