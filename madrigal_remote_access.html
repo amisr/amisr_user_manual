@@ -491,21 +491,15 @@ document.write(`
 <p>To retrieve all radars,run the script:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Example of call to getAllInstruments&#39;</span><span class="p">)</span>
-<span class="n">instList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getAllInstruments</span><span class="p">()</span>
-<span class="c1"># print out Millstone</span>
-<span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="n">instList</span><span class="p">:</span>
-    <span class="c1">#if inst.code == 30:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">code</span> <span class="o">=</span> <span class="mi">61</span> 
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2024</span>
+<span class="n">month</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">hour</span> <span class="o">=</span> <span class="mi">0</span> 
 </pre></div>
 </div>
 </div>
 </div>
-<p>code = 61
-year = 2024
-month = 1
-day = 8
-hour = 0</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperiments</span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
@@ -517,37 +511,6 @@ hour = 0</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">exp</span> <span class="ow">in</span> <span class="n">expList</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id: 100278612
-realUrl: http://cedar.openmadrigal.org/showExperiment/?experiment_list=100278612
-url: http://cedar.openmadrigal.org/madtoc/experiments4/2024/pfa/07jan24b
-name: MSWinds27H.v03 - D-region E-region F-region local measurements
-siteid: 10
-sitename: CEDAR
-instcode: 61
-instname: Poker Flat IS Radar
-startyear: 2024
-startmonth: 1
-startday: 7
-starthour: 7
-startmin: 0
-startsec: 52
-endyear: 2024
-endmonth: 1
-endday: 8
-endhour: 7
-endmin: 0
-endsec: 1
-isLocal: True
-madrigalUrl: http://cedar.openmadrigal.org/
-PI: Asti Bhatt
-PIEmail: asti.bhatt@sri.com
-uttimestamp: 1709108303
-access: 2
-Madrigal version: 3.2
 </pre></div>
 </div>
 </div>
@@ -579,7 +542,7 @@ Madrigal version: 3.2
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">thisFilename</span><span class="p">,</span> <span class="n">downloaded_file</span><span class="p">,</span> 
-                               <span class="n">user_fullname</span><span class="p">,</span> <span class="n">user_email</span><span class="p">,</span> <span class="n">user_affiliation</span><span class="p">,</span><span class="s1">&#39;simple&#39;</span><span class="p">)</span>    
+                               <span class="n">user_fullname</span><span class="p">,</span> <span class="n">user_email</span><span class="p">,</span> <span class="n">user_affiliation</span><span class="p">,</span><span class="s1">&#39;hdf5&#39;</span><span class="p">)</span>    
 </pre></div>
 </div>
 </div>
