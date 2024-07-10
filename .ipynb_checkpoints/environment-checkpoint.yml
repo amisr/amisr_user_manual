@@ -8,7 +8,6 @@ dependencies:
   - h5py
   - cartopy
   - pip
-  - madrigalWeb
   - pip:
       - pymap3d
       - apexpy
