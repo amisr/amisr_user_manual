@@ -11,3 +11,4 @@ dependencies:
   - pip:
       - pymap3d
       - apexpy
+      - madrigalWeb
