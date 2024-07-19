@@ -470,15 +470,27 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Download files that will be used in this tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/20200207.001_lp_5min-fitcal.h5&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the file that we need to run these examples</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/20200207.001_lp_5min-fitcal.h5&#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://data.amisr.com/database/dbase_site_media/PFISR/Experiments/20200207.001/DataFiles/20200207.001_lp_5min-fitcal.h5&#39;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename_lp</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -503,10 +515,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f01e0d8ad40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fc6547d3f70&gt;
 </pre></div>
 </div>
-<img alt="_images/82feb54f7790e4326fe0fe1404b0509cf20e517bc266cba0c1556460ec99c4c0.png" src="_images/82feb54f7790e4326fe0fe1404b0509cf20e517bc266cba0c1556460ec99c4c0.png" />
+<img alt="_images/c877c801f82d4a35122a237cf92f2cade776c0619ab54e90ff84812b539a7ac1.png" src="_images/c877c801f82d4a35122a237cf92f2cade776c0619ab54e90ff84812b539a7ac1.png" />
 </div>
 </div>
 </section>
@@ -533,10 +545,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f01e0b320e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc65452e8c0&gt;
 </pre></div>
 </div>
-<img alt="_images/986553b94aeffab4fffd858eb3612245915772d916389bce7d28f0bf61466a58.png" src="_images/986553b94aeffab4fffd858eb3612245915772d916389bce7d28f0bf61466a58.png" />
+<img alt="_images/ff3a850621f7c44dd45db49ba9bd2cb62852bb685a2bb6315d7f9e48600c3b06.png" src="_images/ff3a850621f7c44dd45db49ba9bd2cb62852bb685a2bb6315d7f9e48600c3b06.png" />
 </div>
 </div>
 </section>
@@ -580,10 +592,10 @@ document.write(`
  [ 6.41570000e+04 -1.54300003e+02  7.75000000e+01  4.45000000e-20]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f01e0778640&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc6541a4f70&gt;
 </pre></div>
 </div>
-<img alt="_images/dfa8cf66e36fcd61391ec41f1dd409e69194051dd39fa66388986442ade4298c.png" src="_images/dfa8cf66e36fcd61391ec41f1dd409e69194051dd39fa66388986442ade4298c.png" />
+<img alt="_images/53726a534101cd7a5a0df08521ae55e9131ab9278118b53ebb2e9940c8adf363.png" src="_images/53726a534101cd7a5a0df08521ae55e9131ab9278118b53ebb2e9940c8adf363.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -609,10 +621,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f01e081f400&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc654092860&gt;
 </pre></div>
 </div>
-<img alt="_images/d1551d9130483f7611e98b29b5d0bd947b2f4b85668c0d1da270deae290065b6.png" src="_images/d1551d9130483f7611e98b29b5d0bd947b2f4b85668c0d1da270deae290065b6.png" />
+<img alt="_images/98150dac4aacc4bd46cbc169eef1644222b74330c391a199d895521780b6a2a0.png" src="_images/98150dac4aacc4bd46cbc169eef1644222b74330c391a199d895521780b6a2a0.png" />
 </div>
 </div>
 </section>
@@ -643,10 +655,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f01e081d540&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fc6545c3250&gt;
 </pre></div>
 </div>
-<img alt="_images/b60691d8409905ddd7951630a13e4781fedaf2b0c2b368ab9e20cfa755900d3e.png" src="_images/b60691d8409905ddd7951630a13e4781fedaf2b0c2b368ab9e20cfa755900d3e.png" />
+<img alt="_images/d70a2580f5b714f86d9e9df4bfc101bae8c2acf75dd3986de7cfd6c33fbe4170.png" src="_images/d70a2580f5b714f86d9e9df4bfc101bae8c2acf75dd3986de7cfd6c33fbe4170.png" />
 </div>
 </div>
 <section id="beam-positions-with-data">
@@ -689,10 +701,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f01e0a368f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc6544562c0&gt;
 </pre></div>
 </div>
-<img alt="_images/8fb725e31d6d3fa01db9966f6bc414a23a0314a80149447d3b095aff38066869.png" src="_images/8fb725e31d6d3fa01db9966f6bc414a23a0314a80149447d3b095aff38066869.png" />
+<img alt="_images/3643b7ce2af421a297221dc2c846f77f7b672f1842364f343e3c39fdced58d9b.png" src="_images/3643b7ce2af421a297221dc2c846f77f7b672f1842364f343e3c39fdced58d9b.png" />
 </div>
 </div>
 </section>

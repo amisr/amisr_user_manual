@@ -456,15 +456,27 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Download files that will be used in this tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/20200207.001_lp_5min-fitcal.h5&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the file that we need to run these examples</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/20200207.001_lp_5min-fitcal.h5&#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://data.amisr.com/database/dbase_site_media/PFISR/Experiments/20200207.001/DataFiles/20200207.001_lp_5min-fitcal.h5&#39;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename_lp</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -504,7 +516,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e74feaf27811f91583796e28d13ab60250f6a1dc18f3df1df96025ed61fb72fb.png" src="_images/e74feaf27811f91583796e28d13ab60250f6a1dc18f3df1df96025ed61fb72fb.png" />
+<img alt="_images/36bd519c51c755f64697f0a38f9ce9327276bdab18ab9dc0b8467ee62455cb49.png" src="_images/36bd519c51c755f64697f0a38f9ce9327276bdab18ab9dc0b8467ee62455cb49.png" />
 </div>
 </div>
 </section>

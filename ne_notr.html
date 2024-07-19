@@ -457,14 +457,26 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Download files that will be used in this tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/20200207.001_lp_5min-fitcal.h5&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the file that we need to run these examples</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/20200207.001_lp_5min-fitcal.h5&#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://data.amisr.com/database/dbase_site_media/PFISR/Experiments/20200207.001/DataFiles/20200207.001_lp_5min-fitcal.h5&#39;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename_lp</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -495,10 +507,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc965f33c10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff36cb426e0&gt;
 </pre></div>
 </div>
-<img alt="_images/7c98f8784ead912f7f42e4f27122715cdf88128d5d5b627f2feb9817e0967cea.png" src="_images/7c98f8784ead912f7f42e4f27122715cdf88128d5d5b627f2feb9817e0967cea.png" />
+<img alt="_images/8c6c27bacf1c79adf48fc495012d3449ceb1f35ffd864524f6fd7cc80a1de5c1.png" src="_images/8c6c27bacf1c79adf48fc495012d3449ceb1f35ffd864524f6fd7cc80a1de5c1.png" />
 </div>
 </div>
 <p>Note the artifacts below 60 km.  These should be removed before any analysis.</p>
@@ -524,10 +536,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc95da0bc70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff36c7a9ed0&gt;
 </pre></div>
 </div>
-<img alt="_images/f10d41e5a9464d4fa4b87bbabb7e5ecb2a8fdec5cbe926c0706fc163e82512c7.png" src="_images/f10d41e5a9464d4fa4b87bbabb7e5ecb2a8fdec5cbe926c0706fc163e82512c7.png" />
+<img alt="_images/432be76fe6f21c94fcde6a3c0fb28c578764d10ca1ed0da472668e8ef46fe3e5.png" src="_images/432be76fe6f21c94fcde6a3c0fb28c578764d10ca1ed0da472668e8ef46fe3e5.png" />
 </div>
 </div>
 <p>For comparison, plot the fitted electron densities from this same experiment.</p>
@@ -551,10 +563,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc95c762860&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff36c57afb0&gt;
 </pre></div>
 </div>
-<img alt="_images/986553b94aeffab4fffd858eb3612245915772d916389bce7d28f0bf61466a58.png" src="_images/986553b94aeffab4fffd858eb3612245915772d916389bce7d28f0bf61466a58.png" />
+<img alt="_images/ff3a850621f7c44dd45db49ba9bd2cb62852bb685a2bb6315d7f9e48600c3b06.png" src="_images/ff3a850621f7c44dd45db49ba9bd2cb62852bb685a2bb6315d7f9e48600c3b06.png" />
 </div>
 </div>
 <p>Note that the range resolution of the fitted electron density is substantially less than that from NeFromPower.</p>
