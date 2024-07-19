@@ -555,7 +555,7 @@ Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildju
     if await self.run_code(code, result, async_=asy):
   File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3577, in run_code
     exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_2520/3640984315.py&quot;, line 9, in &lt;module&gt;
+  File &quot;/tmp/ipykernel_2488/3640984315.py&quot;, line 9, in &lt;module&gt;
     from apexpy import Apex
   File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/__init__.py&quot;, line 5, in &lt;module&gt;
     from apexpy import fortranapex  # noqa F401
@@ -620,7 +620,7 @@ Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildju
     if await self.run_code(code, result, async_=asy):
   File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3577, in run_code
     exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_2520/3640984315.py&quot;, line 9, in &lt;module&gt;
+  File &quot;/tmp/ipykernel_2488/3640984315.py&quot;, line 9, in &lt;module&gt;
     from apexpy import Apex
   File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/__init__.py&quot;, line 11, in &lt;module&gt;
     from apexpy.apex import Apex, ApexHeightError  # noqa F401
@@ -798,7 +798,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/1efb18942aa0484b3dc4cc8480f2d62c981955744226619a6fb649d71de18277.png" src="_images/1efb18942aa0484b3dc4cc8480f2d62c981955744226619a6fb649d71de18277.png" />
+<img alt="_images/12ffbd7d4895b23266c06838a57a3ec0506f730929d0c2488ff87f02a69225b7.png" src="_images/12ffbd7d4895b23266c06838a57a3ec0506f730929d0c2488ff87f02a69225b7.png" />
 </div>
 </div>
 </section>
@@ -822,7 +822,7 @@ VvelsMagCoords
 <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">]):</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">mlat</span><span class="p">,</span> <span class="n">vel</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">500.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">500.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">vel</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">500.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">500.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Geodetic Latitude&#39;</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s1">&#39;$V_</span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">$ (m/s)&#39;</span><span class="p">)</span>
 
@@ -834,7 +834,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/219e2b73031cc0d99608386cf307d02d31b1a2b50b1020aa5683e15cbebfeb16.png" src="_images/219e2b73031cc0d99608386cf307d02d31b1a2b50b1020aa5683e15cbebfeb16.png" />
+<img alt="_images/c845bfac10a9c7cd0e366c2d807225fb4f8283a02737fa16d649e3fa7c24863b.png" src="_images/c845bfac10a9c7cd0e366c2d807225fb4f8283a02737fa16d649e3fa7c24863b.png" />
 </div>
 </div>
 </section>
@@ -914,7 +914,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/4c3a062120076eb6387671ecbe8bb92ea35e0cc7dac67e3058d24f1a622dc242.png" src="_images/4c3a062120076eb6387671ecbe8bb92ea35e0cc7dac67e3058d24f1a622dc242.png" />
+<img alt="_images/a801e93825dbcf43fbe3d6e250c4f1ef3a496a9166dbfa6811917bdddfd9686e.png" src="_images/a801e93825dbcf43fbe3d6e250c4f1ef3a496a9166dbfa6811917bdddfd9686e.png" />
 </div>
 </div>
 </section>
@@ -938,7 +938,7 @@ VvelsMagCoords
 <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">]):</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">mlat</span><span class="p">,</span> <span class="n">efield</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">efield</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Geodetic Latitude&#39;</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s1">&#39;$E_</span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">$ (V/m)&#39;</span><span class="p">)</span>
 
@@ -950,7 +950,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/7cae022b237d6ec35b5a6e7040543347f79ff5657e523135e1ccde6aa57c1974.png" src="_images/7cae022b237d6ec35b5a6e7040543347f79ff5657e523135e1ccde6aa57c1974.png" />
+<img alt="_images/af603dd36bff79718ddfb4dbf397e635ed6683c8ba2598dd549bd657c441dbe9.png" src="_images/af603dd36bff79718ddfb4dbf397e635ed6683c8ba2598dd549bd657c441dbe9.png" />
 </div>
 </div>
 </section>
@@ -991,10 +991,10 @@ VvelsMagCoords
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;Altitude&#39;, &#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;Edir&#39;, &#39;ElectricField&#39;, &#39;Emag&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Vdir&#39;, &#39;Velocity&#39;, &#39;Vmag&#39;, &#39;errEdir&#39;, &#39;errElectricField&#39;, &#39;errEmag&#39;, &#39;errVdir&#39;, &#39;errVelocity&#39;, &#39;errVmag&#39;]&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x133b47c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x12abc78e0&gt;
 </pre></div>
 </div>
-<img alt="_images/fcba6078b95e8ff7896f1c8da61861a1f1352b3b567326fc7078e3178b16fc16.png" src="_images/fcba6078b95e8ff7896f1c8da61861a1f1352b3b567326fc7078e3178b16fc16.png" />
+<img alt="_images/737e66a1c08cac25ee9f92590a9b163cdd72633b7078b1e8af99da37c9d62bed.png" src="_images/737e66a1c08cac25ee9f92590a9b163cdd72633b7078b1e8af99da37c9d62bed.png" />
 </div>
 </div>
 </section>
@@ -1287,7 +1287,7 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
   <div class="footer-item">
     
 <p class="component-author">
-By Leslie Lamarche
+By Leslie Lamarche, Lara Kamal
 </p>
 
   </div>

@@ -374,7 +374,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -390,6 +392,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-guide">How to Use this Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-and-questions">Issues and Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contributors">Contributors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funding-sources">Funding Sources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -402,6 +420,44 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="amisr-user-manual">
 <h1>AMISR User Manual<a class="headerlink" href="#amisr-user-manual" title="Link to this heading">#</a></h1>
 <p>This is a short guide for scientific end users of AMISR data.  It will give a broad overview of how to access, plot, and interpret the data.  This guide will attempt to focus on the most important points for most basic scientific analysis rather than a detailed descriptions of all nuances in these datasets.</p>
+<section id="how-to-use-this-guide">
+<h2>How to Use this Guide<a class="headerlink" href="#how-to-use-this-guide" title="Link to this heading">#</a></h2>
+<p>This guide is a mix of background information and code examples demonstrating how to do common plotting and analysis tasks.  Although it can be read through in full, you may find it more useful to use the table of contents in the left sidebar to skip to the section most relevant to what you are trying to do.  Cross reference links have been embedded in the content to make it possible to jump easily to more information about particular topics.</p>
+<p>Users should adopt a “copy-paste-modify” philosophy with the examples shown in this guide.  For the most part, these examples are intentionally designed to be extremely simple to illustrate the basic steps required to access and plot AMISR data.  Users are encouraged to copy/paste any examples they find helpful into their own code, but will likely have to customize it using normal python and plotting functions to suit their needs.</p>
+</section>
+<section id="issues-and-questions">
+<h2>Issues and Questions<a class="headerlink" href="#issues-and-questions" title="Link to this heading">#</a></h2>
+<p>Any bugs or typos found in this book can be reported through the GitHub button at the top of each page (select “Open Issue” from the drop down options).  Please also open an issue if you have questions or find any content confusing!  Often questions can be answered quickly and highlighting places where the text is unclear will help improve the guide in the future.</p>
+</section>
+<section id="attribution">
+<h2>Attribution<a class="headerlink" href="#attribution" title="Link to this heading">#</a></h2>
+<section id="citation">
+<h3>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h3>
+<p>Please cite this guide as:</p>
+<p>Lamarche, L. J. and Kamal, L. (2024).  AMISR User Manual. Retrieved from <a class="reference external" href="https://amisr.github.io/amisr_user_manual/intro.html">https://amisr.github.io/amisr_user_manual/intro.html</a>.</p>
+</section>
+<section id="contributors">
+<h3>Contributors<a class="headerlink" href="#contributors" title="Link to this heading">#</a></h3>
+<p>The following people have written or contributed to this guide (listed alphabetically).</p>
+<ul class="simple">
+<li><p>Asti Bhatt</p></li>
+<li><p>Lara Kamal</p></li>
+<li><p>Leslie Lamarche</p></li>
+<li><p>Pablo Reyes</p></li>
+</ul>
+</section>
+<section id="funding-sources">
+<h3>Funding Sources<a class="headerlink" href="#funding-sources" title="Link to this heading">#</a></h3>
+<p>Contributions to the AMISR User Manual were funded in part by the following sources.</p>
+<ul class="simple">
+<li><p>NSF Cooperative Agreement #1840962</p></li>
+<li><p>NSF Grant #2027300</p></li>
+<li><p>NASA Grant #80NSSC21K0458</p></li>
+</ul>
+</section>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
@@ -410,6 +466,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a></li>
 </ul>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -458,6 +515,29 @@ document.write(`
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-guide">How to Use this Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-and-questions">Issues and Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contributors">Contributors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funding-sources">Funding Sources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -467,7 +547,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Leslie Lamarche
+By Leslie Lamarche, Lara Kamal
 </p>
 
   </div>
