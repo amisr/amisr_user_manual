@@ -10,5 +10,30 @@ Users should adopt a "copy-paste-modify" philosophy with the examples shown in t
 ## Issues and Questions
 Any bugs or typos found in this book can be reported through the GitHub button at the top of each page (select "Open Issue" from the drop down options).  Please also open an issue if you have questions or find any content confusing!  Often questions can be answered quickly and highlighting places where the text is unclear will help improve the guide in the future.
 
+## Attribution
+
+### Citation
+
+Please cite this guide as:
+
+Lamarche, L. J. and Kamal, L. (2024).  AMISR User Manual. Retrieved from https://amisr.github.io/amisr_user_manual/intro.html.
+
+### Contributors
+The following people have written or contributed to this guide (listed alphabetically).
+
+- Asti Bhatt
+- Lara Kamal
+- Leslie Lamarche
+- Pablo Reyes
+
+### Funding Sources
+Contributions to the AMISR User Manual were funded in part by the following sources.
+
+- NSF Cooperative Agreement \#1840962
+- NSF Grant \#2027300
+- NASA Grant \#80NSSC21K0458
+
+## Table of Contents
+
 ```{tableofcontents}
 ```

@@ -23,8 +23,9 @@ If you have content or examples you would like to contribute to the book, please
 4. Add any pages you created to `_toc.yml`.
 5. Add any packages your examples rely on to `environment.yml`.
 6. Build the book locally and check to make sure your material looks correct.
-7. Commit your changes.
-8. Push changes to GitHub.  The updated webpage will be build automatically.
+7. Add your name and any relevant funding sources under the *Attribution* section in `intro.md`.
+8. Commit your changes.
+9. Push changes to GitHub.  The updated webpage will be build automatically.
 
 Refer to the [jupyter book docs](https://jupyterbook.org/en/stable/intro.html) for more detailed information about syntax and building the book.
 
