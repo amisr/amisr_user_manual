@@ -25,4 +25,4 @@ chapters:
     - file: plotting_madrigal
     - file: errors_madrigal
     - file: advanced_plotting_madrigal
-    - file: new_vvels_madrigal
+    - file: vector_velocity_example_madrigal
