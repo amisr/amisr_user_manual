@@ -196,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="plotting_madrigal.html">Common Plots</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Errors and Data Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_plotting_madrigal.html">Advanced Plotting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new_vvels_madrigal.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector_velocity_example_madrigal.html">Resolved Vector Velocities</a></li>
 </ul>
 </details></li>
 </ul>
@@ -472,21 +472,127 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">madrigalUrl</span><span class="o">=</span><span class="s1">&#39;http://cedar.openmadrigal.org&#39;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">madrigalWeb</span><span class="o">.</span><span class="n">madrigalWeb</span><span class="o">.</span><span class="n">MadrigalData</span><span class="p">(</span><span class="n">madrigalUrl</span><span class="p">)</span>
+
+<span class="n">user_fullname</span> <span class="o">=</span> <span class="s1">&#39;Student Example&#39;</span> 
+<span class="n">user_email</span> <span class="o">=</span> <span class="s1">&#39;isr.summer.school@gmail.com&#39;</span> 
+<span class="n">user_affiliation</span><span class="o">=</span> <span class="s1">&#39;ISR Summer School 2024&#39;</span>
+<span class="n">code</span> <span class="o">=</span> <span class="mi">61</span>   <span class="c1"># PFISR</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2024</span>
+<span class="n">month</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">hour1</span> <span class="o">=</span> <span class="mi">7</span> 
+<span class="n">minute1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hour2</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="c1"># list of experiments inside a time period of a day</span>
+<span class="n">expList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperiments</span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour1</span><span class="p">,</span><span class="n">minute1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">exp</span> <span class="ow">in</span> <span class="n">expList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id: 100278619
+realUrl: http://cedar.openmadrigal.org/showExperiment/?experiment_list=100278619
+url: http://cedar.openmadrigal.org/madtoc/experiments4/2024/pfa/08jan24a
+name: Themis36 - Auroral and convection measurements
+siteid: 10
+sitename: CEDAR
+instcode: 61
+instname: Poker Flat IS Radar
+startyear: 2024
+startmonth: 1
+startday: 8
+starthour: 7
+startmin: 1
+startsec: 4
+endyear: 2024
+endmonth: 1
+endday: 8
+endhour: 18
+endmin: 0
+endsec: 0
+isLocal: True
+madrigalUrl: http://cedar.openmadrigal.org/
+PI: Asti Bhatt
+PIEmail: asti.bhatt@sri.com
+uttimestamp: 1709109883
+access: 2
+Madrigal version: 3.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fileList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperimentFiles</span><span class="p">(</span><span class="n">expList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">file0</span> <span class="ow">in</span> <span class="n">fileList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file0</span><span class="o">.</span><span class="n">name</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file0</span><span class="o">.</span><span class="n">kindat</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">file0</span><span class="o">.</span><span class="n">kindatdesc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pfa20240108.001_ac_nenotr_01min.001.h5 	 1000201 	 Ne From Power - Alternating Code (E-region) - 1 min
+pfa20240108.001_ac_fit_01min.001.h5 	 2000201 	 Fitted - Alternating Code (E-region) - 1 min
+pfa20240108.001_ac_nenotr_03min.001.h5 	 1000203 	 Ne From Power - Alternating Code (E-region) - 3 min
+pfa20240108.001_ac_fit_03min.001.h5 	 2000203 	 Fitted - Alternating Code (E-region) - 3 min
+pfa20240108.001_ac_nenotr_05min.001.h5 	 1000205 	 Ne From Power - Alternating Code (E-region) - 5 min
+pfa20240108.001_ac_fit_05min.001.h5 	 2000205 	 Fitted - Alternating Code (E-region) - 5 min
+pfa20240108.001_ac_nenotr_10min.001.h5 	 1000210 	 Ne From Power - Alternating Code (E-region) - 10 min
+pfa20240108.001_ac_fit_10min.001.h5 	 2000210 	 Fitted - Alternating Code (E-region) - 10 min
+pfa20240108.001_ac_nenotr_15min.001.h5 	 1000215 	 Ne From Power - Alternating Code (E-region) - 15 min
+pfa20240108.001_ac_fit_15min.001.h5 	 2000215 	 Fitted - Alternating Code (E-region) - 15 min
+pfa20240108.001_ac_nenotr_20min.001.h5 	 1000220 	 Ne From Power - Alternating Code (E-region) - 20 min
+pfa20240108.001_ac_fit_20min.001.h5 	 2000220 	 Fitted - Alternating Code (E-region) - 20 min
+pfa20240108.001_lp_nenotr_01min.001.h5 	 1000101 	 Ne From Power - Long Pulse (F-region) - 1 min
+pfa20240108.001_lp_fit_01min.001.h5 	 2000101 	 Fitted - Long Pulse (F-region) - 1 min
+pfa20240108.001_lp_nenotr_03min.001.h5 	 1000103 	 Ne From Power - Long Pulse (F-region) - 3 min
+pfa20240108.001_lp_fit_03min.001.h5 	 2000103 	 Fitted - Long Pulse (F-region) - 3 min
+pfa20240108.001_lp_nenotr_05min.001.h5 	 1000105 	 Ne From Power - Long Pulse (F-region) - 5 min
+pfa20240108.001_lp_fit_05min.001.h5 	 2000105 	 Fitted - Long Pulse (F-region) - 5 min
+pfa20240108.001_lp_nenotr_10min.001.h5 	 1000110 	 Ne From Power - Long Pulse (F-region) - 10 min
+pfa20240108.001_lp_fit_10min.001.h5 	 2000110 	 Fitted - Long Pulse (F-region) - 10 min
+pfa20240108.001_lp_nenotr_15min.001.h5 	 1000115 	 Ne From Power - Long Pulse (F-region) - 15 min
+pfa20240108.001_lp_fit_15min.001.h5 	 2000115 	 Fitted - Long Pulse (F-region) - 15 min
+pfa20240108.001_lp_nenotr_20min.001.h5 	 1000120 	 Ne From Power - Long Pulse (F-region) - 20 min
+pfa20240108.001_lp_fit_20min.001.h5 	 2000120 	 Fitted - Long Pulse (F-region) - 20 min
+pfa20240108.001_lp_vvels_01min.001.h5 	 3000101 	 Resolved Velocity - Long Pulse (F-region) - 1 min
+pfa20240108.001_lp_vvels_03min.001.h5 	 3000103 	 Resolved Velocity - Long Pulse (F-region) - 3 min
+pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse (F-region) - 5 min
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the file that we need to run these examples</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;data/pfa20240108.001_lp_fit_01min.001.h5&#39;</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="n">madrigalUrl</span><span class="o">=</span><span class="s1">&#39;http://cedar.openmadrigal.org&#39;</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">madrigalWeb</span><span class="o">.</span><span class="n">madrigalWeb</span><span class="o">.</span><span class="n">MadrigalData</span><span class="p">(</span><span class="n">madrigalUrl</span><span class="p">)</span>
-    <span class="n">user_fullname</span> <span class="o">=</span> <span class="s1">&#39;Student Example&#39;</span> 
-    <span class="n">user_email</span> <span class="o">=</span> <span class="s1">&#39;isr.summer.school@gmail.com&#39;</span> 
-    <span class="n">user_affiliation</span><span class="o">=</span> <span class="s1">&#39;ISR Summer School 2020&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">filepath</span><span class="o">=</span> <span class="s1">&#39;data/pfa20240108.001_lp_fit_01min.001.h5 &#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+
+    <span class="n">fileList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperimentFiles</span><span class="p">(</span><span class="n">expList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">file0</span> <span class="ow">in</span> <span class="n">fileList</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file0</span><span class="o">.</span><span class="n">kindatdesc</span> <span class="o">==</span> <span class="s1">&#39;Fitted - Long Pulse (F-region) - 1 min&#39;</span><span class="p">:</span>
+            <span class="n">file2download</span> <span class="o">=</span> <span class="n">file0</span><span class="o">.</span><span class="n">name</span>
+            <span class="k">break</span>
         
-    <span class="n">url</span><span class="o">=</span><span class="s1">&#39;/opt/cedar3/experiments4/2024/pfa/08jan24a/pfa20240108.001_lp_fit_01min.001.h5&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
 
-    <span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> 
+    <span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">file2download</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> 
                                <span class="n">user_fullname</span><span class="p">,</span> <span class="n">user_email</span><span class="p">,</span> <span class="n">user_affiliation</span><span class="p">,</span><span class="s1">&#39;hdf5&#39;</span><span class="p">)</span>    
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2"> already downloaded&quot;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File data/pfa20240108.001_lp_fit_01min.001.h5  already downloaded
 </pre></div>
 </div>
 </div>
@@ -496,7 +602,7 @@ document.write(`
 <p>Errors for all parameters can be found in the 2D Parameters array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
     <span class="n">bidx</span> <span class="o">=</span> <span class="s1">&#39;Array with beamid=64157 &#39;</span>
 
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
@@ -517,7 +623,7 @@ document.write(`
 <p>Plot RTI of electron density in beam 0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
     
     <span class="n">bidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -540,7 +646,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2f0c473d00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f0335b3e680&gt;
 </pre></div>
 </div>
 <img alt="_images/79710000007de581ca9db8e1ba6e8fa6bea721064d5ef098e705ea40cb9f2bbe.png" src="_images/79710000007de581ca9db8e1ba6e8fa6bea721064d5ef098e705ea40cb9f2bbe.png" />
@@ -554,15 +660,15 @@ document.write(`
 <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)],</span> <span class="n">dNe</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">2.e11</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cividis&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Slant Range (m)&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Electron Density Error (m$^{-3}$)&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Electron Density (m$^{-3}$)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2ee6fab880&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f035c8a5f60&gt;
 </pre></div>
 </div>
-<img alt="_images/3a754bff24573eac55a1d98a15ca94aad9c26a49da8a992024fd530137788278.png" src="_images/3a754bff24573eac55a1d98a15ca94aad9c26a49da8a992024fd530137788278.png" />
+<img alt="_images/81c628fded07dd8663e47e5298830b1bb54dd4a42ffa8f1ebb3b89bd976122fd.png" src="_images/81c628fded07dd8663e47e5298830b1bb54dd4a42ffa8f1ebb3b89bd976122fd.png" />
 </div>
 </div>
 </section>
@@ -571,7 +677,7 @@ document.write(`
 <p>CEDAR data files contain a useful data quality parameter, chi<sup>2</sup>,  in the 2D Parameters array. Chi<sup>2</sup> measures the goodness-of-fit of the data. This is expected to be somewhere around 1 because of statistical variability. If chi<sup>2</sup> is substantially greater than 1, it indicates this was a very poor fit and the model is not a good match for the data, and therefor the output parameter should not be used. If chi<sup>2</sup> is substantially less than 1, it is also suspect because it suggests very little variance in the data, which is not characteristic of incoherent scatter. It is possible that this point is instead a coherent echo off a hard-target (such as a metallic satellite in the radar’s beam), which erroneously looks like a very high density value with a very low error. A reasonable value for chi<sup>2</sup> is between 0.1 - 10 for most situations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
     <span class="n">bidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
     <span class="n">utime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;timestamps&#39;</span><span class="p">])</span>
@@ -607,7 +713,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2ee4aab6a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f035c7ae380&gt;
 </pre></div>
 </div>
 <img alt="_images/91dcb9d849953b5996f74dbce17504ce8dd6495afbc6de6e5731cedad4543dac.png" src="_images/91dcb9d849953b5996f74dbce17504ce8dd6495afbc6de6e5731cedad4543dac.png" />
@@ -631,7 +737,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2ee4a205b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f035c9294b0&gt;
 </pre></div>
 </div>
 <img alt="_images/0d541dc11a009593701be27bf6e0a9460d0b82a1aa187b22f99087b07da23712.png" src="_images/0d541dc11a009593701be27bf6e0a9460d0b82a1aa187b22f99087b07da23712.png" />

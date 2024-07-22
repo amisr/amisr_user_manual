@@ -196,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="plotting_madrigal.html">Common Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors_madrigal.html">Errors and Data Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_plotting_madrigal.html">Advanced Plotting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new_vvels_madrigal.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector_velocity_example_madrigal.html">Resolved Vector Velocities</a></li>
 </ul>
 </details></li>
 </ul>
@@ -485,14 +485,16 @@ document.write(`
 <span class="n">year</span> <span class="o">=</span> <span class="mi">2024</span>
 <span class="n">month</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">day</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">hour</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="n">hour1</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">hour2</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">min1</span> <span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperiments</span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperiments</span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour1</span><span class="p">,</span><span class="n">min1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -505,31 +507,31 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id: 100278612
-realUrl: http://cedar.openmadrigal.org/showExperiment/?experiment_list=100278612
-url: http://cedar.openmadrigal.org/madtoc/experiments4/2024/pfa/07jan24b
-name: MSWinds27H.v03 - D-region E-region F-region local measurements
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id: 100278619
+realUrl: http://cedar.openmadrigal.org/showExperiment/?experiment_list=100278619
+url: http://cedar.openmadrigal.org/madtoc/experiments4/2024/pfa/08jan24a
+name: Themis36 - Auroral and convection measurements
 siteid: 10
 sitename: CEDAR
 instcode: 61
 instname: Poker Flat IS Radar
 startyear: 2024
 startmonth: 1
-startday: 7
+startday: 8
 starthour: 7
-startmin: 0
-startsec: 52
+startmin: 1
+startsec: 4
 endyear: 2024
 endmonth: 1
 endday: 8
-endhour: 7
+endhour: 18
 endmin: 0
-endsec: 1
+endsec: 0
 isLocal: True
 madrigalUrl: http://cedar.openmadrigal.org/
 PI: Asti Bhatt
 PIEmail: asti.bhatt@sri.com
-uttimestamp: 1709108303
+uttimestamp: 1709109883
 access: 2
 Madrigal version: 3.2
 </pre></div>
@@ -555,7 +557,7 @@ Madrigal version: 3.2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>filename: pfa20240107.002_lp_fit_05min.001.h5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>filename: pfa20240108.001_lp_fit_05min.001.h5
 </pre></div>
 </div>
 </div>
