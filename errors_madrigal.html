@@ -619,45 +619,6 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">bidx</span> <span class="o">=</span> <span class="s1">&#39;Array with beamid=64157 &#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
-
-<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/h5py/_hl/files.py:562,</span> in <span class="ni">File.__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, fs_strategy, fs_persist, fs_threshold, fs_page_size, page_buf_size, min_meta_keep, min_raw_keep, locking, alignment_threshold, alignment_interval, meta_block_size, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">553</span>     <span class="n">fapl</span> <span class="o">=</span> <span class="n">make_fapl</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">libver</span><span class="p">,</span> <span class="n">rdcc_nslots</span><span class="p">,</span> <span class="n">rdcc_nbytes</span><span class="p">,</span> <span class="n">rdcc_w0</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">554</span>                      <span class="n">locking</span><span class="p">,</span> <span class="n">page_buf_size</span><span class="p">,</span> <span class="n">min_meta_keep</span><span class="p">,</span> <span class="n">min_raw_keep</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">555</span>                      <span class="n">alignment_threshold</span><span class="o">=</span><span class="n">alignment_threshold</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">556</span>                      <span class="n">alignment_interval</span><span class="o">=</span><span class="n">alignment_interval</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">557</span>                      <span class="n">meta_block_size</span><span class="o">=</span><span class="n">meta_block_size</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">558</span>                      <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span>     <span class="n">fcpl</span> <span class="o">=</span> <span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">,</span> <span class="n">fs_strategy</span><span class="o">=</span><span class="n">fs_strategy</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span>                      <span class="n">fs_persist</span><span class="o">=</span><span class="n">fs_persist</span><span class="p">,</span> <span class="n">fs_threshold</span><span class="o">=</span><span class="n">fs_threshold</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">561</span>                      <span class="n">fs_page_size</span><span class="o">=</span><span class="n">fs_page_size</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">562</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">make_fid</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">userblock_size</span><span class="p">,</span> <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="p">,</span> <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">libver</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">565</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_libver</span> <span class="o">=</span> <span class="n">libver</span>
-
-<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/h5py/_hl/files.py:235,</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="k">if</span> <span class="n">swmr</span> <span class="ow">and</span> <span class="n">swmr_support</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>         <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
-<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_RDWR</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
-
-<span class="nn">File h5py/_objects.pyx:54,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
-
-<span class="nn">File h5py/_objects.pyx:55,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
-
-<span class="nn">File h5py/h5f.pyx:102,</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
-
-<span class="ne">OSError</span>: Unable to synchronously open file (truncated file: eof = 106119168, sblock-&gt;base_addr = 0, stored_eof = 154001697)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Plot RTI of electron density in beam 0.</p>
 <div class="cell docutils container">
@@ -685,10 +646,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f8d8be93ac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f79cc072620&gt;
 </pre></div>
 </div>
-<img alt="_images/d350f0703345e965efe68c6a1fbda74dfdff9ac1f2c4207cea3d04404da13806.png" src="_images/d350f0703345e965efe68c6a1fbda74dfdff9ac1f2c4207cea3d04404da13806.png" />
+<img alt="_images/79710000007de581ca9db8e1ba6e8fa6bea721064d5ef098e705ea40cb9f2bbe.png" src="_images/79710000007de581ca9db8e1ba6e8fa6bea721064d5ef098e705ea40cb9f2bbe.png" />
 </div>
 </div>
 <p>Plot RTI of electron density error in beam 0.</p>
@@ -704,10 +665,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f8d89491af0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f79ceaa5f00&gt;
 </pre></div>
 </div>
-<img alt="_images/53e640d79a13cf3ec3d685d94f27b2117b1d15be949e99326653bf370d7d104b.png" src="_images/53e640d79a13cf3ec3d685d94f27b2117b1d15be949e99326653bf370d7d104b.png" />
+<img alt="_images/81c628fded07dd8663e47e5298830b1bb54dd4a42ffa8f1ebb3b89bd976122fd.png" src="_images/81c628fded07dd8663e47e5298830b1bb54dd4a42ffa8f1ebb3b89bd976122fd.png" />
 </div>
 </div>
 </section>
@@ -752,10 +713,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f8d882ecfa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f79cc9ae320&gt;
 </pre></div>
 </div>
-<img alt="_images/ed7ec98576467937ff96e066d812f971aac35b4b7559ccf9f0228a21d87db603.png" src="_images/ed7ec98576467937ff96e066d812f971aac35b4b7559ccf9f0228a21d87db603.png" />
+<img alt="_images/91dcb9d849953b5996f74dbce17504ce8dd6495afbc6de6e5731cedad4543dac.png" src="_images/91dcb9d849953b5996f74dbce17504ce8dd6495afbc6de6e5731cedad4543dac.png" />
 </div>
 </div>
 <p>Plot electron density filtered by data quality parameters and where the density error is greater than the density (relative error greater than 1).</p>
@@ -776,10 +737,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f8d8826dd60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f79ceaf7580&gt;
 </pre></div>
 </div>
-<img alt="_images/b205e5273df06f1c252fe2f16ab61dda54fbdaa5ae578aa41ab6b9afecd338e4.png" src="_images/b205e5273df06f1c252fe2f16ab61dda54fbdaa5ae578aa41ab6b9afecd338e4.png" />
+<img alt="_images/0d541dc11a009593701be27bf6e0a9460d0b82a1aa187b22f99087b07da23712.png" src="_images/0d541dc11a009593701be27bf6e0a9460d0b82a1aa187b22f99087b07da23712.png" />
 </div>
 </div>
 </section>
