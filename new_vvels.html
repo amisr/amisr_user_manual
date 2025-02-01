@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="Resolved Vector Velocities" href="vector_velocity_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,15 +149,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -201,6 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector_velocity_example_madrigal.html">Resolved Vector Velocities</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
     </div>
@@ -209,9 +199,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -404,24 +399,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -458,9 +445,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-field">Electric Field</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Magnetic Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Geodetic Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Magnitude and Direction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Magnetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Geodetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Magnitude and Direction</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-magnetic-to-geodetic">Convert Magnetic to Geodetic</a></li>
@@ -488,167 +475,30 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
-<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">h5py</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">apexpy</span> <span class="kn">import</span> <span class="n">Apex</span>
-<span class="kn">import</span> <span class="nn">pymap3d</span> <span class="k">as</span> <span class="nn">pm</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.0.0 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/runpy.py&quot;, line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/runpy.py&quot;, line 86, in _run_code
-    exec(code, run_globals)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel_launcher.py&quot;, line 18, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/traitlets/config/application.py&quot;, line 1075, in launch_instance
-    app.start()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelapp.py&quot;, line 739, in start
-    self.io_loop.start()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/tornado/platform/asyncio.py&quot;, line 205, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py&quot;, line 603, in run_forever
-    self._run_once()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py&quot;, line 1909, in _run_once
-    handle._run()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 545, in dispatch_queue
-    await self.process_one()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 534, in process_one
-    await dispatch(*args)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 437, in dispatch_shell
-    await result
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 362, in execute_request
-    await super().execute_request(stream, ident, parent)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 778, in execute_request
-    reply_content = await reply_content
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 449, in do_execute
-    res = shell.run_cell(
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/zmqshell.py&quot;, line 549, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3075, in run_cell
-    result = self._run_cell(
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3130, in _run_cell
-    result = runner(coro)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/async_helpers.py&quot;, line 128, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3334, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3517, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3577, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_2418/3640984315.py&quot;, line 9, in &lt;module&gt;
-    from apexpy import Apex
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/__init__.py&quot;, line 5, in &lt;module&gt;
-    from apexpy import fortranapex  # noqa F401
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fortranapex module could not be imported. apexpy probably won&#39;t work. Failed with error: numpy.core.multiarray failed to import
-A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.0.0 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/runpy.py&quot;, line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/runpy.py&quot;, line 86, in _run_code
-    exec(code, run_globals)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel_launcher.py&quot;, line 18, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/traitlets/config/application.py&quot;, line 1075, in launch_instance
-    app.start()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelapp.py&quot;, line 739, in start
-    self.io_loop.start()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/tornado/platform/asyncio.py&quot;, line 205, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py&quot;, line 603, in run_forever
-    self._run_once()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/base_events.py&quot;, line 1909, in _run_once
-    handle._run()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 545, in dispatch_queue
-    await self.process_one()
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 534, in process_one
-    await dispatch(*args)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 437, in dispatch_shell
-    await result
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 362, in execute_request
-    await super().execute_request(stream, ident, parent)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 778, in execute_request
-    reply_content = await reply_content
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 449, in do_execute
-    res = shell.run_cell(
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/ipykernel/zmqshell.py&quot;, line 549, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3075, in run_cell
-    result = self._run_cell(
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3130, in _run_cell
-    result = runner(coro)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/async_helpers.py&quot;, line 128, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3334, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3517, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3577, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_2418/3640984315.py&quot;, line 9, in &lt;module&gt;
-    from apexpy import Apex
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/__init__.py&quot;, line 11, in &lt;module&gt;
-    from apexpy.apex import Apex, ApexHeightError  # noqa F401
-  File &quot;/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/apex.py&quot;, line 13, in &lt;module&gt;
-    from apexpy import fortranapex as fa
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/apex.py:15: UserWarning: fortranapex module could not be imported, so apexpy probably won&#39;t work.  Make sure you have a gfortran compiler. Failed with error: numpy.core.multiarray failed to import
-  warnings.warn(&quot;&quot;.join([&quot;fortranapex module could not be imported, so &quot;,
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mdates</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">apexpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Apex</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pymap3d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<p>The resolved vector velocity data product (informally known as “vvels”) is derived from the standard AMISR processed parameters.  By assuming some degree of uniform flow across the FoV, it is possible to combine LoS velocity measurements from different beams to invert a full 3D velocity vector.  This technique is described in detail in Heinsleman and Nicolls, 2008.</p>
+<p>The resolved vector velocity data product (informally known as “vvels”) is derived from the standard AMISR processed parameters.  By assuming some degree of uniform flow across the FoV, it is possible to combine LoS velocity measurements from different beams to invert a full 3D velocity vector.  This technique is described in detail in <span id="id1">[<a class="reference internal" href="references.html#id4" title="C. J. Heinselman and M. J. Nicolls. A Bayesian approach to electric field and E-region neutral wind estimation with the Poker Flat Advanced Modular Incoherent Scatter Radar. Radio Sci., 2008. doi:10.1029/2007RS003805.">Heinselman and Nicolls, 2008</a>]</span>.</p>
 <section id="magnetic-field-mapping">
 <h3>Magnetic Field Mapping<a class="headerlink" href="#magnetic-field-mapping" title="Link to this heading">#</a></h3>
 <p>The resolved velocities algorithms assumes the plasma drift velocity maps along the magnetic field lines and is only valid in the regime where this holds true.  Under the electrostatic assumption (no parallel electric fields), the electric potential is constant along magnetic field lines and an electric field can be mapped to anywhere on that field line.  In the collisionless regime, the plasma velocity is the <span class="math notranslate nohighlight">\(E \times B\)</span> drift velocity and likewise maps along field lines.  This allows the resolved velocities to utilize LoS measurements from all F-region altitudes.</p>
 </section>
 <section id="apex-coordinates">
 <h3>Apex Coordinates<a class="headerlink" href="#apex-coordinates" title="Link to this heading">#</a></h3>
-<p>The resolved velocities inversion algorithm could be implemented in any magnetic coordinate system. We choose to use the Modified Apex coordinate system (Richmond, 1995, Laundal and Richmond, 2017) for the following reasons:</p>
+<p>The resolved velocities inversion algorithm could be implemented in any magnetic coordinate system. We choose to use the Modified Apex coordinate system <span id="id2">[<a class="reference internal" href="references.html#id5" title="K. M. Laundal and A. D. Richmond. Magnetic coordinate systems. Space Sci. Rev., 206:27–59, 2017. doi:10.1007/s11214-016-0275-y.">Laundal and Richmond, 2017</a>, <a class="reference internal" href="references.html#id7" title="A. D. Richmond. Ionospheric electrodynamics using magnetic apex coordinates. J. Geomag. Geoelectr., 47:191–212, 1995.">Richmond, 1995</a>]</span> for the following reasons:</p>
 <ul class="simple">
 <li><p>It is defined everywhere on the globe</p></li>
 <li><p>Apex base vectors are scaled in such a way that mapping the electric field and plasma drift velocity in the near-Earth environment is very convenient</p></li>
@@ -715,23 +565,7 @@ Traceback (most recent call last):  File &quot;/usr/share/miniconda/envs/buildju
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">A</span> <span class="o">=</span> <span class="n">Apex</span><span class="p">(</span><span class="mi">2023</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">glat</span> <span class="o">=</span> <span class="mf">65.7</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">glon</span> <span class="o">=</span> <span class="o">-</span><span class="mf">147.7</span>
-
-<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/apexpy/apex.py:89,</span> in <span class="ni">Apex.__init__</span><span class="nt">(self, date, refh, datafile, fortranlib)</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span>     <span class="n">datafile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;apexsh.dat&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">if</span> <span class="n">fortranlib</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">89</span>     <span class="n">fortranlib</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="vm">__file__</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span> <span class="bp">self</span><span class="o">.</span><span class="n">RE</span> <span class="o">=</span> <span class="mf">6371.009</span>  <span class="c1"># Mean Earth radius in km</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_refh</span><span class="p">(</span><span class="n">refh</span><span class="p">)</span>  <span class="c1"># Reference height in km</span>
-
-<span class="ne">NameError</span>: name &#39;fa&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/0a80a1fa308330ab01f7d1202ddc56debec00afe622fefce92126744a607bb45.png" src="_images/0a80a1fa308330ab01f7d1202ddc56debec00afe622fefce92126744a607bb45.png" />
 </div>
 </div>
 </section>
@@ -798,7 +632,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/12ffbd7d4895b23266c06838a57a3ec0506f730929d0c2488ff87f02a69225b7.png" src="_images/12ffbd7d4895b23266c06838a57a3ec0506f730929d0c2488ff87f02a69225b7.png" />
+<img alt="_images/237c86ea43b4f3c91bcc471a736c2804f96f64cf1c5b2d31cfc52471922588b6.png" src="_images/237c86ea43b4f3c91bcc471a736c2804f96f64cf1c5b2d31cfc52471922588b6.png" />
 </div>
 </div>
 </section>
@@ -834,7 +668,7 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/c845bfac10a9c7cd0e366c2d807225fb4f8283a02737fa16d649e3fa7c24863b.png" src="_images/c845bfac10a9c7cd0e366c2d807225fb4f8283a02737fa16d649e3fa7c24863b.png" />
+<img alt="_images/0fb9f276928f8a42655eccbf35525dec9d7586b08fb6d8b25e56bbdb099bb6cd.png" src="_images/0fb9f276928f8a42655eccbf35525dec9d7586b08fb6d8b25e56bbdb099bb6cd.png" />
 </div>
 </div>
 </section>
@@ -871,10 +705,10 @@ VvelsMagCoords
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x131483100&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f015bff8730&gt;
 </pre></div>
 </div>
-<img alt="_images/89c34034e3434a2d355f0e80c387b6a03095b97a1d3fc23b144b453b4d79fafa.png" src="_images/89c34034e3434a2d355f0e80c387b6a03095b97a1d3fc23b144b453b4d79fafa.png" />
+<img alt="_images/7db3335dcebca20d25c47bb03a930a13dd8ceef4e46d72556363d91d5570b268.png" src="_images/7db3335dcebca20d25c47bb03a930a13dd8ceef4e46d72556363d91d5570b268.png" />
 </div>
 </div>
 </section>
@@ -886,8 +720,8 @@ VvelsMagCoords
 \[ \mathbf{E} = - \mathbf{V} \times \mathbf{B} \]</div>
 <p>The electric field and velocity in the resolved velocities files are not independent measurements.  Both are provided for user convenience.  By definition, there is no parallel electric field component (<span class="math notranslate nohighlight">\(E_{d_3} = 0 \)</span>).</p>
 <p>Similar to velocity, the output files contain the electric field in both geodetic and magnetic coordinates stored in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> and the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> groups respectively.</p>
-<section id="id1">
-<h3>Magnetic Components<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Magnetic Components<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>The electric field components <span class="math notranslate nohighlight">\(E_{d_1}\)</span>, <span class="math notranslate nohighlight">\(E_{d_2}\)</span>, and <span class="math notranslate nohighlight">\(E_{d_3}\)</span> are available in the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">Electric</span> <span class="pre">Field</span></code>.  This array has the dimensions nrecords x nbins x 3.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -914,12 +748,12 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/a801e93825dbcf43fbe3d6e250c4f1ef3a496a9166dbfa6811917bdddfd9686e.png" src="_images/a801e93825dbcf43fbe3d6e250c4f1ef3a496a9166dbfa6811917bdddfd9686e.png" />
+<img alt="_images/df7dbbae1fc34140cbe5308df4d90ea5b44006a7669b1cdc6aa7f614f8629150.png" src="_images/df7dbbae1fc34140cbe5308df4d90ea5b44006a7669b1cdc6aa7f614f8629150.png" />
 </div>
 </div>
 </section>
-<section id="id2">
-<h3>Geodetic Components<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>Geodetic Components<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>The Geodetic East, North, and Up components of the electric field are available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">ElectricField</span></code>.  The shape of this array is nrecords x nalt x nbins x 3, where the last dimension is for each of the three E, N, U components respectively.  Similar to the velocity, the additional altitude dimension captures the fact that the geodetic components change in altitude and the value of each altitude slice can be found in <code class="docutils literal notranslate"><span class="pre">Altitude</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -950,12 +784,12 @@ VvelsMagCoords
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/af603dd36bff79718ddfb4dbf397e635ed6683c8ba2598dd549bd657c441dbe9.png" src="_images/af603dd36bff79718ddfb4dbf397e635ed6683c8ba2598dd549bd657c441dbe9.png" />
+<img alt="_images/1ab928251d3585acabaced1684f9a80340688c6860ecf6e6ec517d7b0578be0a.png" src="_images/1ab928251d3585acabaced1684f9a80340688c6860ecf6e6ec517d7b0578be0a.png" />
 </div>
 </div>
 </section>
-<section id="id3">
-<h3>Magnitude and Direction<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3>Magnitude and Direction<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>The magnitude and horizontal direction (azimuth angle in degrees East of North) of the electric field are also available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group as <code class="docutils literal notranslate"><span class="pre">Emag</span></code> and <code class="docutils literal notranslate"><span class="pre">Edir</span></code>, respectively.  These are scalar quantities but also depend on altitude, so have the dimensions nrecords x nalt x nbins.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -991,10 +825,10 @@ VvelsMagCoords
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;Altitude&#39;, &#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;Edir&#39;, &#39;ElectricField&#39;, &#39;Emag&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Vdir&#39;, &#39;Velocity&#39;, &#39;Vmag&#39;, &#39;errEdir&#39;, &#39;errElectricField&#39;, &#39;errEmag&#39;, &#39;errVdir&#39;, &#39;errVelocity&#39;, &#39;errVmag&#39;]&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x12abc78e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f014ed22770&gt;
 </pre></div>
 </div>
-<img alt="_images/737e66a1c08cac25ee9f92590a9b163cdd72633b7078b1e8af99da37c9d62bed.png" src="_images/737e66a1c08cac25ee9f92590a9b163cdd72633b7078b1e8af99da37c9d62bed.png" />
+<img alt="_images/362b3c712f9df20ff984b444a7d2731d71cbb91dd26ac43c8f255bdeb0dd13ca.png" src="_images/362b3c712f9df20ff984b444a7d2731d71cbb91dd26ac43c8f255bdeb0dd13ca.png" />
 </div>
 </div>
 </section>
@@ -1051,8 +885,8 @@ VvelsMagCoords
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;ElectricField&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Velocity&#39;, &#39;errElectricField&#39;, &#39;errVelocity&#39;]&gt;
-Geodetic Velocity Components: [-55.96753607 -34.19414676 -11.09833093]
-Geodetic Electric Field Components: [-0.00176155  0.00272533  0.0004865 ]
+Geodetic Velocity Components: [-55.96757638 -34.19053666 -11.09837558]
+Geodetic Electric Field Components: [-0.00176145  0.00272546  0.00048648]
 Original Velocity Shape: (188, 29, 3)
 Converted Velocity Shape: (188, 29, 3)
 Original Electric Field Shape: (188, 29, 3)
@@ -1113,7 +947,7 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
 </pre></div>
 </div>
-<img alt="_images/80ae4780d412838099f4571d5254687e33891c4f0a6fd89a4544cd22f0f68f1b.png" src="_images/80ae4780d412838099f4571d5254687e33891c4f0a6fd89a4544cd22f0f68f1b.png" />
+<img alt="_images/f7e58750ebd42e84bc6c117c2d469e12f203220e6069d6496a7d755e31e82f9e.png" src="_images/f7e58750ebd42e84bc6c117c2d469e12f203220e6069d6496a7d755e31e82f9e.png" />
 </div>
 </div>
 </section>
@@ -1152,7 +986,7 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
 
 <span class="c1"># This function is needed due to an issue with cartopy where vectors are not scale/rotated</span>
 <span class="c1">#   correctly in some coordinate systems (see: https://github.com/SciTools/cartopy/issues/1179)</span>
-<span class="k">def</span> <span class="nf">scale_uv</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">scale_uv</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
     <span class="n">us</span> <span class="o">=</span> <span class="n">u</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span><span class="p">)</span>
     <span class="n">vs</span> <span class="o">=</span> <span class="n">v</span>
     <span class="n">sf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">us</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">vs</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -1182,7 +1016,7 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/418b89b83e0b8162a39648a0a72ccee482f02d2a0731fe3ccba9b52dcf4d0ca9.png" src="_images/418b89b83e0b8162a39648a0a72ccee482f02d2a0731fe3ccba9b52dcf4d0ca9.png" />
+<img alt="_images/0d6fef9cce97228cd65f56aed41d80e32a82a37f5631d62ff8d8733a4a99af5c.png" src="_images/0d6fef9cce97228cd65f56aed41d80e32a82a37f5631d62ff8d8733a4a99af5c.png" />
 </div>
 </div>
 </section>
@@ -1243,7 +1077,8 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1265,9 +1100,9 @@ Electric Field Covariance Shape: (188, 29, 3, 3)
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-field">Electric Field</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Magnetic Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Geodetic Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Magnitude and Direction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Magnetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Geodetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Magnitude and Direction</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-magnetic-to-geodetic">Convert Magnetic to Geodetic</a></li>
@@ -1321,8 +1156,8 @@ By Leslie Lamarche, Lara Kamal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

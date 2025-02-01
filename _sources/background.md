@@ -22,3 +22,5 @@ Advanced Modular Incoherent Scatter Radars (AMISR) are a special category of ISR
 The following figure shows how AMISR can volumetrically image structures in 3D in a single scan with a high number of beams.
 
 ![amisr_3D](images/amisr_3D.png)
+
+There are presently 3 full AMISR arrays.  The Poker Flat Incoherent Scatter Radar (PFISR) is located on the [Poker Flat Rocket Range (PFRR)](https://www.pfrr.alaska.edu/content/welcome-poker-flat) in interior Alaska {cite}`Nicolls2007`.  The Resolute Bay Observatory in Nunavut, Canada hosts the Resolute Bay Incoherent Scatter Radar North (RISR-N) {cite}`Bahcivan2010` and the Resolute Bay Incoherent Scatter Radar Canada (RISR-C) {cite}`Gillies2016`.

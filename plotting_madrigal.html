@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -64,6 +67,7 @@
     <link rel="prev" title="Common Data Fields" href="common_data_madrigal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +83,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -99,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +99,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +116,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,15 +147,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -199,6 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector_velocity_example_madrigal.html">Resolved Vector Velocities</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
     </div>
@@ -207,9 +197,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -402,24 +397,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -466,11 +453,11 @@ document.write(`
 <p>The following examples show how to create some common visualizations of Madrigal data. Due to the 4D nature of the data, it is challenging to visualize all parts of the FoV simultaneously.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">madrigalWeb.madrigalWeb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">madrigalWeb.madrigalWeb</span>
 </pre></div>
 </div>
 </div>
@@ -499,9 +486,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id: 100278619
-realUrl: http://cedar.openmadrigal.org/showExperiment/?experiment_list=100278619
-url: http://cedar.openmadrigal.org/madtoc/experiments4/2024/pfa/08jan24a
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id: 100011616
+realUrl: https://cedar.openmadrigal.org/showExperiment/?experiment_list=100011616
+url: https://cedar.openmadrigal.org/madtoc/experiments4/2024/pfa/08jan24a
 name: Themis36 - Auroral and convection measurements
 siteid: 10
 sitename: CEDAR
@@ -520,12 +507,12 @@ endhour: 18
 endmin: 0
 endsec: 0
 isLocal: True
-madrigalUrl: http://cedar.openmadrigal.org/
+madrigalUrl: http://https://cedar.openmadrigal.org/
 PI: Asti Bhatt
 PIEmail: asti.bhatt@sri.com
-uttimestamp: 1709109883
+uttimestamp: 1735095302
 access: 2
-Madrigal version: 3.2
+Madrigal version: 3.0
 </pre></div>
 </div>
 </div>
@@ -539,33 +526,33 @@ Madrigal version: 3.2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pfa20240108.001_ac_nenotr_01min.001.h5 	 1000201 	 Ne From Power - Alternating Code (E-region) - 1 min
-pfa20240108.001_ac_fit_01min.001.h5 	 2000201 	 Fitted - Alternating Code (E-region) - 1 min
-pfa20240108.001_ac_nenotr_03min.001.h5 	 1000203 	 Ne From Power - Alternating Code (E-region) - 3 min
-pfa20240108.001_ac_fit_03min.001.h5 	 2000203 	 Fitted - Alternating Code (E-region) - 3 min
-pfa20240108.001_ac_nenotr_05min.001.h5 	 1000205 	 Ne From Power - Alternating Code (E-region) - 5 min
-pfa20240108.001_ac_fit_05min.001.h5 	 2000205 	 Fitted - Alternating Code (E-region) - 5 min
-pfa20240108.001_ac_nenotr_10min.001.h5 	 1000210 	 Ne From Power - Alternating Code (E-region) - 10 min
-pfa20240108.001_ac_fit_10min.001.h5 	 2000210 	 Fitted - Alternating Code (E-region) - 10 min
-pfa20240108.001_ac_nenotr_15min.001.h5 	 1000215 	 Ne From Power - Alternating Code (E-region) - 15 min
-pfa20240108.001_ac_fit_15min.001.h5 	 2000215 	 Fitted - Alternating Code (E-region) - 15 min
-pfa20240108.001_ac_nenotr_20min.001.h5 	 1000220 	 Ne From Power - Alternating Code (E-region) - 20 min
-pfa20240108.001_ac_fit_20min.001.h5 	 2000220 	 Fitted - Alternating Code (E-region) - 20 min
-pfa20240108.001_lp_nenotr_01min.001.h5 	 1000101 	 Ne From Power - Long Pulse (F-region) - 1 min
-pfa20240108.001_lp_fit_01min.001.h5 	 2000101 	 Fitted - Long Pulse (F-region) - 1 min
-pfa20240108.001_lp_nenotr_03min.001.h5 	 1000103 	 Ne From Power - Long Pulse (F-region) - 3 min
-pfa20240108.001_lp_fit_03min.001.h5 	 2000103 	 Fitted - Long Pulse (F-region) - 3 min
-pfa20240108.001_lp_nenotr_05min.001.h5 	 1000105 	 Ne From Power - Long Pulse (F-region) - 5 min
-pfa20240108.001_lp_fit_05min.001.h5 	 2000105 	 Fitted - Long Pulse (F-region) - 5 min
-pfa20240108.001_lp_nenotr_10min.001.h5 	 1000110 	 Ne From Power - Long Pulse (F-region) - 10 min
-pfa20240108.001_lp_fit_10min.001.h5 	 2000110 	 Fitted - Long Pulse (F-region) - 10 min
-pfa20240108.001_lp_nenotr_15min.001.h5 	 1000115 	 Ne From Power - Long Pulse (F-region) - 15 min
-pfa20240108.001_lp_fit_15min.001.h5 	 2000115 	 Fitted - Long Pulse (F-region) - 15 min
-pfa20240108.001_lp_nenotr_20min.001.h5 	 1000120 	 Ne From Power - Long Pulse (F-region) - 20 min
-pfa20240108.001_lp_fit_20min.001.h5 	 2000120 	 Fitted - Long Pulse (F-region) - 20 min
-pfa20240108.001_lp_vvels_01min.001.h5 	 3000101 	 Resolved Velocity - Long Pulse (F-region) - 1 min
-pfa20240108.001_lp_vvels_03min.001.h5 	 3000103 	 Resolved Velocity - Long Pulse (F-region) - 3 min
-pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse (F-region) - 5 min
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pfa20240108.001_ac_nenotr_01min.001.h5 	 1000201 	 None
+pfa20240108.001_ac_fit_01min.001.h5 	 2000201 	 None
+pfa20240108.001_ac_nenotr_03min.001.h5 	 1000203 	 None
+pfa20240108.001_ac_fit_03min.001.h5 	 2000203 	 None
+pfa20240108.001_ac_nenotr_05min.001.h5 	 1000205 	 None
+pfa20240108.001_ac_fit_05min.001.h5 	 2000205 	 None
+pfa20240108.001_ac_nenotr_10min.001.h5 	 1000210 	 None
+pfa20240108.001_ac_fit_10min.001.h5 	 2000210 	 None
+pfa20240108.001_ac_nenotr_15min.001.h5 	 1000215 	 None
+pfa20240108.001_ac_fit_15min.001.h5 	 2000215 	 None
+pfa20240108.001_ac_nenotr_20min.001.h5 	 1000220 	 None
+pfa20240108.001_ac_fit_20min.001.h5 	 2000220 	 None
+pfa20240108.001_lp_nenotr_01min.001.h5 	 1000101 	 None
+pfa20240108.001_lp_fit_01min.001.h5 	 2000101 	 None
+pfa20240108.001_lp_nenotr_03min.001.h5 	 1000103 	 None
+pfa20240108.001_lp_fit_03min.001.h5 	 2000103 	 None
+pfa20240108.001_lp_nenotr_05min.001.h5 	 1000105 	 None
+pfa20240108.001_lp_fit_05min.001.h5 	 2000105 	 None
+pfa20240108.001_lp_nenotr_10min.001.h5 	 1000110 	 None
+pfa20240108.001_lp_fit_10min.001.h5 	 2000110 	 None
+pfa20240108.001_lp_nenotr_15min.001.h5 	 1000115 	 None
+pfa20240108.001_lp_fit_15min.001.h5 	 2000115 	 None
+pfa20240108.001_lp_nenotr_20min.001.h5 	 1000120 	 None
+pfa20240108.001_lp_fit_20min.001.h5 	 2000120 	 None
+pfa20240108.001_lp_vvels_01min.001.h5 	 3000101 	 None
+pfa20240108.001_lp_vvels_03min.001.h5 	 3000103 	 None
+pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 None
 </pre></div>
 </div>
 </div>
@@ -597,7 +584,20 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File data/pfa20240108.001_lp_fit_01min.001.h5  already downloaded
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data file...
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>             <span class="k">break</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">file2download</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">16</span>                                <span class="n">user_fullname</span><span class="p">,</span> <span class="n">user_email</span><span class="p">,</span> <span class="n">user_affiliation</span><span class="p">,</span><span class="s1">&#39;hdf5&#39;</span><span class="p">)</span>    
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">NameError</span>: name &#39;file2download&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -622,10 +622,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fd9074b49a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7faa09a5bbe0&gt;
 </pre></div>
 </div>
-<img alt="_images/7fd04fa9c9aaaf40811c0e5d060ddae76080281e3c67a60462c4eb2f9d10561c.png" src="_images/7fd04fa9c9aaaf40811c0e5d060ddae76080281e3c67a60462c4eb2f9d10561c.png" />
+<img alt="_images/83671ec3c9a6360d7c8a62ceb8b7ee87f40dc09b418ab9501b8f6ea72e2d30d9.png" src="_images/83671ec3c9a6360d7c8a62ceb8b7ee87f40dc09b418ab9501b8f6ea72e2d30d9.png" />
 </div>
 </div>
 </section>
@@ -652,10 +652,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd90a0075b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7faa08076d90&gt;
 </pre></div>
 </div>
-<img alt="_images/79710000007de581ca9db8e1ba6e8fa6bea721064d5ef098e705ea40cb9f2bbe.png" src="_images/79710000007de581ca9db8e1ba6e8fa6bea721064d5ef098e705ea40cb9f2bbe.png" />
+<img alt="_images/d350f0703345e965efe68c6a1fbda74dfdff9ac1f2c4207cea3d04404da13806.png" src="_images/d350f0703345e965efe68c6a1fbda74dfdff9ac1f2c4207cea3d04404da13806.png" />
 </div>
 </div>
 </section>
@@ -689,10 +689,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd907d9f310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7faa03e9ffd0&gt;
 </pre></div>
 </div>
-<img alt="_images/b82b01a28e01cd2ae7b3f41d662af9eebb88218b743bbfde5ea638a9822cfc77.png" src="_images/b82b01a28e01cd2ae7b3f41d662af9eebb88218b743bbfde5ea638a9822cfc77.png" />
+<img alt="_images/67b90a19b8abfafe9eb1f1ba90d8bfa857e3bccb677ec9e4c9757079309c5e65.png" src="_images/67b90a19b8abfafe9eb1f1ba90d8bfa857e3bccb677ec9e4c9757079309c5e65.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -733,10 +733,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd907cfa410&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7faa03d8fdf0&gt;
 </pre></div>
 </div>
-<img alt="_images/276b5a9f42cb7023531ec9f97d0dca4c2174524b158e871208b16a3f077c0218.png" src="_images/276b5a9f42cb7023531ec9f97d0dca4c2174524b158e871208b16a3f077c0218.png" />
+<img alt="_images/9c1c2e069f794ac0ac82864df1fde6f5d613fb3117850a2aa6e43ba66195b6a0.png" src="_images/9c1c2e069f794ac0ac82864df1fde6f5d613fb3117850a2aa6e43ba66195b6a0.png" />
 </div>
 </div>
 </section>
@@ -770,10 +770,10 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd907ba6e00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faa03cfd790&gt;
 </pre></div>
 </div>
-<img alt="_images/d14c421f585d24af98371c81eac4b0e7043a79f64539c16250618ee274bd5c14.png" src="_images/d14c421f585d24af98371c81eac4b0e7043a79f64539c16250618ee274bd5c14.png" />
+<img alt="_images/18b60ea0531685047de5ccbf1991a3ba4dfa0a46107bba9c9e95d284c609a838.png" src="_images/18b60ea0531685047de5ccbf1991a3ba4dfa0a46107bba9c9e95d284c609a838.png" />
 </div>
 </div>
 </section>
@@ -834,7 +834,8 @@ pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 Resolved Velocity - Long Pulse
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -898,8 +899,8 @@ By Leslie Lamarche, Lara Kamal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
