@@ -19,6 +19,11 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+  
+# Use author-year citation style
+sphinx:
+  config:
+    bibtex_reference_style: author_year
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
