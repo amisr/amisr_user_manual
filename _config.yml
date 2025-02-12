@@ -19,7 +19,7 @@ latex:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - references.bib
+  - src/references.bib
   
 # Use author-year citation style
 sphinx:

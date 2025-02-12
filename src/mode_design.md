@@ -45,3 +45,4 @@ Spatial Resolution &harr; Number of Beams
 Temporal Resolution &harr; Integration Period
 
 Most standard AMISR modes have been designed to balance these factors to collect data that is potentially useful for as many scientific studies as possible.  However, if you have interest in a specific phenomena or type of observation, you are encouraged to contact the PI about potentially designing a specialized mode or campaign. 
+
