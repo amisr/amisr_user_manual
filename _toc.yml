@@ -18,6 +18,7 @@ chapters:
       sections:
       - file: src/sri_database/specialized_parameters/ion_comp
       - file: src/sri_database/specialized_parameters/ne_notr
+      - file: src/sri_database/specialized_parameters/plasma_characteristics
 - file: src/madrigal_database/navigate_database_madrigal
   sections:
     - file: src/madrigal_database/madrigal_remote_access
