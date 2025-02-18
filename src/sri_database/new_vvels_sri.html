@@ -492,7 +492,7 @@
 </div>
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<p>The resolved vector velocity data product (informally known as “vvels”) is derived from the standard AMISR processed parameters.  By assuming some degree of uniform flow across the FoV, it is possible to combine LoS velocity measurements from different beams to invert a full 3D velocity vector.  This technique is described in detail in <span id="id1">[<a class="reference internal" href="../references.html#id4" title="C. J. Heinselman and M. J. Nicolls. A Bayesian approach to electric field and E-region neutral wind estimation with the Poker Flat Advanced Modular Incoherent Scatter Radar. Radio Sci., 2008. doi:10.1029/2007RS003805.">Heinselman and Nicolls, 2008</a>]</span>.</p>
+<p>The resolved vector velocity data product (informally known as “vvels”) is derived from the standard AMISR processed parameters.  By assuming some degree of uniform flow across the FoV, it is possible to combine LoS velocity measurements from different beams to invert a full 3D velocity vector.  This technique is described in detail in <span id="id1">[<a class="reference internal" href="../references.html#id4" title="C. J. Heinselman and M. J. Nicolls. A Bayesian approach to electric field and E-region neutral wind estimation with the Poker Flat Advanced Modular Incoherent Scatter Radar. Radio Sci., 2008. doi:10.1029/2007RS003805.">Heinselman and Nicolls, 2008</a>]</span> and the repository for the code to perform this inversion is available at <a class="github reference external" href="https://github.com/amisr/resolvedvelocities">amisr/resolvedvelocities</a>.</p>
 <section id="magnetic-field-mapping">
 <h3>Magnetic Field Mapping<a class="headerlink" href="#magnetic-field-mapping" title="Link to this heading">#</a></h3>
 <p>The resolved velocities algorithms assumes the plasma drift velocity maps along the magnetic field lines and is only valid in the regime where this holds true.  Under the electrostatic assumption (no parallel electric fields), the electric potential is constant along magnetic field lines and an electric field can be mapped to anywhere on that field line.  In the collisionless regime, the plasma velocity is the <span class="math notranslate nohighlight">\(E \times B\)</span> drift velocity and likewise maps along field lines.  This allows the resolved velocities to utilize LoS measurements from all F-region altitudes.</p>
@@ -706,7 +706,7 @@ VvelsMagCoords
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fba1d1849a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f6170628940&gt;
 </pre></div>
 </div>
 <img alt="../../_images/7db3335dcebca20d25c47bb03a930a13dd8ceef4e46d72556363d91d5570b268.png" src="../../_images/7db3335dcebca20d25c47bb03a930a13dd8ceef4e46d72556363d91d5570b268.png" />
@@ -826,7 +826,7 @@ VvelsMagCoords
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;Altitude&#39;, &#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;Edir&#39;, &#39;ElectricField&#39;, &#39;Emag&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Vdir&#39;, &#39;Velocity&#39;, &#39;Vmag&#39;, &#39;errEdir&#39;, &#39;errElectricField&#39;, &#39;errEmag&#39;, &#39;errVdir&#39;, &#39;errVelocity&#39;, &#39;errVmag&#39;]&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fba10412740&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f6165736740&gt;
 </pre></div>
 </div>
 <img alt="../../_images/362b3c712f9df20ff984b444a7d2731d71cbb91dd26ac43c8f255bdeb0dd13ca.png" src="../../_images/362b3c712f9df20ff984b444a7d2731d71cbb91dd26ac43c8f255bdeb0dd13ca.png" />
