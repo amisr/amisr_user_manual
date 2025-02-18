@@ -9,7 +9,8 @@ author: Leslie Lamarche, Lara Kamal
 execute:
   execute_notebooks: force
 
-exclude_patterns: [future_material/*, tbd/*, README.md]
+#exclude_patterns: [src/future_material/*, tbd/*, README.md]
+exclude_patterns: [src/future_materials/*, tbd/*, README.md]
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -18,7 +19,7 @@ latex:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - references.bib
+  - src/references.bib
   
 # Use author-year citation style
 sphinx:
