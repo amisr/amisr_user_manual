@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Common Plots &#8212; AMISR User Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/madrigal_database/plotting_madrigal';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Errors and Data Filtering" href="errors_madrigal.html" />
+    <link rel="prev" title="Common Data Fields" href="common_data_madrigal.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AMISR User Manual</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    AMISR User Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mode_design.html">Basics of Mode Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sri_database/navigate_database_sri.html">SRI Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/common_data_sri.html">Common Data Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/plotting_sri.html">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/errors_sri.html">Errors and Data Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/advanced_plotting_sri.html">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/vector_velocities_example_sri.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/new_vvels_sri.html">Resolved Vector Velocities - “New” Version</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../sri_database/specialized_parameters/specialized_parameters_intro.html">Specialized Parameters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sri_database/specialized_parameters/ion_comp.html">Ion Composition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sri_database/specialized_parameters/ne_notr.html">Ne From Power</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="madrigal_remote_access.html">Remote Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_data_madrigal.html">Common Data Fields</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors_madrigal.html">Errors and Data Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_plotting_madrigal.html">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector_velocity_example_madrigal.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_vvels_madrigal.html">Resolved Vector Velocities</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/amisr/amisr_user_manual/main?urlpath=lab/tree/src/madrigal_database/plotting_madrigal.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/amisr/amisr_user_manual/blob/main/src/madrigal_database/plotting_madrigal.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/amisr/amisr_user_manual" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/amisr/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fsrc/madrigal_database/plotting_madrigal.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/madrigal_database/plotting_madrigal.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Common Plots</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rti-plot">RTI Plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-most-basic">The Most Basic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-scientifically-useful-plot">A Scientifically Useful Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-a-specific-beam">Plotting a Specific Beam</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-position-plot">Beam Position Plot</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="common-plots">
+<h1>Common Plots<a class="headerlink" href="#common-plots" title="Link to this heading">#</a></h1>
+<p>The following examples show how to create some common visualizations of Madrigal data. Due to the 4D nature of the data, it is challenging to visualize all parts of the FoV simultaneously.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">madrigalWeb.madrigalWeb</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">madrigalUrl</span><span class="o">=</span><span class="s1">&#39;http://cedar.openmadrigal.org&#39;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">madrigalWeb</span><span class="o">.</span><span class="n">madrigalWeb</span><span class="o">.</span><span class="n">MadrigalData</span><span class="p">(</span><span class="n">madrigalUrl</span><span class="p">)</span>
+
+<span class="n">user_fullname</span> <span class="o">=</span> <span class="s1">&#39;Student Example&#39;</span> 
+<span class="n">user_email</span> <span class="o">=</span> <span class="s1">&#39;isr.summer.school@gmail.com&#39;</span> 
+<span class="n">user_affiliation</span><span class="o">=</span> <span class="s1">&#39;ISR Summer School 2024&#39;</span>
+<span class="n">code</span> <span class="o">=</span> <span class="mi">61</span>   <span class="c1"># PFISR</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2024</span>
+<span class="n">month</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">hour1</span> <span class="o">=</span> <span class="mi">7</span> 
+<span class="n">minute1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hour2</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="c1"># list of experiments inside a time period of a day</span>
+<span class="n">expList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperiments</span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour1</span><span class="p">,</span><span class="n">minute1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">exp</span> <span class="ow">in</span> <span class="n">expList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/madrigalWeb/madrigalWeb.py:312,</span> in <span class="ni">MadrigalData.getExperiments</span><span class="nt">(self, code, startyear, startmonth, startday, starthour, startmin, startsec, endyear, endmonth, endday, endhour, endmin, endsec, local)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">312</span>     <span class="n">mainUrl</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">TIMEOUT2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span> <span class="k">except</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:216,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">216</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:525,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">525</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:634,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">634</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">637</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:557,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span> <span class="o">+</span> <span class="n">args</span>
+<span class="ne">--&gt; </span><span class="mi">557</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span> <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:496,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span> <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">496</span> <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span> <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:749,</span> in <span class="ni">HTTPRedirectHandler.http_error_302</span><span class="nt">(self, req, fp, code, msg, headers)</span>
+<span class="g g-Whitespace">    </span><span class="mi">747</span> <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">749</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">new</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:519,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span> <span class="n">sys</span><span class="o">.</span><span class="n">audit</span><span class="p">(</span><span class="s1">&#39;urllib.Request&#39;</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">())</span>
+<span class="ne">--&gt; </span><span class="mi">519</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="c1"># post-process response</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:536,</span> in <span class="ni">OpenerDirector._open</span><span class="nt">(self, req, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="n">protocol</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">type</span>
+<span class="ne">--&gt; </span><span class="mi">536</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_open</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">protocol</span> <span class="o">+</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span>                           <span class="s1">&#39;_open&#39;</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:496,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span> <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">496</span> <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span> <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:1391,</span> in <span class="ni">HTTPSHandler.https_open</span><span class="nt">(self, req)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1390</span> <span class="k">def</span><span class="w"> </span><span class="nf">https_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1391</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_open</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1392</span>         <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">check_hostname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_check_hostname</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/urllib/request.py:1352,</span> in <span class="ni">AbstractHTTPHandler.do_open</span><span class="nt">(self, http_class, req, **http_conn_args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1351</span>         <span class="k">raise</span> <span class="n">URLError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1352</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1353</span> <span class="k">except</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/http/client.py:1375,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1375</span>     <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span> <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/http/client.py:318,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">318</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/http/client.py:279,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="k">def</span><span class="w"> </span><span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">279</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/socket.py:717,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">717</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span> <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/ssl.py:1307,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1304</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1305</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1306</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1307</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1308</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/ssl.py:1163,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1162</span> <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1163</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1164</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">hour2</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># list of experiments inside a time period of a day</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">expList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperiments</span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour1</span><span class="p">,</span><span class="n">minute1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="k">for</span> <span class="n">exp</span> <span class="ow">in</span> <span class="n">expList</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+
+<span class="nn">File /usr/share/miniconda/envs/buildjupyterbook/lib/python3.10/site-packages/madrigalWeb/madrigalWeb.py:314,</span> in <span class="ni">MadrigalData.getExperiments</span><span class="nt">(self, code, startyear, startmonth, startday, starthour, startmin, startsec, endyear, endmonth, endday, endhour, endmin, endsec, local)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span>     <span class="n">mainUrl</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">TIMEOUT2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span> <span class="k">except</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">314</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unable to open url &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="n">page</span> <span class="o">=</span> <span class="n">mainUrl</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span> <span class="n">page</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: unable to open url http://cedar.openmadrigal.org/getExperimentsService.py?code=61&amp;startyear=2024&amp;startmonth=1&amp;startday=8&amp;starthour=7&amp;startmin=1&amp;startsec=0&amp;endyear=2024&amp;endmonth=1&amp;endday=8&amp;endhour=13&amp;endmin=0&amp;endsec=0&amp;local=1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fileList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperimentFiles</span><span class="p">(</span><span class="n">expList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">file0</span> <span class="ow">in</span> <span class="n">fileList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file0</span><span class="o">.</span><span class="n">name</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file0</span><span class="o">.</span><span class="n">kindat</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">file0</span><span class="o">.</span><span class="n">kindatdesc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pfa20240108.001_ac_nenotr_01min.001.h5 	 1000201 	 None
+pfa20240108.001_ac_fit_01min.001.h5 	 2000201 	 None
+pfa20240108.001_ac_nenotr_03min.001.h5 	 1000203 	 None
+pfa20240108.001_ac_fit_03min.001.h5 	 2000203 	 None
+pfa20240108.001_ac_nenotr_05min.001.h5 	 1000205 	 None
+pfa20240108.001_ac_fit_05min.001.h5 	 2000205 	 None
+pfa20240108.001_ac_nenotr_10min.001.h5 	 1000210 	 None
+pfa20240108.001_ac_fit_10min.001.h5 	 2000210 	 None
+pfa20240108.001_ac_nenotr_15min.001.h5 	 1000215 	 None
+pfa20240108.001_ac_fit_15min.001.h5 	 2000215 	 None
+pfa20240108.001_ac_nenotr_20min.001.h5 	 1000220 	 None
+pfa20240108.001_ac_fit_20min.001.h5 	 2000220 	 None
+pfa20240108.001_lp_nenotr_01min.001.h5 	 1000101 	 None
+pfa20240108.001_lp_fit_01min.001.h5 	 2000101 	 None
+pfa20240108.001_lp_nenotr_03min.001.h5 	 1000103 	 None
+pfa20240108.001_lp_fit_03min.001.h5 	 2000103 	 None
+pfa20240108.001_lp_nenotr_05min.001.h5 	 1000105 	 None
+pfa20240108.001_lp_fit_05min.001.h5 	 2000105 	 None
+pfa20240108.001_lp_nenotr_10min.001.h5 	 1000110 	 None
+pfa20240108.001_lp_fit_10min.001.h5 	 2000110 	 None
+pfa20240108.001_lp_nenotr_15min.001.h5 	 1000115 	 None
+pfa20240108.001_lp_fit_15min.001.h5 	 2000115 	 None
+pfa20240108.001_lp_nenotr_20min.001.h5 	 1000120 	 None
+pfa20240108.001_lp_fit_20min.001.h5 	 2000120 	 None
+pfa20240108.001_lp_vvels_01min.001.h5 	 3000101 	 None
+pfa20240108.001_lp_vvels_03min.001.h5 	 3000103 	 None
+pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the file that we need to run these examples</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">filepath</span><span class="o">=</span> <span class="s1">&#39;../data/pfa20240108.001_lp_fit_01min.001.h5 &#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+
+    <span class="n">fileList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperimentFiles</span><span class="p">(</span><span class="n">expList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">file0</span> <span class="ow">in</span> <span class="n">fileList</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file0</span><span class="o">.</span><span class="n">kindatdesc</span> <span class="o">==</span> <span class="s1">&#39;Fitted - Long Pulse (F-region) - 1 min&#39;</span><span class="p">:</span>
+            <span class="n">file2download</span> <span class="o">=</span> <span class="n">file0</span><span class="o">.</span><span class="n">name</span>
+            <span class="k">break</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+
+    <span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">file2download</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> 
+                               <span class="n">user_fullname</span><span class="p">,</span> <span class="n">user_email</span><span class="p">,</span> <span class="n">user_affiliation</span><span class="p">,</span><span class="s1">&#39;hdf5&#39;</span><span class="p">)</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2"> already downloaded&quot;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+Downloading data file...
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="k">break</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">16</span>     <span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">file2download</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span>                                <span class="n">user_fullname</span><span class="p">,</span> <span class="n">user_email</span><span class="p">,</span> <span class="n">user_affiliation</span><span class="p">,</span><span class="s1">&#39;hdf5&#39;</span><span class="p">)</span>    
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">NameError</span>: name &#39;file2download&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<section id="rti-plot">
+<h2>RTI Plot<a class="headerlink" href="#rti-plot" title="Link to this heading">#</a></h2>
+<p>Range-Time-Intensity (RTI) plots are a common way to look at how profiles of a parameter change in time.</p>
+<section id="the-most-basic">
+<h3>The Most Basic<a class="headerlink" href="#the-most-basic" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">bidx</span> <span class="o">=</span> <span class="s1">&#39;Array with beamid=63149 &#39;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ne&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;timestamps&#39;</span><span class="p">])</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)],</span> <span class="n">ne</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">bidx</span> <span class="o">=</span> <span class="s1">&#39;Array with beamid=63149 &#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
+
+<span class="nn">File ~/miniconda3/envs/py312/lib/python3.12/site-packages/h5py/_hl/files.py:562,</span> in <span class="ni">File.__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, fs_strategy, fs_persist, fs_threshold, fs_page_size, page_buf_size, min_meta_keep, min_raw_keep, locking, alignment_threshold, alignment_interval, meta_block_size, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span>     <span class="n">fapl</span> <span class="o">=</span> <span class="n">make_fapl</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">libver</span><span class="p">,</span> <span class="n">rdcc_nslots</span><span class="p">,</span> <span class="n">rdcc_nbytes</span><span class="p">,</span> <span class="n">rdcc_w0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span>                      <span class="n">locking</span><span class="p">,</span> <span class="n">page_buf_size</span><span class="p">,</span> <span class="n">min_meta_keep</span><span class="p">,</span> <span class="n">min_raw_keep</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span>                      <span class="n">alignment_threshold</span><span class="o">=</span><span class="n">alignment_threshold</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>                      <span class="n">alignment_interval</span><span class="o">=</span><span class="n">alignment_interval</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>                      <span class="n">meta_block_size</span><span class="o">=</span><span class="n">meta_block_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span>                      <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span>     <span class="n">fcpl</span> <span class="o">=</span> <span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">,</span> <span class="n">fs_strategy</span><span class="o">=</span><span class="n">fs_strategy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">560</span>                      <span class="n">fs_persist</span><span class="o">=</span><span class="n">fs_persist</span><span class="p">,</span> <span class="n">fs_threshold</span><span class="o">=</span><span class="n">fs_threshold</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span>                      <span class="n">fs_page_size</span><span class="o">=</span><span class="n">fs_page_size</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">562</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">make_fid</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">userblock_size</span><span class="p">,</span> <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="p">,</span> <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">libver</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_libver</span> <span class="o">=</span> <span class="n">libver</span>
+
+<span class="nn">File ~/miniconda3/envs/py312/lib/python3.12/site-packages/h5py/_hl/files.py:235,</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="k">if</span> <span class="n">swmr</span> <span class="ow">and</span> <span class="n">swmr_support</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span>         <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
+<span class="ne">--&gt; </span><span class="mi">235</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_RDWR</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+
+<span class="nn">File h5py/_objects.pyx:54,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">File h5py/_objects.pyx:55,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">File h5py/h5f.pyx:102,</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] Unable to synchronously open file (unable to open file: name = &#39;../data/pfa20240108.001_lp_fit_01min.001.h5 &#39;, errno = 2, error message = &#39;No such file or directory&#39;, flags = 0, o_flags = 0)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-scientifically-useful-plot">
+<h3>A Scientifically Useful Plot<a class="headerlink" href="#a-scientifically-useful-plot" title="Link to this heading">#</a></h3>
+<p>Now lets create the same plot as before but with intelligible axes and labels, a colorbar, ect.  This is probably the minimum you want to do for inclusion in a paper or presentation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">bidx</span> <span class="o">=</span> <span class="s1">&#39;Array with beamid=63149 &#39;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ne&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;timestamps&#39;</span><span class="p">])</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)],</span> <span class="n">ne</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Slant Range (m)&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Electron Density (m$^{-3}$)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7faa08076d90&gt;
+</pre></div>
+</div>
+<img alt="../../_images/d350f0703345e965efe68c6a1fbda74dfdff9ac1f2c4207cea3d04404da13806.png" src="../../_images/d350f0703345e965efe68c6a1fbda74dfdff9ac1f2c4207cea3d04404da13806.png" />
+</div>
+</div>
+</section>
+<section id="plotting-a-specific-beam">
+<h3>Plotting a Specific Beam<a class="headerlink" href="#plotting-a-specific-beam" title="Link to this heading">#</a></h3>
+<p>Plot a specific beam by selecting the beam index (<code class="docutils literal notranslate"><span class="pre">bidx</span></code>) more carefully.  You can either select a particular beam by its beamcode, or choose a beam based on proximity to a particular azimuth/elevation (i.e., choose the highest elevation beam in the beam pattern).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot beam 64157</span>
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">beamcodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">])</span>
+    <span class="n">bidx</span> <span class="o">=</span> <span class="s1">&#39;Array with beamid=64157 &#39;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ne&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;timestamps&#39;</span><span class="p">])</span>
+    
+    <span class="n">azm</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;azm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">elm</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;elm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">beamid</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;beamid&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)],</span> <span class="n">ne</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rng</span><span class="p">)]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Slant Range (m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Beam Number: </span><span class="si">{:.0f}</span><span class="s1"> (az:</span><span class="si">{:.1f}</span><span class="s1">, el:</span><span class="si">{:.1f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">beamid</span><span class="p">,</span> <span class="n">azm</span><span class="p">,</span> <span class="n">elm</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Electron Density (m$^{-3}$)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7faa03e9ffd0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/67b90a19b8abfafe9eb1f1ba90d8bfa857e3bccb677ec9e4c9757079309c5e65.png" src="../../_images/67b90a19b8abfafe9eb1f1ba90d8bfa857e3bccb677ec9e4c9757079309c5e65.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the highest elevation beam (vertical in this case)</span>
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">elms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">bmid</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">elms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;elm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">bmid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;beamid&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">elms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">elms</span><span class="p">)</span>
+    <span class="n">bmid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bmid</span><span class="p">)</span>
+    
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">elms</span><span class="p">)</span>
+    <span class="n">max_beam</span> <span class="o">=</span> <span class="n">bmid</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">bidx</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Array with beamid=</span><span class="si">{</span><span class="n">max_beam</span><span class="si">}</span><span class="s1"> &#39;</span>
+
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ne&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;timestamps&#39;</span><span class="p">])</span>
+
+    <span class="n">azm</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;azm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">elm</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;elm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">beamid</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">bidx</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;beamid&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">ne</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">4.e11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Slant Range (m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Beam Number: </span><span class="si">{:.0f}</span><span class="s1"> (az:</span><span class="si">{:.1f}</span><span class="s1">, el:</span><span class="si">{:.1f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">beamid</span><span class="p">,</span> <span class="n">azm</span><span class="p">,</span> <span class="n">elm</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Electron Density (m$^{-3}$)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7faa03d8fdf0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/9c1c2e069f794ac0ac82864df1fde6f5d613fb3117850a2aa6e43ba66195b6a0.png" src="../../_images/9c1c2e069f794ac0ac82864df1fde6f5d613fb3117850a2aa6e43ba66195b6a0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="beam-position-plot">
+<h2>Beam Position Plot<a class="headerlink" href="#beam-position-plot" title="Link to this heading">#</a></h2>
+<p>Create a polar plot of all beam positions for this particular experiment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">el</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">az</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">el</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;elm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">az</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;azm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">el</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+    <span class="n">az</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">az</span><span class="p">)</span>
+
+<span class="c1"># set up plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;polar&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_theta_direction</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_theta_offset</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_rlabel_position</span><span class="p">(</span><span class="mf">100.</span><span class="p">)</span>
+<span class="n">elticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">20.</span><span class="p">,</span> <span class="mf">90.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_rticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">elticks</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">el</span><span class="p">))</span><span class="o">+</span><span class="sa">u</span><span class="s1">&#39;</span><span class="se">\N{DEGREE SIGN}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">elticks</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">az</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">el</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faa03cfd790&gt;
+</pre></div>
+</div>
+<img alt="../../_images/18b60ea0531685047de5ccbf1991a3ba4dfa0a46107bba9c9e95d284c609a838.png" src="../../_images/18b60ea0531685047de5ccbf1991a3ba4dfa0a46107bba9c9e95d284c609a838.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/madrigal_database"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="common_data_madrigal.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Common Data Fields</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="errors_madrigal.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Errors and Data Filtering</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rti-plot">RTI Plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-most-basic">The Most Basic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-scientifically-useful-plot">A Scientifically Useful Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-a-specific-beam">Plotting a Specific Beam</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-position-plot">Beam Position Plot</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leslie Lamarche, Lara Kamal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

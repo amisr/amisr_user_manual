@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Common Data Fields &#8212; AMISR User Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/madrigal_database/common_data_madrigal';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Common Plots" href="plotting_madrigal.html" />
+    <link rel="prev" title="Remote Access" href="madrigal_remote_access.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AMISR User Manual</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    AMISR User Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mode_design.html">Basics of Mode Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sri_database/navigate_database_sri.html">SRI Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/common_data_sri.html">Common Data Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/plotting_sri.html">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/errors_sri.html">Errors and Data Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/advanced_plotting_sri.html">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/vector_velocities_example_sri.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sri_database/new_vvels_sri.html">Resolved Vector Velocities - “New” Version</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../sri_database/specialized_parameters/specialized_parameters_intro.html">Specialized Parameters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sri_database/specialized_parameters/ion_comp.html">Ion Composition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sri_database/specialized_parameters/ne_notr.html">Ne From Power</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database_madrigal.html">Madrigal Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="madrigal_remote_access.html">Remote Access</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Common Data Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting_madrigal.html">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors_madrigal.html">Errors and Data Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_plotting_madrigal.html">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector_velocity_example_madrigal.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_vvels_madrigal.html">Resolved Vector Velocities</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/amisr/amisr_user_manual/main?urlpath=lab/tree/src/madrigal_database/common_data_madrigal.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/amisr/amisr_user_manual/blob/main/src/madrigal_database/common_data_madrigal.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/amisr/amisr_user_manual" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/amisr/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fsrc/madrigal_database/common_data_madrigal.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/madrigal_database/common_data_madrigal.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Common Data Fields</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-density">Electron Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ion-temperature">Ion Temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-temperature">Electron Temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-sight-velocity">Line-of-Sight Velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time">Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-m">Range [m]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-position-deg">Geographic Position [deg]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#site-info">Site Info</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="common-data-fields">
+<h1>Common Data Fields<a class="headerlink" href="#common-data-fields" title="Link to this heading">#</a></h1>
+<p>This notebook will walk through how to access some of the more common data fields from the Madrigal hdf5 data files.  This should be treated as a quick reference for common scientific applications and is NOT intended to be a comprehensive map of everything in these files.  Refer to metadata contained within the files for descriptions of other arrays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">madrigalWeb.madrigalWeb</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">madrigalUrl</span><span class="o">=</span><span class="s1">&#39;http://cedar.openmadrigal.org&#39;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">madrigalWeb</span><span class="o">.</span><span class="n">madrigalWeb</span><span class="o">.</span><span class="n">MadrigalData</span><span class="p">(</span><span class="n">madrigalUrl</span><span class="p">)</span>
+
+<span class="n">user_fullname</span> <span class="o">=</span> <span class="s1">&#39;Student Example&#39;</span> 
+<span class="n">user_email</span> <span class="o">=</span> <span class="s1">&#39;isr.summer.school@gmail.com&#39;</span> 
+<span class="n">user_affiliation</span><span class="o">=</span> <span class="s1">&#39;ISR Summer School 2024&#39;</span>
+<span class="n">code</span> <span class="o">=</span> <span class="mi">61</span>   <span class="c1"># PFISR</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2024</span>
+<span class="n">month</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">hour1</span> <span class="o">=</span> <span class="mi">7</span> 
+<span class="n">minute1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hour2</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="c1"># list of experiments inside a time period of a day</span>
+<span class="n">expList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperiments</span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour1</span><span class="p">,</span><span class="n">minute1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">hour2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">exp</span> <span class="ow">in</span> <span class="n">expList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id: 100011616
+realUrl: https://cedar.openmadrigal.org/showExperiment/?experiment_list=100011616
+url: https://cedar.openmadrigal.org/madtoc/experiments4/2024/pfa/08jan24a
+name: Themis36 - Auroral and convection measurements
+siteid: 10
+sitename: CEDAR
+instcode: 61
+instname: Poker Flat IS Radar
+startyear: 2024
+startmonth: 1
+startday: 8
+starthour: 7
+startmin: 1
+startsec: 4
+endyear: 2024
+endmonth: 1
+endday: 8
+endhour: 18
+endmin: 0
+endsec: 0
+isLocal: True
+madrigalUrl: http://https://cedar.openmadrigal.org/
+PI: Asti Bhatt
+PIEmail: asti.bhatt@sri.com
+uttimestamp: 1735095302
+access: 2
+Madrigal version: 3.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fileList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperimentFiles</span><span class="p">(</span><span class="n">expList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">file0</span> <span class="ow">in</span> <span class="n">fileList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file0</span><span class="o">.</span><span class="n">name</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file0</span><span class="o">.</span><span class="n">kindat</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">file0</span><span class="o">.</span><span class="n">kindatdesc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pfa20240108.001_ac_nenotr_01min.001.h5 	 1000201 	 None
+pfa20240108.001_ac_fit_01min.001.h5 	 2000201 	 None
+pfa20240108.001_ac_nenotr_03min.001.h5 	 1000203 	 None
+pfa20240108.001_ac_fit_03min.001.h5 	 2000203 	 None
+pfa20240108.001_ac_nenotr_05min.001.h5 	 1000205 	 None
+pfa20240108.001_ac_fit_05min.001.h5 	 2000205 	 None
+pfa20240108.001_ac_nenotr_10min.001.h5 	 1000210 	 None
+pfa20240108.001_ac_fit_10min.001.h5 	 2000210 	 None
+pfa20240108.001_ac_nenotr_15min.001.h5 	 1000215 	 None
+pfa20240108.001_ac_fit_15min.001.h5 	 2000215 	 None
+pfa20240108.001_ac_nenotr_20min.001.h5 	 1000220 	 None
+pfa20240108.001_ac_fit_20min.001.h5 	 2000220 	 None
+pfa20240108.001_lp_nenotr_01min.001.h5 	 1000101 	 None
+pfa20240108.001_lp_fit_01min.001.h5 	 2000101 	 None
+pfa20240108.001_lp_nenotr_03min.001.h5 	 1000103 	 None
+pfa20240108.001_lp_fit_03min.001.h5 	 2000103 	 None
+pfa20240108.001_lp_nenotr_05min.001.h5 	 1000105 	 None
+pfa20240108.001_lp_fit_05min.001.h5 	 2000105 	 None
+pfa20240108.001_lp_nenotr_10min.001.h5 	 1000110 	 None
+pfa20240108.001_lp_fit_10min.001.h5 	 2000110 	 None
+pfa20240108.001_lp_nenotr_15min.001.h5 	 1000115 	 None
+pfa20240108.001_lp_fit_15min.001.h5 	 2000115 	 None
+pfa20240108.001_lp_nenotr_20min.001.h5 	 1000120 	 None
+pfa20240108.001_lp_fit_20min.001.h5 	 2000120 	 None
+pfa20240108.001_lp_vvels_01min.001.h5 	 3000101 	 None
+pfa20240108.001_lp_vvels_03min.001.h5 	 3000103 	 None
+pfa20240108.001_lp_vvels_05min.001.h5 	 3000105 	 None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the file that we need to run these examples</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">filepath</span><span class="o">=</span> <span class="s1">&#39;../data/pfa20240108.001_lp_fit_01min.001.h5 &#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+
+    <span class="n">fileList</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getExperimentFiles</span><span class="p">(</span><span class="n">expList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">file0</span> <span class="ow">in</span> <span class="n">fileList</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file0</span><span class="o">.</span><span class="n">kindatdesc</span> <span class="o">==</span> <span class="s1">&#39;Fitted - Long Pulse (F-region) - 1 min&#39;</span><span class="p">:</span>
+            <span class="n">file2download</span> <span class="o">=</span> <span class="n">file0</span><span class="o">.</span><span class="n">name</span>
+            <span class="k">break</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+
+    <span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">file2download</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> 
+                               <span class="n">user_fullname</span><span class="p">,</span> <span class="n">user_email</span><span class="p">,</span> <span class="n">user_affiliation</span><span class="p">,</span><span class="s1">&#39;hdf5&#39;</span><span class="p">)</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2"> already downloaded&quot;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data file...
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>             <span class="k">break</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="n">file</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="n">file2download</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">16</span>                                <span class="n">user_fullname</span><span class="p">,</span> <span class="n">user_email</span><span class="p">,</span> <span class="n">user_affiliation</span><span class="p">,</span><span class="s1">&#39;hdf5&#39;</span><span class="p">)</span>    
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">NameError</span>: name &#39;file2download&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h5</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">][</span><span class="s1">&#39;Array Layout&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Data&#39;, &#39;Metadata&#39;]
+
+[&#39;Array Layout&#39;, &#39;Table Layout&#39;]
+
+[&#39;Data Parameters&#39;, &#39;Experiment Notes&#39;, &#39;Experiment Parameters&#39;, &#39;Independent Spatial Parameters&#39;, &#39;Parameters Used to Split Array Data&#39;, &#39;_record_layout&#39;]
+
+[&#39;Array with beamid=63149 &#39;, &#39;Array with beamid=63197 &#39;, &#39;Array with beamid=63239 &#39;, &#39;Array with beamid=63281 &#39;, &#39;Array with beamid=63317 &#39;, &#39;Array with beamid=63365 &#39;, &#39;Array with beamid=63401 &#39;, &#39;Array with beamid=63449 &#39;, &#39;Array with beamid=64016 &#39;, &#39;Array with beamid=64031 &#39;, &#39;Array with beamid=64046 &#39;, &#39;Array with beamid=64067 &#39;, &#39;Array with beamid=64157 &#39;, &#39;Array with beamid=64163 &#39;, &#39;Array with beamid=64205 &#39;, &#39;Array with beamid=64232 &#39;, &#39;Array with beamid=64247 &#39;, &#39;Array with beamid=64475 &#39;, &#39;Array with beamid=64817 &#39;, &#39;Array with beamid=64973 &#39;, &#39;Array with beamid=65057 &#39;, &#39;Array with beamid=65282 &#39;, &#39;Array with beamid=65363 &#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata/Data Parameters&#39;</span><span class="p">]))):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata/Data Parameters&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata/Data Parameters&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Year (universal time) [y]
+1 Month (universal time) [m]
+2 Day (universal time) [d]
+3 Hour (universal time) [h]
+4 Minute (universal time) [m]
+5 Second (universal time) [s]
+6 Logical Record Number [N/A]
+7 Kind of data [N/A]
+8 Instrument Code [N/A]
+9 Unix seconds (1/1/1970) at start [s]
+10 Unix seconds (1/1/1970) at end [s]
+11 Mean azimuth angle (0=geog N;90=east) [deg]
+12 Elevation angle (0=horizontal;90=vert) [deg]
+13 Beam identifier [N/A]
+14 Peak power [kW]
+15 Average number of transmit AEUs used [N/A]
+16 Average number of receive AEUs used [N/A]
+17 Code baud count per pulse [N/A]
+18 Pulse length [s]
+19 Transmitted frequency [Hz]
+20 Received frequency [Hz]
+21 Range [km]
+22 Electron density (Ne) [m-3]
+23 Error in Electron density (Ne) [m-3]
+24 Ion temperature (Ti) [K]
+25 Error in Ion temperature (Ti) [K]
+26 Electron temperature (Te) [K]
+27 Error in Electron temperature (Te) [K]
+28 Line of sight ion velocity (pos = away) [ms-1]
+29 Error in Line of sight ion velocity (pos = away) [ms-1]
+30 Corrected Geomagnetic latitude [deg]
+31 Corrected Geomagnetic Longitude [deg]
+32 Composition - [O+]/Ne [N/A]
+33 Error in Composition - [O+]/Ne [N/A]
+34 Reduced-chi square of fit [N/A]
+35 Signal to noise ratio [N/A]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will mostly be dealing with the Array Layout, which is organized by beam.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">][</span><span class="s1">&#39;Array Layout&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Array with beamid=63149 &#39;, &#39;Array with beamid=63197 &#39;, &#39;Array with beamid=63239 &#39;, &#39;Array with beamid=63281 &#39;, &#39;Array with beamid=63317 &#39;, &#39;Array with beamid=63365 &#39;, &#39;Array with beamid=63401 &#39;, &#39;Array with beamid=63449 &#39;, &#39;Array with beamid=64016 &#39;, &#39;Array with beamid=64031 &#39;, &#39;Array with beamid=64046 &#39;, &#39;Array with beamid=64067 &#39;, &#39;Array with beamid=64157 &#39;, &#39;Array with beamid=64163 &#39;, &#39;Array with beamid=64205 &#39;, &#39;Array with beamid=64232 &#39;, &#39;Array with beamid=64247 &#39;, &#39;Array with beamid=64475 &#39;, &#39;Array with beamid=64817 &#39;, &#39;Array with beamid=64973 &#39;, &#39;Array with beamid=65057 &#39;, &#39;Array with beamid=65282 &#39;, &#39;Array with beamid=65363 &#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1D Parameters&#39;, &#39;2D Parameters&#39;, &#39;Layout Description&#39;, &#39;range&#39;, &#39;timestamps&#39;]
+
+[&#39;Data Parameters&#39;, &#39;cgm_lat&#39;, &#39;cgm_long&#39;, &#39;chisq&#39;, &#39;dne&#39;, &#39;dpo+&#39;, &#39;dte&#39;, &#39;dti&#39;, &#39;dvo&#39;, &#39;ne&#39;, &#39;po+&#39;, &#39;sn&#39;, &#39;te&#39;, &#39;ti&#39;, &#39;vo&#39;]
+
+[&#39;Data Parameters&#39;, &#39;azm&#39;, &#39;beamid&#39;, &#39;cbadl&#39;, &#39;elm&#39;, &#39;numrxaeu&#39;, &#39;numtxaeu&#39;, &#39;pl&#39;, &#39;power&#39;, &#39;rfreq&#39;, &#39;tfreq&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="electron-density">
+<h2>Electron Density<a class="headerlink" href="#electron-density" title="Link to this heading">#</a></h2>
+<p><strong>Units:</strong> m<span class="math notranslate nohighlight">\(^{-3}\)</span></p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
+<ul class="simple">
+<li><p>Nrecords: Number of time records</p></li>
+<li><p>Nbeams: Number of radar beams</p></li>
+<li><p>Nranges: Number of radar range gates</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">ne</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ne&#39;</span><span class="p">]))</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ne</span><span class="p">)</span>
+<span class="n">ne</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ion-temperature">
+<h2>Ion Temperature<a class="headerlink" href="#ion-temperature" title="Link to this heading">#</a></h2>
+<p><strong>Units:</strong> K</p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ti</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">ti</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;ti&#39;</span><span class="p">]))</span>
+    <span class="n">ti</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ti</span><span class="p">)</span>
+<span class="n">ti</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="electron-temperature">
+<h2>Electron Temperature<a class="headerlink" href="#electron-temperature" title="Link to this heading">#</a></h2>
+<p><strong>Units:</strong> K</p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">te</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">te</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;te&#39;</span><span class="p">]))</span>
+    <span class="n">te</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">te</span><span class="p">)</span>
+<span class="n">te</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="line-of-sight-velocity">
+<h2>Line-of-Sight Velocity<a class="headerlink" href="#line-of-sight-velocity" title="Link to this heading">#</a></h2>
+<p><strong>Units:</strong> m/s</p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">Vlos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">Vlos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;vo&#39;</span><span class="p">]))</span>
+    <span class="n">Vlos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Vlos</span><span class="p">)</span>
+<span class="n">Vlos</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="time">
+<h2>Time<a class="headerlink" href="#time" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Time</span></code> group lists timestamps in a variety of formats, but <code class="docutils literal notranslate"><span class="pre">UnixTime</span></code> (seconds from January 1, 1970) is often most convenient for programming purposes.</p>
+<p><strong>Dimensions:</strong> Nbeams x Nrecords</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;timestamps&#39;</span><span class="p">]))</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 543)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="range-m">
+<h2>Range [m]<a class="headerlink" href="#range-m" title="Link to this heading">#</a></h2>
+<p><strong>Dimensions:</strong> Nranges</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="s1">&#39;Array with beamid=63149 &#39;</span><span class="p">][</span><span class="s1">&#39;range&#39;</span><span class="p">])</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(73,)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="geographic-position-deg">
+<h2>Geographic Position [deg]<a class="headerlink" href="#geographic-position-deg" title="Link to this heading">#</a></h2>
+<p>Corrected Geomagnetic Latitude and Corrected Geomagnetic Longitude.</p>
+<p><strong>Dimensions:</strong> Nbeams x Nranges x Nrecords</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">cgm_lat</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cgm_long</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">cgm_lat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;cgm_lat&#39;</span><span class="p">]))</span>
+        <span class="n">cgm_long</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;2D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;cgm_long&#39;</span><span class="p">]))</span>
+    <span class="n">cgm_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cgm_lat</span><span class="p">)</span>
+    <span class="n">cgm_long</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cgm_long</span><span class="p">)</span>
+    
+<span class="n">cgm_lat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23, 73, 543)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="beam-positions">
+<h2>Beam Positions<a class="headerlink" href="#beam-positions" title="Link to this heading">#</a></h2>
+<p>The beam azimuths and elevations are contained in the 1D Parameters array.</p>
+<p><strong>Dimensions:</strong> Nbeams</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">elm</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">azm</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">elm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;elm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">azm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Data/Array Layout&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;1D Parameters&#39;</span><span class="p">][</span><span class="s1">&#39;azm&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">elm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">elm</span><span class="p">)</span>
+    <span class="n">azm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">azm</span><span class="p">)</span>
+<span class="n">elm</span><span class="o">.</span><span class="n">shape</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(23,)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="site-info">
+<h2>Site Info<a class="headerlink" href="#site-info" title="Link to this heading">#</a></h2>
+<p>Various information about the radar site and its coordinates are contained within the Site group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">param</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Metadata&#39;</span><span class="p">][</span><span class="s1">&#39;Experiment Parameters&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Site Name:&#39;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Instrument Latitude:&#39;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Instrument Longitude:&#39;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Instrument Altitude:&#39;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Site Name: Poker Flat IS Radar
+Instrument Latitude: 65.13
+Instrument Longitude: 212.529
+Instrument Altitude: 0.215
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Close h5 object</span>
+<span class="n">h5</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/madrigal_database"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="madrigal_remote_access.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Remote Access</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="plotting_madrigal.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Common Plots</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-density">Electron Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ion-temperature">Ion Temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-temperature">Electron Temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-sight-velocity">Line-of-Sight Velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time">Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-m">Range [m]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-position-deg">Geographic Position [deg]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beam-positions">Beam Positions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#site-info">Site Info</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leslie Lamarche, Lara Kamal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

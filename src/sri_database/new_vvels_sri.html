@@ -1,0 +1,1166 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Resolved Vector Velocities - “New” Version &#8212; AMISR User Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/sri_database/new_vvels_sri';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Specialized Parameters" href="specialized_parameters/specialized_parameters_intro.html" />
+    <link rel="prev" title="Resolved Vector Velocities" href="vector_velocities_example_sri.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AMISR User Manual</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    AMISR User Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mode_design.html">Basics of Mode Design</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="navigate_database_sri.html">SRI Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="common_data_sri.html">Common Data Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting_sri.html">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors_sri.html">Errors and Data Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_plotting_sri.html">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector_velocities_example_sri.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Resolved Vector Velocities - “New” Version</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="specialized_parameters/specialized_parameters_intro.html">Specialized Parameters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="specialized_parameters/ion_comp.html">Ion Composition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specialized_parameters/ne_notr.html">Ne From Power</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../madrigal_database/navigate_database_madrigal.html">Madrigal Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../madrigal_database/madrigal_remote_access.html">Remote Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../madrigal_database/common_data_madrigal.html">Common Data Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../madrigal_database/plotting_madrigal.html">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../madrigal_database/errors_madrigal.html">Errors and Data Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../madrigal_database/advanced_plotting_madrigal.html">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../madrigal_database/vector_velocity_example_madrigal.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../madrigal_database/new_vvels_madrigal.html">Resolved Vector Velocities</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/amisr/amisr_user_manual/main?urlpath=lab/tree/src/sri_database/new_vvels_sri.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/amisr/amisr_user_manual/blob/main/src/sri_database/new_vvels_sri.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/amisr/amisr_user_manual" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/amisr/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fsrc/sri_database/new_vvels_sri.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/sri_database/new_vvels_sri.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Resolved Vector Velocities - “New” Version</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-field-mapping">Magnetic Field Mapping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apex-coordinates">Apex Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binning">Binning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolved-vector-velocity-data">Resolved Vector Velocity Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-components">Magnetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geodetic-components">Geodetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude-and-direction">Magnitude and Direction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-field">Electric Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Magnetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Geodetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Magnitude and Direction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-magnetic-to-geodetic">Convert Magnetic to Geodetic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-errors">Vector Errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-vectors-on-map">Plot Vectors on Map</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="resolved-vector-velocities-new-version">
+<h1>Resolved Vector Velocities - “New” Version<a class="headerlink" href="#resolved-vector-velocities-new-version" title="Link to this heading">#</a></h1>
+<p>This tutorial covers how to read in, plot, and work with the new output vector velocities data product.</p>
+<div class="admonition-wip admonition">
+<p class="admonition-title">WIP</p>
+<p>This page is currently a <strong>work in progress</strong>, meaning it likely has incomplete explanations and some non-functional code/links/ect.  Please be patient!</p>
+<p>If you think you can help, please consider <a class="reference external" href="https://github.com/ljlamarche/amisr_user_manual#contributing-material">contributing</a>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mdates</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">apexpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Apex</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pymap3d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>The resolved vector velocity data product (informally known as “vvels”) is derived from the standard AMISR processed parameters.  By assuming some degree of uniform flow across the FoV, it is possible to combine LoS velocity measurements from different beams to invert a full 3D velocity vector.  This technique is described in detail in <span id="id1">[<a class="reference internal" href="../references.html#id4" title="C. J. Heinselman and M. J. Nicolls. A Bayesian approach to electric field and E-region neutral wind estimation with the Poker Flat Advanced Modular Incoherent Scatter Radar. Radio Sci., 2008. doi:10.1029/2007RS003805.">Heinselman and Nicolls, 2008</a>]</span>.</p>
+<section id="magnetic-field-mapping">
+<h3>Magnetic Field Mapping<a class="headerlink" href="#magnetic-field-mapping" title="Link to this heading">#</a></h3>
+<p>The resolved velocities algorithms assumes the plasma drift velocity maps along the magnetic field lines and is only valid in the regime where this holds true.  Under the electrostatic assumption (no parallel electric fields), the electric potential is constant along magnetic field lines and an electric field can be mapped to anywhere on that field line.  In the collisionless regime, the plasma velocity is the <span class="math notranslate nohighlight">\(E \times B\)</span> drift velocity and likewise maps along field lines.  This allows the resolved velocities to utilize LoS measurements from all F-region altitudes.</p>
+</section>
+<section id="apex-coordinates">
+<h3>Apex Coordinates<a class="headerlink" href="#apex-coordinates" title="Link to this heading">#</a></h3>
+<p>The resolved velocities inversion algorithm could be implemented in any magnetic coordinate system. We choose to use the Modified Apex coordinate system <span id="id2">[<a class="reference internal" href="../references.html#id5" title="K. M. Laundal and A. D. Richmond. Magnetic coordinate systems. Space Sci. Rev., 206:27–59, 2017. doi:10.1007/s11214-016-0275-y.">Laundal and Richmond, 2017</a>, <a class="reference internal" href="../references.html#id7" title="A. D. Richmond. Ionospheric electrodynamics using magnetic apex coordinates. J. Geomag. Geoelectr., 47:191–212, 1995.">Richmond, 1995</a>]</span> for the following reasons:</p>
+<ul class="simple">
+<li><p>It is defined everywhere on the globe</p></li>
+<li><p>Apex base vectors are scaled in such a way that mapping the electric field and plasma drift velocity in the near-Earth environment is very convenient</p></li>
+<li><p>There is computationally efficient python package, <a class="reference external" href="https://apexpy.readthedocs.io/en/latest/index.html">apexpy</a>, for coordinate conversions that includes covariant and contravariant base vectors (nessicary for vector calculations)</p></li>
+</ul>
+<p>The apex covariant, <span class="math notranslate nohighlight">\(\mathbf{e}_i\)</span>, and contravariant, <span class="math notranslate nohighlight">\(\mathbf{d}_i\)</span>, base vectors are oriented such that <span class="math notranslate nohighlight">\(\mathbf{e}_3\)</span> and <span class="math notranslate nohighlight">\(\mathbf{d}_3\)</span> are in the direction of the magnetic field, <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf{d}_1\)</span> are roughly eastwards, and <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span> and <span class="math notranslate nohighlight">\(\mathbf{d}_2\)</span> complete the right-handed coordinate system (roughly southwards in the Northern Hemisphere at high latitudes).  The <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span>, <span class="math notranslate nohighlight">\(\mathbf{d}_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf{d}_1\)</span> base vectors are all perpendicular to the magnetic field.</p>
+<p>Base vectors are scaled such that the covariant components of the plasma drift velocity (<span class="math notranslate nohighlight">\(V_{e_1}\)</span> and <span class="math notranslate nohighlight">\(V_{e_2}\)</span>) and the corresponding contravarient components of the electric field (<span class="math notranslate nohighlight">\(E_{d_1}\)</span> and <span class="math notranslate nohighlight">\(E_{d_2}\)</span>) are constant at all altitudes along a magnetic field line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Apex</span><span class="p">(</span><span class="mi">2023</span><span class="p">)</span>
+<span class="n">glat</span> <span class="o">=</span> <span class="mf">65.7</span>
+<span class="n">glon</span> <span class="o">=</span> <span class="o">-</span><span class="mf">147.7</span>
+<span class="n">mlat</span><span class="p">,</span> <span class="n">mlon</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">geo2apex</span><span class="p">(</span><span class="n">glat</span><span class="p">,</span> <span class="n">glon</span><span class="p">,</span> <span class="mf">300.</span><span class="p">)</span>
+
+<span class="c1"># Create field line array</span>
+<span class="n">apex_height</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">get_apex</span><span class="p">(</span><span class="n">mlat</span><span class="p">)</span>
+<span class="n">galt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">apex_height</span><span class="p">,</span> <span class="mf">100.</span><span class="p">)</span><span class="o">*</span><span class="mf">1000.</span>
+<span class="n">glatN</span><span class="p">,</span> <span class="n">glonN</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">map_to_height</span><span class="p">(</span><span class="n">glat</span><span class="p">,</span> <span class="n">glon</span><span class="p">,</span> <span class="mf">300.</span><span class="p">,</span> <span class="n">galt</span><span class="o">/</span><span class="mf">1000.</span><span class="p">)</span>
+<span class="n">glatS</span><span class="p">,</span> <span class="n">glonS</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">map_to_height</span><span class="p">(</span><span class="n">glat</span><span class="p">,</span> <span class="n">glon</span><span class="p">,</span> <span class="mf">300.</span><span class="p">,</span> <span class="n">galt</span><span class="o">/</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">conjugate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Combine north and south mapped arrays</span>
+<span class="n">fl_glat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">glatN</span><span class="p">,</span><span class="n">glatS</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">fl_glon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">glonN</span><span class="p">,</span><span class="n">glonS</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">fl_galt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">galt</span><span class="p">,</span><span class="n">galt</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">g3</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">e3</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">basevectors_apex</span><span class="p">(</span><span class="n">glat</span><span class="p">,</span> <span class="n">glon</span><span class="p">,</span> <span class="mf">300.</span><span class="p">)</span>
+<span class="n">efield</span> <span class="o">=</span> <span class="mf">500.</span><span class="o">*</span><span class="n">d2</span>
+<span class="n">vel</span> <span class="o">=</span> <span class="mf">500.</span><span class="o">*</span><span class="n">e1</span>
+<span class="c1"># Subsample field line array to get locations for vectors</span>
+<span class="n">vec_galt</span> <span class="o">=</span> <span class="n">fl_galt</span><span class="p">[::</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">vec_glat</span> <span class="o">=</span> <span class="n">fl_glat</span><span class="p">[::</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">vec_glon</span> <span class="o">=</span> <span class="n">fl_glon</span><span class="p">[::</span><span class="mi">30</span><span class="p">]</span>
+<span class="c1"># Map vectors to these locations</span>
+<span class="n">mapped_vel</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">map_V_to_height</span><span class="p">(</span><span class="n">mlat</span><span class="p">,</span> <span class="n">mlon</span><span class="p">,</span> <span class="mf">300.</span><span class="p">,</span> <span class="n">vec_galt</span><span class="o">/</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">vel</span><span class="p">)</span>
+<span class="n">mapped_ef</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">map_V_to_height</span><span class="p">(</span><span class="n">mlat</span><span class="p">,</span> <span class="n">mlon</span><span class="p">,</span> <span class="mf">300.</span><span class="p">,</span> <span class="n">vec_galt</span><span class="o">/</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">efield</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the surface</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">6371.</span><span class="o">*</span><span class="mf">1000.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">6371.</span><span class="o">*</span><span class="mf">1000.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mf">6371.</span><span class="o">*</span><span class="mf">1000.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+<span class="c1"># Plot field line</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">geodetic2ecef</span><span class="p">(</span><span class="n">fl_glat</span><span class="p">,</span> <span class="n">fl_glon</span><span class="p">,</span> <span class="n">fl_galt</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Magnetic Field Line&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot velocity/electric field</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">geodetic2ecef</span><span class="p">(</span><span class="n">vec_glat</span><span class="p">,</span> <span class="n">vec_glon</span><span class="p">,</span> <span class="n">vec_galt</span><span class="p">)</span>
+<span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">enu2uvw</span><span class="p">(</span><span class="n">mapped_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">mapped_vel</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">mapped_vel</span><span class="p">[</span><span class="mi">2</span><span class="p">,:],</span> <span class="n">vec_glat</span><span class="p">,</span> <span class="n">vec_glon</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Velocity&#39;</span><span class="p">)</span>
+<span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">enu2uvw</span><span class="p">(</span><span class="n">mapped_ef</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">mapped_ef</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">mapped_ef</span><span class="p">[</span><span class="mi">2</span><span class="p">,:],</span> <span class="n">vec_glat</span><span class="p">,</span> <span class="n">vec_glon</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Electric Field&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mf">75.</span><span class="p">)</span>
+<span class="c1"># Set an equal aspect ratio</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0a80a1fa308330ab01f7d1202ddc56debec00afe622fefce92126744a607bb45.png" src="../../_images/0a80a1fa308330ab01f7d1202ddc56debec00afe622fefce92126744a607bb45.png" />
+</div>
+</div>
+</section>
+<section id="binning">
+<h3>Binning<a class="headerlink" href="#binning" title="Link to this heading">#</a></h3>
+<p>Instead of calculating a single vector velocity over the entire AMISR FoV, the FoV is usually broken into several bins based on magnetic latitude and the velocity is assumed constant in each bin.  This works relatively well as auroral structures tend to be oriented along magnetic parallels and it allows us to resolve some variation in the flow structure in magnetic latitude.  These bins are customizable when the resolved vector velocities code is run and do not need to cover the entire longitudinal range of the FoV, but it is recommended they do to maximize the diversity of look-angles used and make the inversion more well-poised.</p>
+</section>
+</section>
+<section id="resolved-vector-velocity-data">
+<h2>Resolved Vector Velocity Data<a class="headerlink" href="#resolved-vector-velocity-data" title="Link to this heading">#</a></h2>
+<p>The velocity vector inversion is done in magnetic coordinates, but for convenience, output files contain the resulting vector in both geodetic and magnetic coordinates.  These are stored in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> and the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> groups respectively.  The <code class="docutils literal notranslate"><span class="pre">ProcessingParams</span></code>, <code class="docutils literal notranslate"><span class="pre">Site</span></code>, and <code class="docutils literal notranslate"><span class="pre">Time</span></code> groups are similar to those in the original processed data files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;../data/20200207.001_lp_5min-fitcal-vvels_lat.h5&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">h5</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ProcessingParams
+Site
+Time
+VvelsGeoCoords
+VvelsMagCoords
+</pre></div>
+</div>
+</div>
+</div>
+<section id="magnetic-components">
+<h3>Magnetic Components<a class="headerlink" href="#magnetic-components" title="Link to this heading">#</a></h3>
+<p>The magnetic components of the velocity vector is the native output of the resolved velocities inversion algorithm.  All other output parameters in the file are derived from these.</p>
+<p>The plasma drift velocity components <span class="math notranslate nohighlight">\(V_{e_1}\)</span>, <span class="math notranslate nohighlight">\(V_{e_2}\)</span>, and <span class="math notranslate nohighlight">\(V_{e_3}\)</span> are available in the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">Velocity</span></code>.  This array has the dimensions nrecords x nbins x 3.</p>
+<p>Because the inversion algorithm assumes the velocity is purely the <span class="math notranslate nohighlight">\(E \times B\)</span> plasma drift velocity that is perpendicular to the magnetic fields, the <span class="math notranslate nohighlight">\(V_{e_3}\)</span> component SHOULD be zero. This is often not the case in the output, but it is typically orders of magnitude less than the perp-B components and can be thought of as a residual to the fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">mlat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Latitude&#39;</span><span class="p">][:]</span>
+    <span class="n">vel</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Velocity&#39;</span><span class="p">][:]</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">mlat</span><span class="p">,</span> <span class="n">vel</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">500.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">500.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Magnetic Latitude&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s1">&#39;$Ve_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">$ (m/s)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/237c86ea43b4f3c91bcc471a736c2804f96f64cf1c5b2d31cfc52471922588b6.png" src="../../_images/237c86ea43b4f3c91bcc471a736c2804f96f64cf1c5b2d31cfc52471922588b6.png" />
+</div>
+</div>
+</section>
+<section id="geodetic-components">
+<h3>Geodetic Components<a class="headerlink" href="#geodetic-components" title="Link to this heading">#</a></h3>
+<p>The Geodetic East, North, and Up components of the vector velocities are available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">Velocity</span></code>.  The shape of this array is nrecords x nalt x nbins x 3, where the last dimension is for each of the three E, N, U components respectively.  Unlike the magnetic components, the geodetic components DO change in altitude, hence the additional altitude dimension in this array.  The values of these altitude slices are in <code class="docutils literal notranslate"><span class="pre">Altitude</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targalt</span> <span class="o">=</span> <span class="mf">300.</span>
+
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Altitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">aidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">alt</span><span class="o">-</span><span class="n">targalt</span><span class="p">))</span>
+    <span class="n">glat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Latitude&#39;</span><span class="p">][</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">vel</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Velocity&#39;</span><span class="p">][:,</span><span class="n">aidx</span><span class="p">,:,:]</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">]):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">vel</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">500.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">500.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Geodetic Latitude&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s1">&#39;$V_</span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">$ (m/s)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/0fb9f276928f8a42655eccbf35525dec9d7586b08fb6d8b25e56bbdb099bb6cd.png" src="../../_images/0fb9f276928f8a42655eccbf35525dec9d7586b08fb6d8b25e56bbdb099bb6cd.png" />
+</div>
+</div>
+</section>
+<section id="magnitude-and-direction">
+<h3>Magnitude and Direction<a class="headerlink" href="#magnitude-and-direction" title="Link to this heading">#</a></h3>
+<p>The magnitude and horizontal direction (azimuth angle in degrees East of North) of the resolved velocity vectors are also available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group as <code class="docutils literal notranslate"><span class="pre">Vmag</span></code> and <code class="docutils literal notranslate"><span class="pre">Vdir</span></code>, respectively.  These are scalar quantities but also depend on altitude, so have the dimensions nrecords x nalt x nbins.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targalt</span> <span class="o">=</span> <span class="mf">300.</span>
+
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Altitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">aidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">alt</span><span class="o">-</span><span class="n">targalt</span><span class="p">))</span>
+    <span class="n">glat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Latitude&#39;</span><span class="p">][</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">vmag</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Vmag&#39;</span><span class="p">][:,</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">vdir</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Vdir&#39;</span><span class="p">][:,</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">vmag</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Geodetic Latitude&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Magnitude (m/s)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">vdir</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">180.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">180.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;twilight&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Geodetic Latitude&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bearing Angle (deg)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fba1d1849a0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/7db3335dcebca20d25c47bb03a930a13dd8ceef4e46d72556363d91d5570b268.png" src="../../_images/7db3335dcebca20d25c47bb03a930a13dd8ceef4e46d72556363d91d5570b268.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="electric-field">
+<h2>Electric Field<a class="headerlink" href="#electric-field" title="Link to this heading">#</a></h2>
+<p>The electric field is calculated from the vector velocity, assuming only <span class="math notranslate nohighlight">\(E \times B\)</span> plasma drift.</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{E} = - \mathbf{V} \times \mathbf{B} \]</div>
+<p>The electric field and velocity in the resolved velocities files are not independent measurements.  Both are provided for user convenience.  By definition, there is no parallel electric field component (<span class="math notranslate nohighlight">\(E_{d_3} = 0 \)</span>).</p>
+<p>Similar to velocity, the output files contain the electric field in both geodetic and magnetic coordinates stored in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> and the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> groups respectively.</p>
+<section id="id3">
+<h3>Magnetic Components<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>The electric field components <span class="math notranslate nohighlight">\(E_{d_1}\)</span>, <span class="math notranslate nohighlight">\(E_{d_2}\)</span>, and <span class="math notranslate nohighlight">\(E_{d_3}\)</span> are available in the <code class="docutils literal notranslate"><span class="pre">VvelsMagCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">Electric</span> <span class="pre">Field</span></code>.  This array has the dimensions nrecords x nbins x 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">mlat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Latitude&#39;</span><span class="p">][:]</span>
+    <span class="n">efield</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/ElectricField&#39;</span><span class="p">][:]</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">mlat</span><span class="p">,</span> <span class="n">efield</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Magnetic Latitude&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s1">&#39;$Ed_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">$ (V/m)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/df7dbbae1fc34140cbe5308df4d90ea5b44006a7669b1cdc6aa7f614f8629150.png" src="../../_images/df7dbbae1fc34140cbe5308df4d90ea5b44006a7669b1cdc6aa7f614f8629150.png" />
+</div>
+</div>
+</section>
+<section id="id4">
+<h3>Geodetic Components<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>The Geodetic East, North, and Up components of the electric field are available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group in the variable <code class="docutils literal notranslate"><span class="pre">ElectricField</span></code>.  The shape of this array is nrecords x nalt x nbins x 3, where the last dimension is for each of the three E, N, U components respectively.  Similar to the velocity, the additional altitude dimension captures the fact that the geodetic components change in altitude and the value of each altitude slice can be found in <code class="docutils literal notranslate"><span class="pre">Altitude</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targalt</span> <span class="o">=</span> <span class="mf">300.</span>
+
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Altitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">aidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">alt</span><span class="o">-</span><span class="n">targalt</span><span class="p">))</span>
+    <span class="n">glat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Latitude&#39;</span><span class="p">][</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">efield</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/ElectricField&#39;</span><span class="p">][:,</span><span class="n">aidx</span><span class="p">,:,:]</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">]):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">efield</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Geodetic Latitude&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s1">&#39;$E_</span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s1">$ (V/m)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/1ab928251d3585acabaced1684f9a80340688c6860ecf6e6ec517d7b0578be0a.png" src="../../_images/1ab928251d3585acabaced1684f9a80340688c6860ecf6e6ec517d7b0578be0a.png" />
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Magnitude and Direction<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>The magnitude and horizontal direction (azimuth angle in degrees East of North) of the electric field are also available in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code> group as <code class="docutils literal notranslate"><span class="pre">Emag</span></code> and <code class="docutils literal notranslate"><span class="pre">Edir</span></code>, respectively.  These are scalar quantities but also depend on altitude, so have the dimensions nrecords x nalt x nbins.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targalt</span> <span class="o">=</span> <span class="mf">300.</span>
+
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Altitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">aidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">alt</span><span class="o">-</span><span class="n">targalt</span><span class="p">))</span>
+    <span class="n">glat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Latitude&#39;</span><span class="p">][</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">emag</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Emag&#39;</span><span class="p">][:,</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">edir</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Edir&#39;</span><span class="p">][:,</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">emag</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Geodetic Latitude&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Magnitude (V/m)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">edir</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">180.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">180.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;twilight&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Geodetic Latitude&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bearing Angle (deg)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;Altitude&#39;, &#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;Edir&#39;, &#39;ElectricField&#39;, &#39;Emag&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Vdir&#39;, &#39;Velocity&#39;, &#39;Vmag&#39;, &#39;errEdir&#39;, &#39;errElectricField&#39;, &#39;errEmag&#39;, &#39;errVdir&#39;, &#39;errVelocity&#39;, &#39;errVmag&#39;]&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fba10412740&gt;
+</pre></div>
+</div>
+<img alt="../../_images/362b3c712f9df20ff984b444a7d2731d71cbb91dd26ac43c8f255bdeb0dd13ca.png" src="../../_images/362b3c712f9df20ff984b444a7d2731d71cbb91dd26ac43c8f255bdeb0dd13ca.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="convert-magnetic-to-geodetic">
+<h2>Convert Magnetic to Geodetic<a class="headerlink" href="#convert-magnetic-to-geodetic" title="Link to this heading">#</a></h2>
+<p>To convert magnetic vector components to geodetic vector components, use apexpy to find the base vectors for that location.  Then use Laundal and Richmond, 2017 eqn 75/77 to calculate the geodetic components of the vector.</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{V} = V_{e_1} \mathbf{e}_1 + V_{e_2} \mathbf{e}_2 \]</div>
+<div class="math notranslate nohighlight">
+\[ \mathbf{E} = E_{d_1} \mathbf{d}_1 + E_{d_2} \mathbf{d}_2 \]</div>
+<p>When converting arrays of velocity vectors, it can be helpful to use Einstein notation with <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.einsum.html">numpy.einsum</a>.</p>
+<div class="math notranslate nohighlight">
+\[ V_{mnik}' = V_{mnij}e_{ijk} \]</div>
+<p>For most use cases, geodetic components can be found in the <code class="docutils literal notranslate"><span class="pre">VvelsGeoCoords</span></code>, where they have been pre-calculated at set altitudes for user convenience.  Users should only have to manually convert from apex components to geodetic when velocity at a very specific altitude is needed, or other unusual circumstances.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">mlat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Latitude&#39;</span><span class="p">][:]</span>
+    <span class="n">mlon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Longitude&#39;</span><span class="p">][:]</span>
+    <span class="n">vel</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Velocity&#39;</span><span class="p">][:]</span>
+    <span class="n">efield</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/ElectricField&#39;</span><span class="p">][:]</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">Apex</span><span class="p">(</span><span class="mi">2020</span><span class="p">)</span>
+
+<span class="c1"># Convert a single point with a target altitude of 300 km</span>
+<span class="n">targalt</span> <span class="o">=</span> <span class="mf">300.</span>
+<span class="n">tidx</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">bidx</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">g3</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">e3</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">basevectors_apex</span><span class="p">(</span><span class="n">mlat</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">mlon</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">targalt</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="s1">&#39;apex&#39;</span><span class="p">)</span>
+<span class="n">Ve1</span><span class="p">,</span> <span class="n">Ve2</span><span class="p">,</span> <span class="n">Ve3</span> <span class="o">=</span> <span class="n">vel</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:]</span>
+<span class="n">Ed1</span><span class="p">,</span> <span class="n">Ed2</span><span class="p">,</span> <span class="n">Ed3</span> <span class="o">=</span> <span class="n">efield</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:]</span>
+
+<span class="n">Vgeo</span> <span class="o">=</span> <span class="n">Ve1</span><span class="o">*</span><span class="n">e1</span> <span class="o">+</span> <span class="n">Ve2</span><span class="o">*</span><span class="n">e2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Geodetic Velocity Components: </span><span class="si">{</span><span class="n">Vgeo</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Egeo</span> <span class="o">=</span> <span class="n">Ed1</span><span class="o">*</span><span class="n">d1</span> <span class="o">+</span> <span class="n">Ed2</span><span class="o">*</span><span class="n">d2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Geodetic Electric Field Components: </span><span class="si">{</span><span class="n">Egeo</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convert full array</span>
+<span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">g3</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">e3</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">basevectors_apex</span><span class="p">(</span><span class="n">mlat</span><span class="p">,</span> <span class="n">mlon</span><span class="p">,</span> <span class="mf">300.</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="s1">&#39;apex&#39;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">Vgeo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;...ij,ijk-&gt;...ik&#39;</span><span class="p">,</span><span class="n">vel</span><span class="p">[:,:,:</span><span class="mi">2</span><span class="p">],</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Original Velocity Shape: </span><span class="si">{</span><span class="n">vel</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Converted Velocity Shape: </span><span class="si">{</span><span class="n">Vgeo</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">Egeo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;...ij,ijk-&gt;...ik&#39;</span><span class="p">,</span><span class="n">efield</span><span class="p">[:,:,:</span><span class="mi">2</span><span class="p">],</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Original Electric Field Shape: </span><span class="si">{</span><span class="n">efield</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Converted Electric Field Shape: </span><span class="si">{</span><span class="n">Egeo</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;CovarianceE&#39;, &#39;CovarianceV&#39;, &#39;ElectricField&#39;, &#39;Latitude&#39;, &#39;Longitude&#39;, &#39;Velocity&#39;, &#39;errElectricField&#39;, &#39;errVelocity&#39;]&gt;
+Geodetic Velocity Components: [-55.96757638 -34.19053666 -11.09837558]
+Geodetic Electric Field Components: [-0.00176145  0.00272546  0.00048648]
+Original Velocity Shape: (188, 29, 3)
+Converted Velocity Shape: (188, 29, 3)
+Original Electric Field Shape: (188, 29, 3)
+Converted Electric Field Shape: (188, 29, 3)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="vector-errors">
+<h2>Vector Errors<a class="headerlink" href="#vector-errors" title="Link to this heading">#</a></h2>
+<p>The resolved velocities files contain error arrays for the components (geodetic and magnetic), magnitudes, and directions.  The files also contain the full covariance matrices for the component arrays.  These are nessisary for error propogation when converting between different coordinate systems and other vector calculations.  The magnetic component covariance matrices have the shape nrecords x nbins x 3 x 3 while the geodetic component covariance matrices have the shape nrecords x nalt x nbins x 3 x 3.  The additional dimension in both cases represents the fact that the covariance matrix for a vector of length 3 has the shape 3 x 3.  To calculate the errors on individual components from a covariance matrix, take the square root of the diagonal components.</p>
+<p>Plotting the error arrays reveals that the errors get extremely high in the northern-most and southern-most magnetic latitude bins where there are often few points in each bin to control the inversion.  This corresponds to the regions in the above plots that show a great deal of “salt and pepper” noise, and should generally not be trusted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">mlat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Latitude&#39;</span><span class="p">][:]</span>
+    <span class="n">mlon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Longitude&#39;</span><span class="p">][:]</span>
+    <span class="n">vel</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/Velocity&#39;</span><span class="p">][:]</span>
+    <span class="n">errv</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/errVelocity&#39;</span><span class="p">][:]</span>
+    <span class="n">covv</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/CovarianceV&#39;</span><span class="p">][:]</span>
+    <span class="n">efield</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/ElectricField&#39;</span><span class="p">][:]</span>
+    <span class="n">erre</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/errElectricField&#39;</span><span class="p">][:]</span>
+    <span class="n">cove</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsMagCoords/CovarianceE&#39;</span><span class="p">][:]</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Velocity Shape: </span><span class="si">{</span><span class="n">vel</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Velocity Error Shape: </span><span class="si">{</span><span class="n">errv</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Velocity Covariance Shape: </span><span class="si">{</span><span class="n">covv</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Electric Field Shape: </span><span class="si">{</span><span class="n">efield</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Electric Field Error Shape: </span><span class="si">{</span><span class="n">erre</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Electric Field Covariance Shape: </span><span class="si">{</span><span class="n">cove</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">mlat</span><span class="p">,</span> <span class="n">errv</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">500.</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cividis&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Magnetic Latitude&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s1">&#39;$err Ve_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">$ (m/s)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Universal Time&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Velocity Shape: (188, 29, 3)
+Velocity Error Shape: (188, 29, 3)
+Velocity Covariance Shape: (188, 29, 3, 3)
+Electric Field Shape: (188, 29, 3)
+Electric Field Error Shape: (188, 29, 3)
+Electric Field Covariance Shape: (188, 29, 3, 3)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Universal Time&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/f7e58750ebd42e84bc6c117c2d469e12f203220e6069d6496a7d755e31e82f9e.png" src="../../_images/f7e58750ebd42e84bc6c117c2d469e12f203220e6069d6496a7d755e31e82f9e.png" />
+</div>
+</div>
+</section>
+<section id="plot-vectors-on-map">
+<h2>Plot Vectors on Map<a class="headerlink" href="#plot-vectors-on-map" title="Link to this heading">#</a></h2>
+<p>To create a map of the velocity or electric field vectors on a map, load the geodetic components of the quantity of interest an plot them with quiver and cartopy.  Only the geodetic East and geodetic North components can be displayed this way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targalt</span> <span class="o">=</span> <span class="mf">300.</span>
+<span class="n">utargtime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2020-02-07T07:00:00&#39;</span><span class="p">,</span> <span class="s1">&#39;[s]&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+
+    <span class="n">site_lat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Latitude&#39;</span><span class="p">][()]</span>
+    <span class="n">site_lon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Site/Longitude&#39;</span><span class="p">][()]</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Altitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">aidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">alt</span><span class="o">-</span><span class="n">targalt</span><span class="p">))</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">tidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">utargtime</span><span class="o">-</span><span class="n">utime</span><span class="p">))</span>
+    <span class="n">glat</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Latitude&#39;</span><span class="p">][</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">glon</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Longitude&#39;</span><span class="p">][</span><span class="n">aidx</span><span class="p">,:]</span>
+    <span class="n">vel</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;VvelsGeoCoords/Velocity&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">aidx</span><span class="p">,:,:]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+
+<span class="c1"># generate figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="c1"># create map</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">AzimuthalEquidistant</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="n">site_lon</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="n">site_lat</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mf">159.</span><span class="p">,</span> <span class="o">-</span><span class="mf">135.</span><span class="p">,</span> <span class="mf">61.</span><span class="p">,</span> <span class="mf">72.</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="c1"># This function is needed due to an issue with cartopy where vectors are not scale/rotated</span>
+<span class="c1">#   correctly in some coordinate systems (see: https://github.com/SciTools/cartopy/issues/1179)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">scale_uv</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">us</span> <span class="o">=</span> <span class="n">u</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span><span class="p">)</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">sf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">us</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">vs</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">us</span><span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="n">vs</span><span class="o">*</span><span class="n">sf</span>
+
+<span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scale_uv</span><span class="p">(</span><span class="n">glon</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">vel</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">vel</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">glon</span><span class="p">,</span> <span class="n">glat</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">quiverkey</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;V=500m/s&#39;</span><span class="p">,</span> <span class="n">labelpos</span><span class="o">=</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">)</span>
+
+
+<span class="c1"># Add magnetic parallels for visualization convenience</span>
+<span class="n">mlon_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">150.</span><span class="p">,</span> <span class="o">-</span><span class="mf">50.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_extent</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">mlat</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">60.</span><span class="p">,</span> <span class="mf">76.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">):</span>
+    <span class="n">mlat_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">mlat</span><span class="p">)</span>
+
+    <span class="n">glat_arr</span><span class="p">,</span> <span class="n">glon_arr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">apex2geo</span><span class="p">(</span><span class="n">mlat_arr</span><span class="p">,</span> <span class="n">mlon_arr</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">targalt</span><span class="p">)</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">proj</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">glon_arr</span><span class="p">,</span> <span class="n">glat_arr</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">yl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">line</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">yl</span><span class="o">&gt;</span><span class="n">y0</span> <span class="ow">and</span> <span class="n">yl</span><span class="o">&lt;</span><span class="n">y1</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x1</span><span class="o">+</span><span class="mf">5e4</span><span class="p">,</span> <span class="n">yl</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">mlat</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">°N MLAT&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0d6fef9cce97228cd65f56aed41d80e32a82a37f5631d62ff8d8733a4a99af5c.png" src="../../_images/0d6fef9cce97228cd65f56aed41d80e32a82a37f5631d62ff8d8733a4a99af5c.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/sri_database"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="vector_velocities_example_sri.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Resolved Vector Velocities</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="specialized_parameters/specialized_parameters_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Specialized Parameters</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-field-mapping">Magnetic Field Mapping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apex-coordinates">Apex Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binning">Binning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolved-vector-velocity-data">Resolved Vector Velocity Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-components">Magnetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geodetic-components">Geodetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude-and-direction">Magnitude and Direction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-field">Electric Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Magnetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Geodetic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Magnitude and Direction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-magnetic-to-geodetic">Convert Magnetic to Geodetic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-errors">Vector Errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-vectors-on-map">Plot Vectors on Map</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leslie Lamarche, Lara Kamal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
