@@ -17,15 +17,27 @@ If you have a question about some content in the book, think an area needs addit
 ### Contributing Material
 If you have content or examples you would like to contribute to the book, please do!  The following steps are recommended:
 
-1. Clone this repository
-2. Install the current requirements
-3. Add your content.  This can be in the form of markdown files or jupyter notebooks.
+1. Fork and clone your own copy of this repository.
+```
+git clone https://github.com/<your_username>/amisr_user_manual.git
+cd amisr_user_manual
+```
+2. Install the current requirements in your environment.  This can be done from the environment file if you use conda.  If you typically install packages with pip, you will have to open `environment.yml` and manually install the packages listed there.
+```
+conda env update --name <your_environment_name> --file environment.yml
+```
+3. Add your content.  This can be in the form of markdown files or jupyter notebooks.  All content files should be contained within the `src` directory and subdirectories within.
 4. Add any pages you created to `_toc.yml`.
-5. Add any packages your examples rely on to `environment.yml`.
-6. Build the book locally and check to make sure your material looks correct.
-7. Add your name and any relevant funding sources under the *Attribution* section in `intro.md`.
-8. Commit your changes.
-9. Push changes to GitHub.  The updated webpage will be build automatically.
+5. Add any packages your examples rely on to `environment.yml`.  Try to avoid using large packages or anything that may have trouble with a default installation when possible.
+6. Add your name and any relevant funding sources under the *Attribution* section in `src/intro.md`.
+7. Build the book locally.
+```
+jupyter-book build .
+```
+8. Check the local build to make sure your material looks correct.  The build command should have created the file `_build/html/index.html` which can be opened in any browser.
+9. Commit your changes.  This can happen at multiple stages as you develop content.
+10. Push changes to your local fork on GitHub.
+11. Create a pull request from your local branch to the `main` branch of [amisr/amisr_user_manual](https://github.com/amisr/amisr_user_manual).  When the pull request is merged, the webpage will be updated automatically.
 
 Refer to the [jupyter book docs](https://jupyterbook.org/en/stable/intro.html) for more detailed information about syntax and building the book.
 
