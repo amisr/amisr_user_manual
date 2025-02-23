@@ -1,6 +1,6 @@
 # AMISR User Manual
 
-This is the repository hosting all the files used to create the AMISR User Manual, available at https://amisr.github.io/amisr_user_manual/intro.html
+This is the repository hosting all the files used to create the AMISR User Manual, available at https://amisr.github.io/amisr_user_manual
 
 This is intended to be a basic guide to help scientific users access, visualize, and interpret AMISR data.  It is available as a [jupyter book](https://jupyterbook.org/en/stable/intro.html) hosted on [GitHub Pages](https://pages.github.com/). The notebooks included provide examples of some of the more common analysis and plotting tools.  Please feel free to download notebooks if they are useful, or copy/paste examples into your own code and modify as appropriate!
 
