@@ -1,0 +1,1124 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fundamental Plasma Parameters &#8212; AMISR User Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/sri_database/specialized_parameters/plasma_characteristics';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Madrigal Database" href="../../madrigal_database/navigate_database_madrigal.html" />
+    <link rel="prev" title="Ne From Power" href="ne_notr.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AMISR User Manual</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    AMISR User Manual
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mode_design.html">Basics of Mode Design</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../navigate_database_sri.html">SRI Database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../common_data_sri.html">Common Data Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting_sri.html">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../errors_sri.html">Errors and Data Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_plotting_sri.html">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector_velocities_example_sri.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../new_vvels_sri.html">Resolved Vector Velocities - “New” Version</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="specialized_parameters_intro.html">Specialized Parameters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ion_comp.html">Ion Composition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ne_notr.html">Ne From Power</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Fundamental Plasma Parameters</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../madrigal_database/navigate_database_madrigal.html">Madrigal Database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../madrigal_database/madrigal_remote_access.html">Remote Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../madrigal_database/common_data_madrigal.html">Common Data Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../madrigal_database/plotting_madrigal.html">Common Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../madrigal_database/errors_madrigal.html">Errors and Data Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../madrigal_database/advanced_plotting_madrigal.html">Advanced Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../madrigal_database/vector_velocity_example_madrigal.html">Resolved Vector Velocities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../madrigal_database/new_vvels_madrigal.html">Resolved Vector Velocities</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/amisr/amisr_user_manual/main?urlpath=lab/tree/src/sri_database/specialized_parameters/plasma_characteristics.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/amisr/amisr_user_manual/blob/main/src/sri_database/specialized_parameters/plasma_characteristics.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/amisr/amisr_user_manual" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/amisr/amisr_user_manual/issues/new?title=Issue%20on%20page%20%2Fsrc/sri_database/specialized_parameters/plasma_characteristics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/src/sri_database/specialized_parameters/plasma_characteristics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fundamental Plasma Parameters</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-frequency">Collision Frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debye-length">Debye Length</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-velocity">Thermal Velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gyrofrequency">Gyrofrequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gyroradius">Gyroradius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plasma-frequency">Plasma Frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inertial-length">Inertial Length</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hall-conductivity">Hall Conductivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pedersen-conductivity">Pedersen Conductivity</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fundamental-plasma-parameters">
+<h1>Fundamental Plasma Parameters<a class="headerlink" href="#fundamental-plasma-parameters" title="Link to this heading">#</a></h1>
+<p>This tutorial shows how to calculate some fundamental parameters that are typically used to characterize the ionospheric plasma from AMISR data files.  The equations used here are sourced from the NRL Plasma Formulary p28-29 <span id="id1">[<a class="reference internal" href="../../references.html#id9" title="NRL Plasma Formulary. Beam Physics Branch, Plasma Physics Division, Naval Research Laboratory, Washington, DC 20375, 2013."><em>NRL Plasma Formulary</em>, 2013</a>]</span> and Schunk &amp; Nagy, 2009, p45 and p141 <span id="id2">[<a class="reference internal" href="../../references.html#id8" title="R. Schunk and A. Nagy. Ionospheres: Plysics, Plasma Physics, and Chemistry. Cambridge Univ. Press, New York, NY, USA, 2 edition, 2009.">Schunk and Nagy, 2009</a>]</span>. Note that many of the parameters shown in this tutorial are time dependent, but only single profiles are shown to demonstrate more clearely how they vary in altitude.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">const</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">colors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Download files that will be used in this tutorial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the file that we need to run these examples</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;../../data/20200207.001_lp_5min-fitcal.h5&#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://data.amisr.com/database/dbase_site_media/PFISR/Experiments/20200207.001/DataFiles/20200207.001_lp_5min-fitcal.h5&#39;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading data file...&#39;</span><span class="p">)</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...Done!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note on Ions:</strong> There are multiple relevant ion species in the ionosphere.  Ion mass  <span class="math notranslate nohighlight">\(m_i\)</span> can be found by multiplying the <code class="docutils literal notranslate"><span class="pre">IonMass</span></code> array by the mass of a proton.  The <a class="reference internal" href="../common_data_sri.html#fits"><span class="std std-ref">Fits Array</span></a> includes the fractional ion composition, which can be used to calculate the density of indiviual ion species by multipying by the electron density (see <a class="reference internal" href="ion_comp.html"><span class="doc std std-doc">Ion Composition</span></a> for more details).  These operations may require some array broadcasting and expand the size of the array to include a species dimension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:]</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ion_mass</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:]</span>
+
+<span class="n">ni</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">ne</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">frac</span><span class="p">[:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">mi</span> <span class="o">=</span> <span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ne</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ni</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">am</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">,</span> <span class="n">mi</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">am</span><span class="si">}</span><span class="s1"> AMU = </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1"> km&#39;</span><span class="p">)</span>
+
+<span class="n">mass_labels</span> <span class="o">=</span> <span class="p">{</span><span class="mi">16</span><span class="p">:</span><span class="sa">r</span><span class="s1">&#39;O$^+$&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">:</span><span class="sa">r</span><span class="s1">&#39;O$_2^+$&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">:</span><span class="s1">&#39;NO$^+$&#39;</span><span class="p">,</span> <span class="mi">28</span><span class="p">:</span><span class="s1">&#39;N$_2^+$&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">:</span><span class="s1">&#39;N$^+$&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74) (188, 11, 74, 5)
+16.0 AMU = 2.67619508152e-26 km
+32.0 AMU = 5.35239016304e-26 km
+30.0 AMU = 5.0178657778499995e-26 km
+28.0 AMU = 4.68334139266e-26 km
+14.0 AMU = 2.34167069633e-26 km
+</pre></div>
+</div>
+</div>
+</div>
+<p>The ion density array has the standard dimensions for record, beam, and bin, plus an additional one for the five ion species.  Many of the general equations shown below include <span class="math notranslate nohighlight">\(e_\alpha\)</span>, which is used to indicate absolute value of charge the species.  For the ionospheric regimes relevant to ISR measurments, ions normally only have +1 charge states, so <span class="math notranslate nohighlight">\(e_\alpha = e\)</span> and <span class="math notranslate nohighlight">\(e_\alpha\)</span> will be implicitly replaced with just the elementary charge, <span class="math notranslate nohighlight">\(e\)</span>, in coding examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load some parameters from the file that are only needed for plotting</span>
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">beamcodes</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;BeamCodes&#39;</span><span class="p">][:]</span>
+    <span class="n">bidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">beamcodes</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Altitude&#39;</span><span class="p">][:]</span>
+    <span class="n">utime</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Time/UnixTime&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+<span class="n">tidx</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="collision-frequency">
+<h2>Collision Frequency<a class="headerlink" href="#collision-frequency" title="Link to this heading">#</a></h2>
+<p>The collision frequencies are contained directly within the AMISR files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">nu_i</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">nu_e</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nu_e</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">nu_i</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74) (188, 11, 74, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nu_i</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">mass_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nu_e</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;e-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Collision Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/b244c0de5b6919b8dde227abc4da2d94987c6df0899ed1afa21d80928c58f059.png" src="../../../_images/b244c0de5b6919b8dde227abc4da2d94987c6df0899ed1afa21d80928c58f059.png" />
+</div>
+</div>
+</section>
+<section id="debye-length">
+<h2>Debye Length<a class="headerlink" href="#debye-length" title="Link to this heading">#</a></h2>
+<p>The Debye length is the minimum distance over which plasma can exhibit collective behavior.</p>
+<div class="math notranslate nohighlight">
+\[ \lambda_D = \sqrt{\frac{\epsilon_0 k_B T_e}{n_e e^2}} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:]</span>
+    <span class="n">te</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">lam_D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">const</span><span class="o">.</span><span class="n">epsilon_0</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">k</span><span class="o">*</span><span class="n">te</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ne</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lam_D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2643/3888609315.py:5: RuntimeWarning: invalid value encountered in sqrt
+  lam_D = np.sqrt((const.epsilon_0*const.k*te)/(ne*const.e**2))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam_D</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">])</span>
+<span class="c1"># ax.legend()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Debye Length (m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/0ce9945bcb23a45eee66b7f8830721fe90ead8887fef6d92d70548c4cd668d9c.png" src="../../../_images/0ce9945bcb23a45eee66b7f8830721fe90ead8887fef6d92d70548c4cd668d9c.png" />
+</div>
+</div>
+</section>
+<section id="thermal-velocity">
+<h2>Thermal Velocity<a class="headerlink" href="#thermal-velocity" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ v_{T\alpha} = \sqrt{\frac{k_B T_\alpha}{m_\alpha}} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ion_mass</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:]</span>
+    <span class="n">te</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ti</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">v_te</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">k</span><span class="o">*</span><span class="n">te</span><span class="o">/</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="p">)</span>
+<span class="n">v_ti</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">k</span><span class="o">*</span><span class="n">ti</span><span class="o">/</span><span class="p">(</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v_te</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">v_ti</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74) (188, 11, 74, 5)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2643/3741107914.py:6: RuntimeWarning: invalid value encountered in sqrt
+  v_te = np.sqrt(const.k*te/const.m_e)
+/tmp/ipykernel_2643/3741107914.py:7: RuntimeWarning: invalid value encountered in sqrt
+  v_ti = np.sqrt(const.k*ti/(ion_mass*const.m_p))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v_ti</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">mass_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v_te</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;e-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Thermal Velocity (m/s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/07ad55c53911cc6a2f86b3dd815c60a556132029f18b93a455913353479b114a.png" src="../../../_images/07ad55c53911cc6a2f86b3dd815c60a556132029f18b93a455913353479b114a.png" />
+</div>
+</div>
+</section>
+<section id="gyrofrequency">
+<h2>Gyrofrequency<a class="headerlink" href="#gyrofrequency" title="Link to this heading">#</a></h2>
+<p>The frequency at which charged particles gyrate around the magnetic field line.  This is also called the cyclotron frequency.</p>
+<div class="math notranslate nohighlight">
+\[ \omega_{c\alpha} = \frac{e_\alpha B}{m_\alpha} \]</div>
+<p>Becasue there are no time-dependent parameters in the gyrofrequency, it only has a single value for each beam, bin, and species in the array (no record dimension).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Babs&#39;</span><span class="p">][:]</span>
+    <span class="n">ion_mass</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:]</span>
+
+<span class="n">omega_ce</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">*</span><span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="p">)</span>
+<span class="n">omega_ci</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">omega_ce</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">omega_ci</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11, 74) (11, 74, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omega_ci</span><span class="p">[</span><span class="n">bidx</span><span class="p">,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">mass_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omega_ce</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;e-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Gyrofrequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/ccab852ec5eb7e2f5b792f93aa74e7a4607c823db1d78fc700029fae071b556a.png" src="../../../_images/ccab852ec5eb7e2f5b792f93aa74e7a4607c823db1d78fc700029fae071b556a.png" />
+</div>
+</div>
+</section>
+<section id="gyroradius">
+<h2>Gyroradius<a class="headerlink" href="#gyroradius" title="Link to this heading">#</a></h2>
+<p>The gyroradius is the radius at which charged particles gyrate around the magnetic field.</p>
+<div class="math notranslate nohighlight">
+\[ r_\alpha = \frac{v_{T\alpha}}{\omega_{c\alpha}} = \frac{\sqrt{k_B T_\alpha m_\alpha}}{eB} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Babs&#39;</span><span class="p">][:]</span>
+    <span class="n">ion_mass</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:]</span>
+    <span class="n">te</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ti</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">omega_ce</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">*</span><span class="n">B</span><span class="o">/</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span>
+<span class="n">v_te</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">k</span><span class="o">*</span><span class="n">te</span><span class="o">/</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="p">)</span>
+<span class="n">re</span> <span class="o">=</span> <span class="n">v_te</span><span class="o">/</span><span class="n">omega_ce</span>
+<span class="n">omega_ci</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">)</span>
+<span class="n">v_ti</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">k</span><span class="o">*</span><span class="n">ti</span><span class="o">/</span><span class="p">(</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">))</span>
+<span class="n">ri</span> <span class="o">=</span> <span class="n">v_ti</span><span class="o">/</span><span class="n">omega_ci</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ri</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74) (188, 11, 74, 5)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2643/3104341878.py:8: RuntimeWarning: invalid value encountered in sqrt
+  v_te = np.sqrt(const.k*te/const.m_e)
+/tmp/ipykernel_2643/3104341878.py:11: RuntimeWarning: invalid value encountered in sqrt
+  v_ti = np.sqrt(const.k*ti/(ion_mass*const.m_p))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ri</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">mass_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">re</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;e-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Gyroradius (m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/f4940667222bc321e5a55a96f77b2d9c633f1adfc44e48df751a86de54755332.png" src="../../../_images/f4940667222bc321e5a55a96f77b2d9c633f1adfc44e48df751a86de54755332.png" />
+</div>
+</div>
+</section>
+<section id="plasma-frequency">
+<h2>Plasma Frequency<a class="headerlink" href="#plasma-frequency" title="Link to this heading">#</a></h2>
+<p>This describes the response of particles to time-varying electric fields.</p>
+<div class="math notranslate nohighlight">
+\[ \omega_{p\alpha} = \sqrt{\frac{n_\alpha e_\alpha^2}{\epsilon_0 m_\alpha}} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:]</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ion_mass</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:]</span>
+    
+<span class="n">ni</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">ne</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">frac</span><span class="p">[:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">omega_pe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">ne</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">epsilon_0</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="p">))</span>
+<span class="n">omega_pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">ni</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">epsilon_0</span><span class="o">*</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">omega_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">omega_pi</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74) (188, 11, 74, 5)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2643/3299216418.py:7: RuntimeWarning: invalid value encountered in sqrt
+  omega_pe = np.sqrt((ne*const.e**2)/(const.epsilon_0*const.m_e))
+/tmp/ipykernel_2643/3299216418.py:8: RuntimeWarning: invalid value encountered in sqrt
+  omega_pi = np.sqrt((ni*const.e**2)/(const.epsilon_0*ion_mass*const.m_p))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omega_pi</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">mass_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omega_pe</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;e-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Plasma Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/fd301a0350b0bfd432f43528511886cd51cd51fd1338c899678a090bb8c248c6.png" src="../../../_images/fd301a0350b0bfd432f43528511886cd51cd51fd1338c899678a090bb8c248c6.png" />
+</div>
+</div>
+</section>
+<section id="inertial-length">
+<h2>Inertial Length<a class="headerlink" href="#inertial-length" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ d_\alpha = \frac{c}{\omega_{p\alpha}} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:]</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ion_mass</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:]</span>
+
+<span class="n">ni</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">ne</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">frac</span><span class="p">[:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">omega_pe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">ne</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">epsilon_0</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="p">))</span>
+<span class="n">omega_pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">ni</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">epsilon_0</span><span class="o">*</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">))</span>
+<span class="n">di</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span><span class="o">/</span><span class="n">omega_pi</span>
+<span class="n">de</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span><span class="o">/</span><span class="n">omega_pe</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">de</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">di</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74) (188, 11, 74, 5)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2643/3274770970.py:7: RuntimeWarning: invalid value encountered in sqrt
+  omega_pe = np.sqrt((ne*const.e**2)/(const.epsilon_0*const.m_e))
+/tmp/ipykernel_2643/3274770970.py:8: RuntimeWarning: invalid value encountered in sqrt
+  omega_pi = np.sqrt((ni*const.e**2)/(const.epsilon_0*ion_mass*const.m_p))
+/tmp/ipykernel_2643/3274770970.py:9: RuntimeWarning: divide by zero encountered in divide
+  di = const.c/omega_pi
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">di</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">mass_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ion_mass</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">de</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;e-&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Inertial Length (m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/bd025d00547eb3bbff0e6f4d91f63c99a206e0976807865082d87eea13d1586e.png" src="../../../_images/bd025d00547eb3bbff0e6f4d91f63c99a206e0976807865082d87eea13d1586e.png" />
+</div>
+</div>
+</section>
+<section id="hall-conductivity">
+<h2>Hall Conductivity<a class="headerlink" href="#hall-conductivity" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ \sigma_H = \frac{n_e e^2}{m_e}\frac{\omega_{ce}}{\nu_e^2+\omega_{ce}^2} - \sum_i \frac{n_i e^2}{m_i}\frac{\omega_{ci}}{\nu_i^2+\omega_{ci}^2} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Babs&#39;</span><span class="p">][:]</span>
+    <span class="n">ion_mass</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:]</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">nu_i</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">nu_e</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:]</span>
+
+<span class="n">ni</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">ne</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">frac</span><span class="p">[:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">omega_ce</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">*</span><span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="p">)</span>
+<span class="n">omega_ci</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">)</span>
+<span class="n">sigma_H</span> <span class="o">=</span> <span class="p">(</span><span class="n">ne</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="o">*</span><span class="n">omega_ce</span><span class="o">/</span><span class="p">(</span><span class="n">nu_e</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">omega_ce</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">ni</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">)</span><span class="o">*</span><span class="n">omega_ci</span><span class="o">/</span><span class="p">(</span><span class="n">nu_i</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">omega_ci</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma_H</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sigma_H</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">])</span>
+<span class="c1"># ax.legend()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Hall Conductivity (S/m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/4a2b579abfc4924707b6f087d2bca076ab0064c15ea8e089f992bb63176acbc4.png" src="../../../_images/4a2b579abfc4924707b6f087d2bca076ab0064c15ea8e089f992bb63176acbc4.png" />
+</div>
+</div>
+</section>
+<section id="pedersen-conductivity">
+<h2>Pedersen Conductivity<a class="headerlink" href="#pedersen-conductivity" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ \sigma_P = \frac{n_e e^2}{m_e}\frac{\nu_e}{\nu_e^2+\omega_{ce}^2} + \sum_i \frac{n_i e^2}{m_i}\frac{\nu_i}{\nu_i^2+\omega_{ci}^2} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;Geomag/Babs&#39;</span><span class="p">][:]</span>
+    <span class="n">ion_mass</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/IonMass&#39;</span><span class="p">][:]</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">nu_i</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">nu_e</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Fits&#39;</span><span class="p">][:,:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="n">h5</span><span class="p">[</span><span class="s1">&#39;FittedParams/Ne&#39;</span><span class="p">][:]</span>
+
+<span class="n">ni</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">ne</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">frac</span><span class="p">[:,:,:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">omega_ce</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">*</span><span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="p">)</span>
+<span class="n">omega_ci</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">)</span>
+<span class="n">sigma_P</span> <span class="o">=</span> <span class="p">(</span><span class="n">ne</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">const</span><span class="o">.</span><span class="n">m_e</span><span class="o">*</span><span class="n">nu_e</span><span class="o">/</span><span class="p">(</span><span class="n">nu_e</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">omega_ce</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">ni</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ion_mass</span><span class="o">*</span><span class="n">const</span><span class="o">.</span><span class="n">m_p</span><span class="p">)</span><span class="o">*</span><span class="n">nu_i</span><span class="o">/</span><span class="p">(</span><span class="n">nu_i</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">omega_ci</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma_P</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(188, 11, 74)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sigma_P</span><span class="p">[</span><span class="n">tidx</span><span class="p">,</span><span class="n">bidx</span><span class="p">,:],</span> <span class="n">alt</span><span class="p">[</span><span class="n">bidx</span><span class="p">])</span>
+<span class="c1"># ax.legend()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Pedersen Conductivity (S/m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude (m)&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/6cc97a2cc5bf5efd982609914e7be00f2331308cef0a90f27a9c6c3a87202d1e.png" src="../../../_images/6cc97a2cc5bf5efd982609914e7be00f2331308cef0a90f27a9c6c3a87202d1e.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/sri_database/specialized_parameters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ne_notr.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ne From Power</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../madrigal_database/navigate_database_madrigal.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Madrigal Database</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-frequency">Collision Frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debye-length">Debye Length</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-velocity">Thermal Velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gyrofrequency">Gyrofrequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gyroradius">Gyroradius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plasma-frequency">Plasma Frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inertial-length">Inertial Length</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hall-conductivity">Hall Conductivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pedersen-conductivity">Pedersen Conductivity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leslie Lamarche, Lara Kamal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
