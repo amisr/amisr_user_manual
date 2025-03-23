@@ -400,7 +400,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-guide">How to Use this Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-guide">How to Use this Guide</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-in-binder">Run in Binder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-locally">Run Locally</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-and-questions">Issues and Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
@@ -427,6 +431,68 @@ document.write(`
 <h2>How to Use this Guide<a class="headerlink" href="#how-to-use-this-guide" title="Link to this heading">#</a></h2>
 <p>This guide is a mix of background information and code examples demonstrating how to do common plotting and analysis tasks.  Although it can be read through in full, you may find it more useful to use the table of contents in the left sidebar to skip to the section most relevant to what you are trying to do.  Cross reference links have been embedded in the content to make it possible to jump easily to more information about particular topics.</p>
 <p>Users should adopt a “copy-paste-modify” philosophy with the examples shown in this guide.  For the most part, these examples are intentionally designed to be extremely simple to illustrate the basic steps required to access and plot AMISR data.  Users are encouraged to copy/paste any examples they find helpful into their own code, but will likely have to customize it using normal python and plotting functions to suit their needs.</p>
+<section id="run-in-binder">
+<h3>Run in Binder<a class="headerlink" href="#run-in-binder" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://mybinder.org">Binder</a> is a online service that lets you run jupyter notebooks in the cloud.  Click the button below to run this tutorial in Binder.  Note that it may take several minutes to load.</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/amisr/amisr_user_manual/main"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Binder instances are not perminent and have limited computational resources.  This is useful for quickly exploring the AMISR data and learning the basics of working with it, but not for any significant analysis.  If you would like to save your work or perform more subtansive analyses, consider the option to <a class="reference internal" href="#local"><span class="std std-ref">run locally</span></a>.</p>
+</div>
+</section>
+<section id="run-locally">
+<span id="local"></span><h3>Run Locally<a class="headerlink" href="#run-locally" title="Link to this heading">#</a></h3>
+<p>The tutorial notebooks can be downloaded and run locally.</p>
+<ol class="arabic simple">
+<li><p><strong>Install Python</strong></p></li>
+</ol>
+<p>Python can be downloaded and installed from <a class="reference external" href="https://www.python.org">python.org</a> for a variety of operating systems.  From the “Downloads” tab select your operating system and download and run the installer.  Alternatively you can install a more comprehensive package manager such as <a class="reference external" href="https://www.anaconda.com/docs/main">Anaconda</a> or <a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/main">Miniconda</a>.  Any python installation should be fine, so if you have a functional one already you can skip this step.  A recent version of python (at least 3.10) is recommended, but the tutorial may still function with earlier versions.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Clone User Manual Repository</strong></p></li>
+</ol>
+<p>Open a command prompt and navigate to where on you machine you would like the user manual notebooks saved.  Run the following command to clone the GitHub repo and enter the repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">amisr</span><span class="o">/</span><span class="n">amisr_user_manual</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">amisr_user_manual</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Create a Virtual Environment</strong></p></li>
+</ol>
+<p>A virtual environment will allow you to set up and install the prerequisites required to run the user manual without interfering with other python packages you have installed and use for other work.  This is recommended, but not strictly required.  If you installed python through Anaconda or Miniconda, use the <code class="docutils literal notranslate"><span class="pre">conda</span></code> option, otherwise use <code class="docutils literal notranslate"><span class="pre">venv</span></code>.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+venv</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">venvs</span><span class="o">/</span><span class="n">amisr_user_manual</span>
+<span class="n">source</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">venvs</span><span class="o">/</span><span class="n">amisr_user_manual</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+conda</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">amisr_user_manual</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">amisr_user_manual</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Install Required Packages</strong></p></li>
+</ol>
+<p>A requirements is included in the root of the repository.  Use these to install all packages used in the tutorials.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Start Jupyter Lab</strong></p></li>
+</ol>
+<p>Run this command from a command prompt to start jupyter lab and open the user manual in your browser.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">lab</span>
+</pre></div>
+</div>
+<p>Some IDEs may let you interact with the jupyer notebooks directly.</p>
+</section>
 </section>
 <section id="issues-and-questions">
 <h2>Issues and Questions<a class="headerlink" href="#issues-and-questions" title="Link to this heading">#</a></h2>
@@ -528,7 +594,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-guide">How to Use this Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-guide">How to Use this Guide</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-in-binder">Run in Binder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-locally">Run Locally</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-and-questions">Issues and Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
