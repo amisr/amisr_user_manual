@@ -1,0 +1,9 @@
+jupyterlab
+numpy
+scipy
+h5py
+matplotlib
+cartopy
+pymap3d
+apexpy
+madrigalWeb
